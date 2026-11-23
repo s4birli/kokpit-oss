@@ -66,8 +66,8 @@ class FakeBrowsers implements BrowserManager {
     this.calls.push(["forward", projectId]);
     return this.st(projectId);
   }
-  async reload(projectId: string) {
-    this.calls.push(["reload", projectId]);
+  async reload(projectId: string, ignoreCache = false) {
+    this.calls.push(["reload", projectId, ignoreCache]);
     return this.st(projectId);
   }
   async selectTab(projectId: string, tabId: string) {
@@ -300,6 +300,9 @@ describe("browser handlers", () => {
     expect(browsers.calls.map((x) => x[0])).toEqual(["open", "navigate", "back", "forward", "reload", "selectTab", "newTab", "closeTab", "close"]);
     expect(browsers.calls[1]).toEqual(["navigate", "p1", "https://example.com/"]);
     expect(browsers.calls[7]).toEqual(["closeTab", "p1", "T1"]);
+    await c.req("browser.open", { projectId: "p1" });
+    expect((await c.req("browser.reload", { projectId: "p1", ignoreCache: true })).ok).toBe(true);
+    expect(browsers.calls.at(-1)).toEqual(["reload", "p1", true]);
   });
 
   it("closeTab: bad tab id → INVALID; client-side project → INVALID; not running → NOT_FOUND", async () => {

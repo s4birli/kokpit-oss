@@ -2,6 +2,7 @@
 import { describe, expect, it } from "vitest";
 import { BrowserInputEventSchema, type BrowserInputEvent } from "@kokpit/shared";
 import { chromeArgs, FrameGate, modifierBits, parseDevToolsActivePort, profileDir, toCdpInput } from "./browser.ts";
+import { editingCommandsFor, editingShortcut, type EditingCommands } from "./browser-live.ts";
 
 describe("chromeArgs", () => {
   const base = { profileDir: "/data/browser-profiles/p", port: 9333, headless: false, testMode: false, windowWidth: 1280, windowHeight: 800 };
@@ -181,6 +182,53 @@ describe("toCdpInput", () => {
 
   it("text inserts without key events", () => {
     expect(toCdpInput(parse({ type: "text", text: "merhaba" }))).toEqual([{ method: "Input.insertText", params: { text: "merhaba" } }]);
+  });
+});
+
+describe("toCdpInput: macOS editing commands (Chrome on a Mac edits text with the system's key bindings)", () => {
+  const parse = (e: unknown) => BrowserInputEventSchema.parse(e) as BrowserInputEvent;
+  const table: EditingCommands = { "Meta+a": "selectAll", "Alt+ArrowLeft": "moveWordLeft", "Alt+ArrowUp": ["moveBackward", "moveToBeginningOfParagraph"], "Shift+Meta+z": "redo", "Control+f": "moveForward" };
+  const down = (key: string, code: string, modifiers: Record<string, boolean> = {}, action = "down") =>
+    toCdpInput(parse({ type: "key", action, key, code, modifiers }), table)[0]!.params;
+
+  it("names the command on the key down: Cmd+A selects all, Option+← moves a word, Cmd+Shift+Z redoes", () => {
+    expect(down("a", "KeyA", { meta: true })).toMatchObject({ type: "rawKeyDown", commands: ["selectAll"] });
+    expect(down("ArrowLeft", "ArrowLeft", { alt: true })).toMatchObject({ commands: ["moveWordLeft"] });
+    expect(down("Z", "KeyZ", { meta: true, shift: true })).toMatchObject({ commands: ["redo"] });
+    expect(down("ArrowUp", "ArrowUp", { alt: true })).toMatchObject({ commands: ["moveBackward", "moveToBeginningOfParagraph"] });
+  });
+
+  it("the character decides, not the position; a key whose character is not a letter falls back to its code (Option+F types ƒ)", () => {
+    // German QWERTZ: the "z" key sits where the US "y" is.
+    expect(down("z", "KeyY", { meta: true, shift: true })).toMatchObject({ commands: ["redo"] });
+    expect(down("ƒ", "KeyF", { ctrl: true })).toMatchObject({ commands: ["moveForward"] });
+    expect(editingShortcut({ key: "ı", code: "KeyI", modifiers: { meta: true } })).toBe("Meta+i");
+    expect(editingShortcut({ key: "ArrowLeft", code: "ArrowLeft", modifiers: { shift: true, alt: true, meta: true, ctrl: true } })).toBe("Shift+Control+Alt+Meta+ArrowLeft");
+  });
+
+  it("only exact modifiers match; key up, char and other keys carry no commands", () => {
+    expect(down("a", "KeyA", { meta: true, alt: true })).not.toHaveProperty("commands");
+    expect(down("a", "KeyA", {})).not.toHaveProperty("commands");
+    expect(down("a", "KeyA", { meta: true }, "up")).not.toHaveProperty("commands");
+    expect(down("q", "KeyQ", { meta: true })).not.toHaveProperty("commands");
+    // A printable key keeps its text (and gets no command).
+    expect(down("ş", "Semicolon")).toMatchObject({ type: "keyDown", text: "ş" });
+  });
+
+  it("without a table (Chrome not on a Mac) nothing changes", () => {
+    expect(toCdpInput(parse({ type: "key", action: "down", key: "a", code: "KeyA", modifiers: { meta: true } }), null)[0]!.params).not.toHaveProperty("commands");
+  });
+
+  it("the shipped table applies on macOS only, and every entry is a usable command list", () => {
+    expect(editingCommandsFor("linux")).toBeNull();
+    const mac = editingCommandsFor("darwin")!;
+    expect(mac["Meta+a"]).toBe("selectAll");
+    expect(mac["Meta+z"]).toBe("undo");
+    expect(mac["Meta+ArrowLeft"]).toBe("moveToLeftEndOfLine");
+    for (const [k, v] of Object.entries(mac)) {
+      expect(k).toMatch(/^(Shift\+)?(Control\+)?(Alt\+)?(Meta\+)?([a-z]|[A-Z][A-Za-z]+)$/);
+      for (const c of Array.isArray(v) ? v : [v]) expect(c).toMatch(/^[a-z][A-Za-z]+$/);
+    }
   });
 });
 

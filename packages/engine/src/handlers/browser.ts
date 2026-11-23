@@ -91,7 +91,7 @@ export function createBrowserHandlers(deps: BrowserHandlerDeps): BrowserHandlers
     "browser.navigate": (c, p) => browser(c, p.projectId, (m, id) => m.navigate(id, p.url)),
     "browser.back": (c, p) => browser(c, p.projectId, (m, id) => m.back(id)),
     "browser.forward": (c, p) => browser(c, p.projectId, (m, id) => m.forward(id)),
-    "browser.reload": (c, p) => browser(c, p.projectId, (m, id) => m.reload(id)),
+    "browser.reload": (c, p) => browser(c, p.projectId, (m, id) => m.reload(id, p.ignoreCache === true)),
     "browser.selectTab": (c, p) => browser(c, p.projectId, (m, id) => m.selectTab(id, p.tabId)),
     "browser.newTab": (c, p) => browser(c, p.projectId, (m, id) => m.newTab(id, p.url)),
     // Bağlantılar: a link the user chose in a terminal. Only the origin is logged — a path or query may hold a token.

@@ -370,7 +370,8 @@ export interface BrowserManager {
   navigate(projectId: string, url: string): Promise<BrowserState>;
   back(projectId: string): Promise<BrowserState>;
   forward(projectId: string): Promise<BrowserState>;
-  reload(projectId: string): Promise<BrowserState>;
+  /** `ignoreCache`: ⇧⌘R (Chrome's hard reload). */
+  reload(projectId: string, ignoreCache?: boolean): Promise<BrowserState>;
   selectTab(projectId: string, tabId: string): Promise<BrowserState>;
   newTab(projectId: string, url?: string): Promise<BrowserState>;
   /**
@@ -1424,7 +1425,7 @@ export function createBrowserManager(deps: BrowserManagerDeps): BrowserManager {
       }),
     back: (projectId) => historyStep(projectId, -1),
     forward: (projectId) => historyStep(projectId, 1),
-    reload: (projectId) => onActive(projectId, (inst, sid) => inst.cdp.send("Page.reload", {}, sid)),
+    reload: (projectId, ignoreCache = false) => onActive(projectId, (inst, sid) => inst.cdp.send("Page.reload", ignoreCache ? { ignoreCache: true } : {}, sid)),
     async selectTab(projectId, tabId) {
       const inst = requireRunning(projectId);
       const gone = () => !inst.tabs.has(tabId) || hiddenTab(inst, tabId);

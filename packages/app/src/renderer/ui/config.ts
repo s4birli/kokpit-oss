@@ -59,6 +59,8 @@ export interface UiConfig {
   browserPinchIdleMs: number;
   /** The "%80 − + Sıfırla" bubble after a zoom change hides after this long (stays while the pointer is on it). */
   browserZoomBubbleMs: number;
+  /** ⇧⌘T: how many closed tabs' addresses the Tarayıcı panel keeps to open again. */
+  browserClosedTabsKept: number;
   /** Search engine for address-bar input that is not an address; `%s` = the URL-encoded text. */
   browserSearchUrl: string;
   /**
@@ -109,6 +111,7 @@ export const defaultUiConfig: UiConfig = {
   browserPinchIdleMs: 250,
   // Chrome's zoom bubble closes after 1.5 s.
   browserZoomBubbleMs: 1500,
+  browserClosedTabsKept: 25,
   browserSearchUrl: "https://www.google.com/search?q=%s",
   streamHideGraceMs: 2000,
   filesSideBySideMinWidth: 560,

@@ -13,6 +13,7 @@ import { errorMessage, isDisconnected } from "./errors.ts";
 import type { PanelStateStore } from "./layout/contract.ts";
 import { PanelTitle } from "./PanelTitle.tsx";
 import { defaultClipboard, drawJpegFrame, usePageView, type FrameDrawer, type PageChannel, type PageClipboard } from "./page-view.tsx";
+import type { SurfaceAction } from "./page-keys.ts";
 import { useViewPrefs } from "./view-prefs-context.tsx";
 import { BROWSER_ZOOM_KEY, GLOBAL_SCOPE, legacyZoom, searchUrlOf } from "./view-prefs.ts";
 import "./browser.css";
@@ -146,6 +147,11 @@ function EngineBrowser({ client, project, config, drawFrame = drawJpegFrame, tab
   const configRef = useRef(config);
   configRef.current = config;
   const reloadRef = useRef<() => Promise<void>>(async () => {});
+  /** The browser's own shortcuts (page-keys.ts); set below once the actions exist. */
+  const shortcutRef = useRef<(action: SurfaceAction) => boolean>(() => false);
+  const addressRef = useRef<HTMLInputElement>(null);
+  /** Addresses of the tabs closed here, newest last: ⇧⌘T opens them again (as in Chrome). */
+  const closedTabs = useRef<string[]>([]);
   const channel = useMemo(() => browserChannel(client, projectId), [client, projectId]);
   const page = usePageView({
     client,
@@ -159,6 +165,7 @@ function EngineBrowser({ client, project, config, drawFrame = drawJpegFrame, tab
     onError: setError,
     reload: () => reloadRef.current(),
     menuZoom: true,
+    onShortcut: (action) => shortcutRef.current(action),
   });
   const { engineZoom, engineOwner } = page;
   /** Every browser state the engine sends carries the project's zoom and who drives the viewport. */
@@ -274,8 +281,81 @@ function EngineBrowser({ client, project, config, drawFrame = drawJpegFrame, tab
       })
       .finally(settle);
   };
-  const closeTab = (tabId: string) => void act(() => client.request("browser.closeTab", { projectId, tabId }));
+  const closeTab = (tabId: string) => {
+    const url = state?.tabs.find((x) => x.id === tabId)?.url ?? "";
+    if (/^https?:/i.test(url)) closedTabs.current = [...closedTabs.current, url].slice(-config.browserClosedTabsKept);
+    void act(() => client.request("browser.closeTab", { projectId, tabId }));
+  };
   const newTab = () => void act(() => client.request("browser.newTab", { projectId }));
+  const focusAddress = () => {
+    const input = addressRef.current;
+    input?.focus();
+    input?.select();
+  };
+
+  /** The tab the strip shows as active (the one clicked last, until the engine answered). */
+  const shownTabId = pendingTab !== null && state?.tabs.some((x) => x.id === pendingTab) ? pendingTab : state?.activeTabId;
+  const tabAt = (index: number): string | undefined => state?.tabs[index]?.id;
+  const stepTab = (delta: 1 | -1): string | undefined => {
+    const list = state?.tabs ?? [];
+    if (list.length === 0) return undefined;
+    const at = list.findIndex((x) => x.id === shownTabId);
+    return list[(Math.max(0, at) + delta + list.length) % list.length]!.id;
+  };
+  shortcutRef.current = (action) => {
+    if (!state?.running) return false;
+    const go = (tabId: string | undefined): true => {
+      if (tabId !== undefined && tabId !== shownTabId) selectTab(tabId);
+      return true;
+    };
+    switch (action) {
+      case "focusAddress":
+        focusAddress();
+        return true;
+      case "newTab":
+        // As in Chrome: the new tab's address bar has the caret, empty, ready for an address.
+        focusAddress();
+        void act(() => client.request("browser.newTab", { projectId })).then((ok) => {
+          if (!ok) return;
+          editing.current = true;
+          setAddress("");
+          focusAddress();
+        });
+        return true;
+      case "closeTab":
+        if (shownTabId !== undefined) closeTab(shownTabId);
+        return true;
+      case "reopenTab": {
+        const url = closedTabs.current.pop();
+        if (url !== undefined) void act(() => client.request("browser.newTab", { projectId, url }));
+        return true;
+      }
+      case "reload":
+        simple("browser.reload");
+        return true;
+      case "reloadHard":
+        void act(() => client.request("browser.reload", { projectId, ignoreCache: true }));
+        return true;
+      case "back":
+        simple("browser.back");
+        return true;
+      case "forward":
+        simple("browser.forward");
+        return true;
+      case "nextTab":
+        return go(stepTab(1));
+      case "prevTab":
+        return go(stepTab(-1));
+      case "lastTab":
+        return go(tabAt((state.tabs.length || 1) - 1));
+      case "find":
+      case "findNext":
+      case "findPrevious":
+        return false;
+      default:
+        return go(tabAt(Number(action.slice("tab".length)) - 1));
+    }
+  };
 
   // Active tab ↔ panel state: reselect the remembered tab once (by id, else by URL), then follow the real one.
   useEffect(() => {
@@ -358,7 +438,7 @@ function EngineBrowser({ client, project, config, drawFrame = drawJpegFrame, tab
   }
 
   return (
-    <div className="kp-browser__body" onKeyDownCapture={page.onZoomKey} onKeyUpCapture={page.onZoomKey}>
+    <div className="kp-browser__body" onKeyDownCapture={page.onSurfaceKey} onKeyUpCapture={page.onSurfaceKey}>
       <div className="kp-browser__tabs" role="group" aria-label={t("browser.panel.tabs")} ref={stripRef}>
         {state.tabs.map((tab) => {
           const label = tabLabel(tab);
@@ -396,6 +476,7 @@ function EngineBrowser({ client, project, config, drawFrame = drawJpegFrame, tab
         </button>
         <form className="kp-browser__address" onSubmit={submitAddress}>
           <input
+            ref={addressRef}
             className="kp-input kp-input--mono kp-browser__url"
             aria-label={t("browser.panel.address")}
             value={address}

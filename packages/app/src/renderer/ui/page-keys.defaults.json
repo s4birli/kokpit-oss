@@ -1,0 +1,28 @@
+{
+  "$comment": "Who gets a key pressed on a streamed page (Tarayıcı, Masaüstü windows), as Chrome on macOS decides. `surface`: the browser's own shortcuts — the surface acts and the page gets nothing (an action the surface does not offer leaves the key to the page). `app`: Kokpit's menu keys — neither the surface nor the page, the menu bar runs them. Everything else goes to the page (Cmd+A / Z, Option and Cmd text navigation included; the engine applies the system's editing commands). Zoom (Cmd + − / = / 0) and copy / cut / paste have their own rules (view-prefs.ts, browser-input.ts). Combos: modifiers then a key; Mod = Cmd on macOS, Ctrl elsewhere; the key is a character (case ignored), a DOM key name or a physical key code.",
+  "surface": {
+    "focusAddress": ["Mod+l", "Alt+Mod+f"],
+    "newTab": ["Mod+t"],
+    "closeTab": ["Mod+w"],
+    "reopenTab": ["Shift+Mod+t"],
+    "reload": ["Mod+r", "F5"],
+    "reloadHard": ["Shift+Mod+r", "Shift+F5"],
+    "back": ["Mod+[", "Mod+BracketLeft"],
+    "forward": ["Mod+]", "Mod+BracketRight"],
+    "nextTab": ["Control+Tab", "Alt+Mod+ArrowRight", "Shift+Mod+]", "Shift+Mod+}", "Shift+Mod+BracketRight", "Control+PageDown"],
+    "prevTab": ["Shift+Control+Tab", "Alt+Mod+ArrowLeft", "Shift+Mod+[", "Shift+Mod+{", "Shift+Mod+BracketLeft", "Control+PageUp"],
+    "tab1": ["Mod+1"],
+    "tab2": ["Mod+2"],
+    "tab3": ["Mod+3"],
+    "tab4": ["Mod+4"],
+    "tab5": ["Mod+5"],
+    "tab6": ["Mod+6"],
+    "tab7": ["Mod+7"],
+    "tab8": ["Mod+8"],
+    "lastTab": ["Mod+9"],
+    "find": ["Mod+f"],
+    "findNext": ["Mod+g"],
+    "findPrevious": ["Shift+Mod+g"]
+  },
+  "app": ["Mod+q", "Mod+h", "Alt+Mod+h", "Mod+m", "Mod+,", "Shift+Mod+/", "Shift+Mod+?", "Shift+Mod+Slash", "Alt+Mod+i"]
+}

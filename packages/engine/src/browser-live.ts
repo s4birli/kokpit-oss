@@ -3,6 +3,7 @@
 // the self-healing of a lost size, the input queue, and page evaluation for the clipboard. A project's Chrome has
 // one (its active tab, which moves with tab switches); the Masaüstü's Chrome has one per open window, all live at
 // once. Chrome itself — start, adoption, tabs, close — stays in browser.ts.
+import { readFileSync } from "node:fs";
 import { BROWSER_LIMITS, type BrowserFrameMetadata, type BrowserInputEvent, type BrowserModifiers } from "@kokpit/shared";
 import type { BrowserConfig } from "./browser-config.ts";
 import type { CdpConnection } from "./cdp.ts";
@@ -63,8 +64,58 @@ function keyText(key: string, mods: BrowserModifiers | undefined): string | unde
   return [...key].length === 1 ? key : undefined;
 }
 
-/** A validated app input event → the CDP Input.* calls that reproduce it. */
-export function toCdpInput(ev: BrowserInputEvent): CdpCall[] {
+// ---- macOS editing commands ----
+
+/** Key bindings → Blink editing commands (browser-keys.defaults.json). */
+export type EditingCommands = Readonly<Record<string, string | readonly string[]>>;
+
+interface EditingKeysFile {
+  platforms: string[];
+  commands: Record<string, string | string[]>;
+}
+const EDITING_KEYS: EditingKeysFile = JSON.parse(readFileSync(new URL("../browser-keys.defaults.json", import.meta.url), "utf8")) as EditingKeysFile;
+
+/** The table for a Chrome running on `platform` (the engine's own: Chrome runs where the engine does); null = none needed. */
+export function editingCommandsFor(platform: string): EditingCommands | null {
+  return EDITING_KEYS.platforms.includes(platform) ? EDITING_KEYS.commands : null;
+}
+
+const EDITING = editingCommandsFor(process.platform);
+const MODIFIER_ORDER = [
+  ["shift", "Shift"],
+  ["ctrl", "Control"],
+  ["alt", "Alt"],
+  ["meta", "Meta"],
+] as const;
+const ASCII_LETTER = /^[a-z]$/;
+const LETTER_CODE = /^Key([A-Z])$/;
+
+/**
+ * The table's name of a key press: "Shift+Control+Alt+Meta+<key>". A letter is the character the layout gives (German
+ * Cmd+Z is the "z" key wherever it sits); a key whose character is no ASCII letter (Option+F types "ƒ", Turkish "ı")
+ * falls back to the letter of its position. Other keys go by their DOM name (ArrowLeft, Backspace…).
+ */
+export function editingShortcut(ev: { key: string; code: string; modifiers?: BrowserModifiers | undefined }): string {
+  const lower = ev.key.toLowerCase();
+  const letter = LETTER_CODE.exec(ev.code)?.[1]?.toLowerCase();
+  const name = ASCII_LETTER.test(lower) ? lower : [...ev.key].length === 1 && letter !== undefined ? letter : ev.key;
+  const mods = MODIFIER_ORDER.filter(([m]) => ev.modifiers?.[m] === true).map(([, label]) => label);
+  return [...mods, name].join("+");
+}
+
+function editingCommands(ev: { key: string; code: string; modifiers?: BrowserModifiers | undefined }, table: EditingCommands | null): string[] | undefined {
+  if (!table) return undefined;
+  const shortcut = editingShortcut(ev);
+  const found = Object.hasOwn(table, shortcut) ? table[shortcut] : undefined;
+  if (found === undefined) return undefined;
+  return typeof found === "string" ? [found] : [...found];
+}
+
+/**
+ * A validated app input event → the CDP Input.* calls that reproduce it. `editing`: the system key bindings of the
+ * Chrome's platform (macOS), named on each key down as Chrome's own window would apply them.
+ */
+export function toCdpInput(ev: BrowserInputEvent, editing: EditingCommands | null = EDITING): CdpCall[] {
   switch (ev.type) {
     case "mouse": {
       const moving = ev.action === "move";
@@ -101,10 +152,12 @@ export function toCdpInput(ev: BrowserInputEvent): CdpCall[] {
       if (ev.action === "up") return [{ method: "Input.dispatchKeyEvent", params: { type: "keyUp", ...common } }];
       if (ev.action === "char") return [{ method: "Input.dispatchKeyEvent", params: { type: "char", ...common, text: ev.key } }];
       const text = keyText(ev.key, ev.modifiers);
+      const commands = editingCommands(ev, editing);
+      const down = { ...common, ...(commands ? { commands } : {}) };
       return [
         {
           method: "Input.dispatchKeyEvent",
-          params: text === undefined ? { type: "rawKeyDown", ...common } : { type: "keyDown", ...common, text, unmodifiedText: text },
+          params: text === undefined ? { type: "rawKeyDown", ...down } : { type: "keyDown", ...down, text, unmodifiedText: text },
         },
       ];
     }

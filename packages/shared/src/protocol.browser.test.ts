@@ -49,6 +49,9 @@ describe("İş B: tarayıcı protokolü", () => {
       expect(ok(req(m, p)), m).toBe(true);
     }
     expect(ok(req("browser.navigate", { ...p, url: "https://example.com/a?b=1" }))).toBe(true);
+    // ⇧⌘R: reload without the cache
+    expect(ok(req("browser.reload", { ...p, ignoreCache: true }))).toBe(true);
+    expect(ok(req("browser.reload", { ...p, ignoreCache: "yes" }))).toBe(false);
     expect(ok(req("browser.selectTab", { ...p, tabId: "ABCDEF0123" }))).toBe(true);
     expect(ok(req("browser.newTab", p))).toBe(true);
     expect(ok(req("browser.newTab", { ...p, url: "about:blank" }))).toBe(true);

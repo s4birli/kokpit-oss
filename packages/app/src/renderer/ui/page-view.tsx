@@ -44,6 +44,7 @@ import { errorMessage, isDisconnected } from "./errors.ts";
 import { useT } from "../../i18n/index.ts";
 import { fitSize } from "./fit-size.ts";
 import { onViewCommand, shortcutStep, zoomAfter, zoomLabel, type Step } from "./view-prefs.ts";
+import { routeKey, type SurfaceAction } from "./page-keys.ts";
 
 /** Draws one base64 JPEG on the canvas; resolves with the image size (null = not drawn). */
 export type FrameDrawer = (canvas: HTMLCanvasElement, data: string) => Promise<Size | null>;
@@ -141,13 +142,21 @@ export interface PageViewOptions {
    */
   pageZoom?: boolean;
   rightClick?: "menu" | "app";
+  /**
+   * The browser's own shortcuts (page-keys.ts: address bar, tabs, reload, back / forward, find) pressed anywhere in
+   * the surface. Returns whether the surface did it; a key it does not handle goes on to the page.
+   */
+  onShortcut?(action: SurfaceAction): boolean;
 }
 
 export interface PageView {
   /** The picture area: canvas + zoom bubble. */
   element: ReactElement;
-  /** Capture-phase key handler for the whole surface: Cmd/Ctrl + − / = / 0 zoom the page instead of reaching it. */
-  onZoomKey(e: KeyboardEvent<HTMLElement>): void;
+  /**
+   * Capture-phase key handler for the whole surface: Cmd/Ctrl + − / = / 0 zoom the page and the browser's own
+   * shortcuts go to `onShortcut` instead of reaching the page (their key-ups too).
+   */
+  onSurfaceKey(e: KeyboardEvent<HTMLElement>): void;
   /** The engine's word on the page: its zoom and whether this connection drives its viewport. */
   engineZoom(zoom: number | undefined): void;
   engineOwner(owner: boolean): void;
@@ -258,22 +267,42 @@ export function usePageView(o: PageViewOptions): PageView {
       else if (cmd === "browser.zoom.reset") stepZoom("reset");
     });
   }, [stepZoom, menuZoom]);
-  /** Codes of zoom shortcut keys still down: their key-up is not the page's (also when Cmd came up first). */
-  const zoomKeys = useRef(new Set<string>());
+  /** Codes of surface shortcut keys (zoom, page-keys.ts) still down: their key-up is not the page's (also when Cmd came up first). */
+  const surfaceKeys = useRef(new Set<string>());
   const pageZoom = o.pageZoom !== false;
+  /** A web page follows Chrome's key rule (page-keys.ts); a Mac window (Masaüstü faz 2) gets every key, as before. */
+  const chromeKeys = pageZoom;
   const rightToApp = o.rightClick === "app";
-  const onZoomKey = (e: KeyboardEvent<HTMLElement>) => {
-    if (!pageZoom) return;
-    const step = shortcutStep(e);
+  const onShortcutRef = useRef(o.onShortcut);
+  onShortcutRef.current = o.onShortcut;
+  const onSurfaceKey = (e: KeyboardEvent<HTMLElement>) => {
+    const keep = () => {
+      e.preventDefault();
+      e.stopPropagation();
+    };
     if (e.type === "keyup") {
-      if (!zoomKeys.current.delete(e.code) && !step) return;
-    } else {
-      if (!step) return;
-      zoomKeys.current.add(e.code);
+      if (surfaceKeys.current.delete(e.code) || (pageZoom && shortcutStep(e))) keep();
+      return;
     }
-    e.preventDefault();
-    e.stopPropagation();
-    if (e.type === "keydown" && step) stepZoom(step);
+    if (e.type !== "keydown" || e.nativeEvent.isComposing) return;
+    const step = pageZoom ? shortcutStep(e) : null;
+    if (step) {
+      surfaceKeys.current.add(e.code);
+      keep();
+      stepZoom(step);
+      return;
+    }
+    if (!chromeKeys) return;
+    const route = routeKey(e, mac);
+    if (route.to !== "surface") return;
+    // Held down: the action ran once; the repeats are nobody's.
+    if (e.repeat && surfaceKeys.current.has(e.code)) {
+      keep();
+      return;
+    }
+    if (onShortcutRef.current?.(route.action) !== true) return;
+    surfaceKeys.current.add(e.code);
+    keep();
   };
 
   // Screencast lifecycle: subscribe while running; restart on reconnect and when the viewer is resized.
@@ -616,6 +645,11 @@ export function usePageView(o: PageViewOptions): PageView {
         if (!e.repeat) copyFromPage(shortcut === "cut");
         return;
       }
+      // Kokpit's menu keys (Cmd+Q, Cmd+H, Cmd+, …): left alone, so the menu bar runs them — never the page's.
+      if (chromeKeys && routeKey(e, mac).to === "app") {
+        shortcutKeys.current.add(e.code);
+        return;
+      }
       shortcutKeys.current.delete(e.code);
     } else if (shortcutKeys.current.delete(e.code)) {
       return;
@@ -718,5 +752,5 @@ export function usePageView(o: PageViewOptions): PageView {
     </div>
   );
 
-  return { element, onZoomKey, engineZoom, engineOwner, zoom };
+  return { element, onSurfaceKey, engineZoom, engineOwner, zoom };
 }

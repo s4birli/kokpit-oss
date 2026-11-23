@@ -306,7 +306,8 @@ export const BrowserRequestParams = {
   "browser.navigate": z.object({ ...ProjectRef, url: BrowserUrlSchema }).strict(),
   "browser.back": z.object(ProjectRef).strict(),
   "browser.forward": z.object(ProjectRef).strict(),
-  "browser.reload": z.object(ProjectRef).strict(),
+  /** `ignoreCache`: ⇧⌘R — the page and its resources come from the network again. */
+  "browser.reload": z.object({ ...ProjectRef, ignoreCache: z.boolean().optional() }).strict(),
   "browser.selectTab": z.object({ ...ProjectRef, tabId: Id }).strict(),
   "browser.newTab": z.object({ ...ProjectRef, url: BrowserUrlSchema.optional() }).strict(),
   /**
