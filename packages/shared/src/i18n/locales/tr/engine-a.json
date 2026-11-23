@@ -1,0 +1,191 @@
+{
+  "appUpdates": {
+    "notPublished": "Bu derleme yayında değil"
+  },
+  "bgAgents": {
+    "unexpected": "claude agents beklenmeyen bir yanıt verdi.",
+    "badSessionId": "geçersiz oturum kimliği",
+    "notFound": "claude bu makinede bulunamadı ({binary}).",
+    "timeout": "claude {seconds} saniyede yanıt vermedi.",
+    "tooBig": "claude çıktısı çok büyük.",
+    "spawnFailed": "claude çalıştırılamadı.",
+    "spawnFailedDetail": "claude çalıştırılamadı: {detail}",
+    "failedDetail": "claude hata verdi: {detail}",
+    "failedCode": "claude hata verdi (çıkış kodu {code}).",
+    "unreadable": "claude agents okunamadı.",
+    "agentNotFound": "Arka plan ajanı bulunamadı.",
+    "projectNotFound": "Ajanın projesi bulunamadı."
+  },
+  "browserClipboard": {
+    "badLimit": "geçersiz sınır",
+    "badCoordinate": "geçersiz koordinat",
+    "selectionTooLarge": "Seçim çok büyük: en çok {max} karakter kopyalanabilir."
+  },
+  "browserIsolated": {
+    "failed": "Sayfa isteği yanıtlamadı (sayfa değişmiş ya da kapanmış olabilir)."
+  },
+  "browserLive": {
+    "noSelection": "Sayfa seçimini vermedi."
+  },
+  "browserLoginFill": {
+    "noAnswer": "Sayfa yanıt vermedi; hiçbir alan doldurulmadı.",
+    "noFields": "Bu sayfada doldurulacak kullanıcı adı ya da parola alanı bulunamadı. (Başka kökenli çerçevelerin içindeki alanlar doldurulmaz.)",
+    "ambiguous": "Bu sayfada birden çok parola alanı var (kayıt ya da parola değiştirme formu). Doldurmak istediğiniz alana tıklayıp yeniden deneyin.",
+    "notFilled": "Alanlar bulundu ama doldurulamadı (sayfa değeri geri aldı).",
+    "nonHttpPage": "http(s) olmayan bir sayfa",
+    "originMismatch": "Bu giriş {saved} için kayıtlı; açık sayfa {page}. Hiçbir alan doldurulmadı.",
+    "saveOriginMismatch": "Giriş yalnız tarayıcıda açık olan site için kaydedilir: istenen {requested}, açık sayfa {page}. Kaydedilmedi."
+  },
+  "browserPorts": {
+    "noFreePort": "Tarayıcı için boş port bulunamadı"
+  },
+  "browser": {
+    "badProfileId": "Bu proje kimliği tarayıcı profili için uygun değil: {projectId}",
+    "extensionDirNotAbsolute": "Uzantı klasörü mutlak bir yol olmalı",
+    "extensionDirBadPath": "Uzantı klasörünün yolu geçersiz",
+    "extensionDirNotFound": "Uzantı klasörü bulunamadı: {dir}",
+    "notAFolder": "Bu bir klasör değil: {dir}",
+    "noManifest": "Klasörde {manifest} yok: {dir}",
+    "devtoolsUnreadable": "Chrome DevTools adresi okunamadı",
+    "devtoolsUnexpected": "Chrome DevTools beklenmeyen bir adreste",
+    "chromeStartFailed": "Chrome başlatılamadı ({reason}). Profil başka bir Chrome'da açık olabilir.",
+    "chromeTimeout": "Chrome zamanında yanıt vermedi",
+    "chromeConnectFailed": "Chrome'a bağlanılamadı: {reason}",
+    "chromePrepareFailed": "Chrome hazırlanamadı: {reason}",
+    "extensionsNotAllowed": "Bu tarayıcı uzantı yüklemeye izin verilmeden başlatılmış; tarayıcıyı kapatıp yeniden aç.",
+    "extensionLoadFailed": "Uzantı yüklenemedi: {reason}",
+    "engineStopping": "Motor kapanıyor",
+    "notRunning": "Tarayıcı açık değil",
+    "tabNotFound": "Sekme bulunamadı",
+    "noActiveTab": "Etkin sekme yok",
+    "tabCloseFailed": "Sekme kapatılamadı: {reason}",
+    "pageOpenFailed": "Sayfa açılamadı: {reason}",
+    "tooManyTabs": "En fazla {max} sekme açılabilir",
+    "pasteTooLarge": "Yapıştırılacak metin çok büyük: en çok {max} karakter.",
+    "tooManyExtensions": "En fazla {max} geliştirici uzantısı eklenebilir",
+    "badZoom": "Geçersiz yakınlaştırma",
+    "zoomAppTooOld": "Bu uygulama sürümü eski: tarayıcı yakınlaştırması artık motorda tutuluyor ve bu sürümden değiştirilemiyor. Uygulamayı güncelle.",
+    "badZoomRequest": "Geçersiz yakınlaştırma isteği",
+    "badPanelSize": "Geçersiz panel boyutu",
+    "hiddenOnScreen": "Tarayıcı Mac mini ekranında gizli; önce \"Mac mini ekranında göster\"i aç."
+  },
+  "cards": {
+    "notARepo": "Bu klasör bir git reposu değil; kart açılamaz.",
+    "projectNotFound": "Proje bulunamadı: {projectId}",
+    "noCardsOnSsh": "SSH projelerinde kart yok: {project}",
+    "worktreeOutside": "Worktree yolu veri klasörünün dışına çıkıyor: {projectId}",
+    "cardNotFound": "Kart bulunamadı: {cardId}",
+    "dirty": "Commit edilmemiş değişiklikler var: {paths}",
+    "dirtyMore": "Commit edilmemiş değişiklikler var: {paths} (+{more} daha)"
+  },
+  "claudeAccounts": {
+    "noDefault": "varsayılan Claude hesabı yok",
+    "notFound": "Claude hesabı bulunamadı: {id}",
+    "badPath": "Klasör yolu geçersiz.",
+    "notAbsolute": "Klasör mutlak yol ya da ~/ ile başlamalı.",
+    "outsideHome": "Klasör ana klasörün ({home}) içinde olmalı.",
+    "symlinkOutsideHome": "Klasör sembolik bağla ana klasörün dışına çıkıyor.",
+    "notAFolder": "Klasör değil: {dir}",
+    "createFailed": "Klasör oluşturulamadı: {dir} ({reason})",
+    "nameTaken": "Bu adda bir hesap zaten var: {name}",
+    "dirTaken": "Bu klasör zaten \"{name}\" hesabının.",
+    "defaultDirFixed": "Varsayılan hesabın klasörü değiştirilemez.",
+    "defaultNotDeletable": "Varsayılan hesap silinemez.",
+    "inUse_one": "{count} proje bu hesabı kullanıyor: {projects}",
+    "inUse_other": "{count} proje bu hesabı kullanıyor: {projects}",
+    "defaultAlreadyShares": "Varsayılan hesap zaten bu klasörleri kullanıyor.",
+    "skipExists": "zaten var, dokunulmadı",
+    "skipMissing": "varsayılan hesapta yok",
+    "skipLinkFailed": "bağlanamadı ({reason})"
+  },
+  "claudeInventory": {
+    "badId": "Geçersiz öğe kimliği",
+    "outside": "Yol Claude klasörünün dışına çıkıyor",
+    "missing": "Öğe bulunamadı",
+    "notMarkdown": "Yalnız markdown dosyaları önizlenir",
+    "noProjectDir": "Bu projenin bu makinede Claude klasörü yok"
+  },
+  "claudeUsage": {
+    "unknownFolder": "Bilinmeyen klasör",
+    "sessionsLinked": "Oturum kayıtları klasörü sembolik bağla hesap klasörünün dışına çıkıyor; okunmadı.",
+    "sessionsUnreadable": "Oturum kayıtları okunamadı.",
+    "probeDisabled": "Claude'a sorma bu motorda kapalı (claudeUsage.probe.enabled).",
+    "probeTooSoon_one": "Az önce soruldu; {count} saniye sonra yeniden dene.",
+    "probeTooSoon_other": "Az önce soruldu; {count} saniye sonra yeniden dene.",
+    "notFound": "claude bulunamadı ({binary}).",
+    "noQuota": "Claude kota bilgisi vermedi (giriş yapılmamış ya da abonelik hesabı olmayabilir)."
+  },
+  "filesMedia": {
+    "unsupported": "Bu dosya türü Kokpit'te açılamıyor",
+    "mismatch": "Dosyanın içeriği uzantısıyla uyuşmuyor; açılmadı",
+    "tooLarge": "Dosya Kokpit'te açılamayacak kadar büyük",
+    "notAFile": "Yalnız dosyalar açılır"
+  },
+  "filesPreview": {
+    "missing": "Dosya bulunamadı",
+    "notFile": "Yalnız dosyalar önizlenir",
+    "unsupported": "Bu dosya türü tarayıcıda önizlenemez",
+    "outside": "Bu klasör önizlemeye açık değil: ev klasörünün ya da projenin içinde olmalı",
+    "hidden": "Gizli (noktayla başlayan) klasör ve dosyalar önizlenmez",
+    "home": "Ev klasörünün kendisi önizlemeye açılmaz: sayfayı kendi klasörüne koyun",
+    "denied": "Bu klasör önizlemeye kapalı",
+    "tooLarge": "Dosya önizlenemeyecek kadar büyük",
+    "rate": "Çok sık önizleme açıldı; biraz sonra yeniden deneyin",
+    "gone": "Önizleme adresi geçersiz ya da süresi doldu. Terminaldeki yola yeniden tıklayın.",
+    "notFound": "Bulunamadı",
+    "busy": "Çok fazla istek; biraz sonra yeniden deneyin"
+  },
+  "files": {
+    "outside": "Yol proje klasörünün dışına çıkıyor",
+    "badPath": "Geçersiz yol",
+    "missing": "Dosya ya da klasör bulunamadı",
+    "rootMissing": "Proje klasörü bulunamadı",
+    "notAFolder": "Bu bir klasör değil"
+  },
+  "flow": {
+    "badName": "Geçersiz akış adı",
+    "noFolder": "Bu projede akış klasörü yok",
+    "notFound": "Akış bulunamadı",
+    "tooLarge": "Akış dosyası gösterilemeyecek kadar büyük"
+  },
+  "localPaths": {
+    "notOpenable": "Yalnız dosyalar ve klasörler açılır"
+  },
+  "launch": {
+    "badAlias": "sunucu takma adı geçersiz",
+    "badAddress": "sunucu adresi geçersiz",
+    "badUser": "sunucu kullanıcısı geçersiz",
+    "badPort": "sunucu portu geçersiz",
+    "badKey": "sunucu anahtarı geçersiz",
+    "cardNotInProject": "kart bu projeye ait değil",
+    "noCardsOnSsh": "SSH projelerinde kart yok",
+    "hostNotFound": "projenin SSH sunucusu bulunamadı",
+    "hostNotInProject": "sunucu bu projeye ait değil",
+    "badRemoteDir": "uzak klasör geçersiz",
+    "notCloned": "proje henüz klonlanmadı"
+  },
+  "git": {
+    "timeout": "git {command} zaman aşımına uğradı ({ms} ms)",
+    "noDefaultBranch": "Varsayılan branch bulunamadı (origin/HEAD yok, HEAD ayrık)."
+  },
+  "logins": {
+    "riskFirst": "Bu tarayıcıyı ajanlar da sürebiliyor; doldurulan şifreyi okuyabilirler. Doldurmak için bu projede bu riski kabul etmeniz gerekir.",
+    "riskNow": "Şu anda bu projede çalışan ajan (terminal ya da arka plan ajanı) var; doldurulan şifreyi okuyabilir. Her doldurmada onayınız gerekir.",
+    "waiting": "Motorun Mac'inin ekranında Anahtar Zinciri onayı bekleniyor. Bu giriş için ikinci bir istek açılmadı.",
+    "cooldown_one": "Bu girişin Anahtar Zinciri onayı az önce reddedildi ya da yanıtsız kaldı; {count} saniye sonra yeniden deneyin.",
+    "cooldown_other": "Bu girişin Anahtar Zinciri onayı az önce reddedildi ya da yanıtsız kaldı; {count} saniye sonra yeniden deneyin.",
+    "keychainInteraction": "Anahtar zinciri kilitli ya da onay bekliyor. Motorun çalıştığı Mac'in ekranında anahtar zincirinin kilidini açın; izin penceresi çıkarsa “İzin Ver”i seçin, sonra yeniden deneyin.",
+    "keychainTimeout": "Anahtar zinciri yanıt vermedi: onay beklendi ama süre doldu. Motorun çalıştığı Mac'in ekranında Anahtar Zinciri penceresinde “İzin Ver”i seçip yeniden deneyin.",
+    "keychainDenied": "Anahtar zinciri erişimi reddedildi. Motorun çalıştığı Mac'in ekranında çıkan pencerede izin verin, sonra yeniden deneyin.",
+    "keychainUnavailable": "Motorun çalıştığı Mac'te anahtar zinciri kullanılamıyor (security aracı ya da oturum anahtar zinciri bulunamadı).",
+    "keychainNotFound": "Bu girişin parolası anahtar zincirinde yok (elle silinmiş olabilir). Girişi silip yeniden kaydedin.",
+    "keychainGarbage": "Anahtar zincirindeki kayıt Kokpit'in yazdığı biçimde değil. Girişi silip yeniden kaydedin.",
+    "keychainFailed": "Anahtar zinciri işlemi başarısız oldu.",
+    "secretTooLong": "Parola çok uzun: en çok {max} bayt saklanabilir.",
+    "badProjectId": "Bu projenin kimliği anahtar zincirinde kullanılamıyor.",
+    "noBrowser": "Bu motorda tarayıcı yok",
+    "rateLimited": "Çok sık dolduruluyor; biraz bekleyip yeniden deneyin.",
+    "tooMany": "Bu projede en çok {max} giriş saklanabilir.",
+    "notFound": "Giriş bulunamadı"
+  }
+}

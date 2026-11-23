@@ -1,0 +1,29 @@
+{
+  "validation": {
+    "urlTooLong": "The engine address is too long.",
+    "urlScheme": "The address must start with ws:// or wss:// (e.g. ws://100.x.y.z:port).",
+    "keyTooLong": "The key is too long.",
+    "urlRequired": "The engine address is required.",
+    "keyRequired": "The key is required."
+  },
+  "notice": {
+    "unauthorized": "Key rejected",
+    "locked": "The saved key could not be read by this build (macOS Keychain permission). The address is kept; enter the key once more."
+  },
+  "insecure": {
+    "label": "Connect anyway on an insecure network (this address only)",
+    "warning": "Warning: anyone on this network who can get between you and the engine (same Wi-Fi, a device in between) can relay the handshake to the real engine and use the connection in your place — open terminals, that is, run code on the Mac mini. Turn this on only if you trust this network; use Tailscale or wss:// if you can."
+  },
+  "screen": {
+    "savedUnreadable": "The saved settings could not be read.",
+    "localFailed": "Could not connect to the engine on this Mac.",
+    "saveFailed": "The settings could not be saved.",
+    "title": "Connect to the engine",
+    "hint": "Enter the address and access key of the engine on the Mac mini.",
+    "local": "Connect to the engine on this Mac",
+    "orManual": "or enter it by hand",
+    "url": "Engine address",
+    "key": "Key",
+    "submit": "Connect"
+  }
+}

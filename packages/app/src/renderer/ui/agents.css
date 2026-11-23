@@ -1,0 +1,312 @@
+/* İş A — ajan özeti: Ajanlar panel, rail counters, "Seni bekleyen". Uses only variables from theme.css. */
+
+/* ---------- state chip ---------- */
+.kp-agent-chip {
+  flex: none;
+  padding: 0 var(--space-2);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  white-space: nowrap;
+  color: var(--muted);
+}
+.kp-agent-chip--running {
+  color: var(--accent-text);
+  border-color: var(--accent);
+}
+.kp-agent-chip--waiting {
+  color: var(--warn);
+  border-color: var(--warn);
+  font-weight: var(--fw-bold);
+}
+.kp-agent-chip--exited {
+  border-style: dashed;
+}
+
+/* ---------- Ajanlar panel ---------- */
+.kp-agents__empty {
+  margin: 0;
+  padding: var(--space-3);
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+.kp-agents__list {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.kp-agent {
+  width: 100%;
+  min-height: var(--touch);
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  border: var(--border-w) solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.kp-agent:hover {
+  border-color: var(--border);
+  background: var(--panel-selected);
+}
+.kp-agent__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+.kp-agent__name {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+}
+.kp-agent__card,
+.kp-agent__time {
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+.kp-agent__time {
+  margin-left: auto;
+}
+.kp-agent__summary {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- rail: counters ---------- */
+.kp-agent-count {
+  display: flex;
+  gap: var(--space-1);
+  flex: none;
+}
+.kp-agent-count__n {
+  min-width: calc(var(--space-4) + var(--space-1));
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-align: center;
+  border: var(--border-w) solid currentColor;
+}
+.kp-agent-count__n--running {
+  color: var(--accent-text);
+}
+.kp-agent-count__n--waiting {
+  color: var(--warn);
+}
+
+/* ---------- rail: Seni bekleyen ---------- */
+.kp-waiting {
+  /* Its own height, whatever else the rail holds: the list below scrolls, the block is never squeezed. */
+  flex: none;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  border: var(--border-w) solid var(--warn);
+  border-radius: var(--radius-md);
+}
+.kp-waiting__title {
+  margin: 0;
+  color: var(--warn);
+}
+/* Many waiting sessions scroll here, so the projects under the block stay on screen. */
+.kp-waiting__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: var(--waiting-list-max-height);
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.kp-waiting__list > li {
+  flex: none;
+  min-width: 0;
+}
+/* Two lines: name and time, then where. A long name is cut with "…"; the row's tooltip has the full text. */
+.kp-waiting__item {
+  width: 100%;
+  min-height: var(--touch);
+  padding: var(--space-1) var(--space-2);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "name time"
+    "where where";
+  align-items: baseline;
+  align-content: center;
+  column-gap: var(--space-2);
+  border: var(--border-w) solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.kp-waiting__item:hover {
+  border-color: var(--border);
+  background: var(--panel);
+}
+.kp-waiting__name,
+.kp-waiting__where {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.kp-waiting__name {
+  grid-area: name;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+}
+.kp-waiting__where,
+.kp-waiting__time {
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+.kp-waiting__where {
+  grid-area: where;
+}
+.kp-waiting__time {
+  grid-area: time;
+  white-space: nowrap;
+}
+
+/* ---------- collapsed rail: the number of waiting sessions ---------- */
+/* As wide as the expand button above it: the strip is the same strip whether or not anything waits. */
+.kp-rail__waiting {
+  flex: none;
+  align-self: stretch;
+  min-width: 0;
+  min-height: var(--touch);
+  padding: 0;
+  overflow: hidden;
+  border: var(--border-w) solid var(--warn);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--warn);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-align: center;
+  cursor: pointer;
+}
+.kp-rail__waiting:hover {
+  background: var(--panel);
+}
+
+/* ---------- settings: multi-line field ---------- */
+.kp-input--area {
+  padding: var(--space-2) var(--space-3);
+  resize: vertical;
+}
+
+/* ---------- İş A (Adım 7): Terminaller / Arka plan ajanları ---------- */
+.kp-agents__section {
+  margin: 0;
+  padding: var(--space-2) var(--space-3) 0;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.kp-bga {
+  border-top: var(--border-w) solid var(--border);
+  margin-top: var(--space-2);
+}
+.kp-bga__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* In a narrow group "Tüm projeler" goes under the heading instead of being cut off. */
+  flex-wrap: wrap;
+  gap: 0 var(--space-2);
+  padding-right: var(--space-3);
+}
+.kp-bga__all {
+  /* Beside the heading while even its narrowest form fits; on a row of its own (in one line) when it does not. */
+  flex: 1 1 min-content;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding-top: var(--space-2);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+.kp-bga__toggle {
+  width: 100%;
+  min-height: var(--touch);
+  padding: 0 var(--space-3);
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-align: left;
+  cursor: pointer;
+}
+.kp-bga__group--waiting .kp-bga__toggle {
+  color: var(--warn);
+}
+.kp-bga__toggle[aria-expanded="false"] {
+  color: var(--muted);
+}
+.kp-bga__row {
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  border: var(--border-w) solid transparent;
+  border-radius: var(--radius-sm);
+}
+.kp-bga__row:hover {
+  border-color: var(--border);
+  background: var(--panel-selected);
+}
+.kp-bga__row--marked {
+  border-color: var(--warn);
+}
+.kp-bga__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+}
+.kp-bga__confirm {
+  font-size: var(--fs-xs);
+  color: var(--warn);
+}
+.kp-bga__logs {
+  margin: var(--space-2);
+  border: var(--border-w) solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--panel-selected);
+}
+.kp-bga__logs-text {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  max-height: var(--bga-logs-max-height);
+  overflow: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  white-space: pre-wrap;
+  word-break: break-word;
+}

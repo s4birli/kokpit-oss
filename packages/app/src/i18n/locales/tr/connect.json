@@ -1,0 +1,29 @@
+{
+  "validation": {
+    "urlTooLong": "Motor adresi çok uzun.",
+    "urlScheme": "Adres ws:// ya da wss:// ile başlamalı (ör. ws://100.x.y.z:port).",
+    "keyTooLong": "Anahtar çok uzun.",
+    "urlRequired": "Motor adresi gerekli.",
+    "keyRequired": "Anahtar gerekli."
+  },
+  "notice": {
+    "unauthorized": "Anahtar reddedildi",
+    "locked": "Kayıtlı anahtar bu derlemede okunamadı (macOS Anahtar Zinciri izni). Adres duruyor; anahtarı bir kez yeniden gir."
+  },
+  "insecure": {
+    "label": "Güvenli olmayan ağda yine de bağlan (yalnız bu adres)",
+    "warning": "Uyarı: bu ağda motorun adresine geçebilen biri (aynı Wi-Fi, ara bir cihaz) el sıkışmayı gerçek motora aktarıp bağlantıyı senin yerine kullanabilir — terminaller açabilir, yani Mac mini'de kod çalıştırabilir. Yalnız bu ağa güveniyorsan aç; mümkünse Tailscale ya da wss:// kullan."
+  },
+  "screen": {
+    "savedUnreadable": "Kaydedilen ayarlar okunamadı.",
+    "localFailed": "Bu Mac'teki motora bağlanılamadı.",
+    "saveFailed": "Ayarlar kaydedilemedi.",
+    "title": "Motora bağlan",
+    "hint": "Mac mini'deki motorun adresini ve erişim anahtarını gir.",
+    "local": "Bu Mac'teki motora bağlan",
+    "orManual": "ya da elle gir",
+    "url": "Motor adresi",
+    "key": "Anahtar",
+    "submit": "Bağlan"
+  }
+}

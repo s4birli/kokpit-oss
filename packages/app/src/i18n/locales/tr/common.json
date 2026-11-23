@@ -1,0 +1,39 @@
+{
+  "language": {
+    "name": "Türkçe"
+  },
+  "uiState": {
+    "invalid": "Arayüz durumu geçersiz.",
+    "noVersion": "Arayüz durumu sürümü yok.",
+    "tooManyLayouts": "Çok fazla proje düzeni var.",
+    "notJson": "Arayüz durumu JSON değil.",
+    "tooLarge": "Arayüz durumu çok büyük."
+  },
+  "sites": {
+    "tailnetBlocked": "Tailscale kapalı ya da bu adres tailnet'inde değil; düz http ile açılmadı.",
+    "badgeTailnetLabel": "http · Tailscale",
+    "badgeTailnetTitle": "Düz http (şifresiz). Yalnız Tailscale açıkken ve bu adres tailnet'indeyken yüklenir; trafiği tailnet içinde bu adresi yöneten cihaz görebilir.",
+    "badgeLocalLabel": "http · yerel",
+    "badgeLocalTitle": "Düz http (şifresiz); adres bu bilgisayarın kendisi.",
+    "urlCredentials": "adreste kullanıcı adı ya da parola olamaz.",
+    "urlHttpNeedsIp": "http:// yalnız IP adresiyle yazılan Tailscale/yerel adresler için kabul edilir (ör. http://100.x.y.z:9119); alan adı için https:// gerekir.",
+    "urlHttpNotPrivate": "http:// yalnız Tailscale ve yerel adresler için kabul edilir ({cidrs}); bu adres için https:// gerekir.",
+    "urlScheme": "adres https:// ile başlamalı (Tailscale/yerel IP adresi için http:// de olur, ör. http://100.x.y.z:9119).",
+    "invalidSite": "Geçersiz site.",
+    "site": "Site",
+    "invalidId": "{title}: geçersiz kimlik.",
+    "nameRequired": "Ad gerekli.",
+    "nameTooLong": "{title}…: ad en çok {max} karakter.",
+    "urlError": "{title}: {error}",
+    "invalidList": "Site listesi geçersiz.",
+    "tooMany": "En çok {max} site.",
+    "duplicateId": "{title}: aynı kimlikte iki site var."
+  },
+  "client": {
+    "disconnected": "Motor bağlantısı koptu.",
+    "transportUnchecked": "Bağlantının güvenli olup olmadığı denetlenemedi.",
+    "notConnected": "Motora bağlı değil.",
+    "invalidRequest": "Geçersiz istek: {method}",
+    "timeout": "Motor yanıt vermedi: {method}"
+  }
+}

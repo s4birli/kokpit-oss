@@ -1,0 +1,286 @@
+/* İş F — Dosyalar. Colours only from theme.css variables. */
+.kp-files {
+  --kp-files-indent: var(--space-3);
+  /* The divider between tree and preview: a thin bar to drag. */
+  --kp-files-divider: var(--tabs-divider-w);
+  /* The audio player's width when the preview is wider than that. */
+  --kp-files-audio-width: 480px;
+  min-height: var(--placeholder-min-height);
+  height: 100%;
+}
+.kp-files__where {
+  min-width: 0;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kp-files__alert {
+  margin: 0;
+  padding: var(--space-3);
+}
+/*
+ * Tree and preview each get their own track and scroll inside it: neither can push the other out of the panel
+ * (they used to wrap into one clipped column, so the preview ended up below the panel's edge).
+ */
+.kp-files__body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  min-height: 0;
+  overflow: hidden;
+}
+.kp-files__tree,
+.kp-files__group {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.kp-files__tree {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  padding: var(--space-1) 0;
+}
+.kp-files__divider {
+  background: var(--border);
+  touch-action: none;
+}
+.kp-files__body--side .kp-files__divider {
+  cursor: col-resize;
+}
+.kp-files__body--stacked .kp-files__divider {
+  cursor: row-resize;
+}
+.kp-files__divider:hover {
+  background: var(--border-strong);
+}
+.kp-files__divider:focus-visible {
+  outline: var(--focus-w) solid var(--focus-ring);
+  outline-offset: calc(-1 * var(--focus-w));
+}
+.kp-files__entry {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  width: 100%;
+  min-height: calc(var(--touch) * 0.6);
+  padding: 0 var(--space-2) 0 calc(var(--space-2) + var(--kp-files-depth, 0) * var(--kp-files-indent));
+  border: 0;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--fs-sm);
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.kp-files__entry:hover:not(:disabled) {
+  background: var(--panel-selected);
+}
+.kp-files__entry[aria-current="true"] {
+  background: var(--panel-selected);
+  color: var(--accent-text);
+}
+.kp-files__entry:disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+}
+.kp-files__name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kp-files__entry--link {
+  font-style: italic;
+}
+.kp-files__icon {
+  flex: 0 0 var(--space-3);
+  color: var(--muted);
+  text-align: center;
+}
+.kp-files__note {
+  padding: var(--space-1) var(--space-2) var(--space-1)
+    calc(var(--space-2) + var(--space-3) + var(--kp-files-depth, 0) * var(--kp-files-indent));
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+.kp-files__preview {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--panel);
+}
+/* The large preview: the same element, over the whole window (Esc / "Küçült" brings it back). */
+.kp-files__preview--large {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+}
+.kp-files__preview-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+/* One slim line above the file: path, size, actions. */
+.kp-files__head {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  min-height: var(--bar-h);
+  padding: 0 var(--space-1) 0 var(--space-2);
+  border-bottom: var(--border-w) solid var(--border);
+}
+.kp-files__path {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kp-files__size {
+  flex: none;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  white-space: nowrap;
+}
+/* In the narrow column the line belongs to the path and the actions (the size is on the large preview). */
+.kp-files__body--stacked .kp-files__preview:not(.kp-files__preview--large) .kp-files__size {
+  display: none;
+}
+.kp-files__head-actions {
+  flex: none;
+  display: flex;
+  gap: var(--space-1);
+}
+.kp-files__hint {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+.kp-files__code-wrap {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  overflow: auto;
+  background: var(--term-bg);
+}
+.kp-files__code-wrap:focus-visible {
+  outline: var(--focus-w) solid var(--focus-ring);
+  outline-offset: calc(-1 * var(--focus-w));
+}
+.kp-files__gutter,
+.kp-files__code {
+  margin: 0;
+  padding: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--term-font-size);
+  line-height: 1.5;
+  /* Rows of text, not a flex item squeezed to the wrap's height. */
+  height: max-content;
+  min-height: 100%;
+}
+.kp-files__gutter {
+  flex: 0 0 auto;
+  position: sticky;
+  left: 0;
+  color: var(--muted);
+  background: var(--term-bg);
+  text-align: right;
+  user-select: none;
+  border-right: var(--border-w) solid var(--border);
+}
+.kp-files__code {
+  flex: 1 0 auto;
+  color: var(--text);
+  white-space: pre;
+  tab-size: 4;
+}
+/* Streamed media: the player / picture / PDF fills what is left under the path line. */
+.kp-files__media {
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--term-bg);
+}
+.kp-files__player {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  max-height: 100%;
+  background: var(--term-bg);
+}
+.kp-files__player:focus-visible {
+  outline: var(--focus-w) solid var(--focus-ring);
+  outline-offset: calc(-1 * var(--focus-w));
+}
+.kp-files__player--audio {
+  flex: none;
+  width: min(100%, var(--kp-files-audio-width));
+}
+.kp-files__zoom {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+.kp-files__zoom:focus-visible {
+  outline: var(--focus-w) solid var(--focus-ring);
+  outline-offset: calc(-1 * var(--focus-w));
+}
+/* Fit: the whole picture inside the area, never enlarged past its own size. */
+.kp-files__image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+/* %100: the picture at its own size, scrolled inside the area. */
+.kp-files__media--actual {
+  display: block;
+  overflow: auto;
+}
+.kp-files__media--actual .kp-files__zoom {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  cursor: zoom-out;
+}
+.kp-files__media--actual .kp-files__image {
+  max-width: none;
+  max-height: none;
+  display: block;
+}
+.kp-files__pdf {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border: 0;
+  background: var(--term-bg);
+}

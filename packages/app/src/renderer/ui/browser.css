@@ -1,0 +1,231 @@
+/* İş B: Tarayıcı panel. Uses only variables from theme.css. */
+.kp-browser {
+  grid-column: 1 / -1;
+}
+/* Running: the picture fits the panel, so the panel itself must not grow with it (nothing to scroll). */
+.kp-dock-panel > .kp-browser:has(.kp-browser__view) {
+  flex: 1 1 0;
+  min-height: 0;
+}
+/* Running: tabs row, toolbar row, then the page — edge to edge. */
+.kp-browser__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+/* Not running (an empty state, not chrome): the explanation and its buttons keep their air. */
+.kp-browser__body--idle {
+  gap: var(--space-2);
+  padding: var(--space-2);
+}
+.kp-browser__body > .kp-error {
+  padding: var(--space-1) var(--space-2);
+}
+.kp-browser__body--idle > .kp-error {
+  padding: 0;
+}
+.kp-browser__note {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+.kp-browser__actions {
+  display: flex;
+  gap: var(--space-2);
+}
+/* One slim row; in a very narrow panel it wraps instead of hiding a control. */
+.kp-browser__toolbar {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: var(--bar-h);
+  padding: 0 var(--space-1);
+  border-bottom: var(--border-w) solid var(--border);
+}
+.kp-browser__toolbar .kp-btn {
+  flex: none;
+  white-space: nowrap;
+}
+.kp-browser__address {
+  flex: 1 1 var(--browser-address-min);
+  display: flex;
+  min-width: var(--browser-address-min);
+}
+.kp-browser__url {
+  flex: 1;
+  min-width: 0;
+}
+.kp-browser__tabs {
+  flex: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--space-1);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  min-width: 0;
+  min-height: var(--bar-h);
+}
+/* The browser's own tab row (the Web panel's tabs sit inside its bar, which has the padding and the line). */
+.kp-browser__body > .kp-browser__tabs {
+  padding: 0 var(--space-1);
+  border-bottom: var(--border-w) solid var(--border);
+}
+/* Adım 7: one tab = select button + ×. Tabs shrink to a minimum, then the strip scrolls (≥10 tabs). */
+.kp-browser__tab {
+  flex: 0 1 var(--browser-tab-max);
+  min-width: var(--browser-tab-min);
+  max-width: var(--browser-tab-max);
+  display: flex;
+  align-items: stretch;
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--rail);
+  color: var(--muted);
+}
+.kp-browser__tab[data-active] {
+  border-color: var(--accent);
+  background: var(--panel-selected);
+  color: var(--text);
+}
+.kp-browser__tab-select {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: var(--hit-min);
+  padding: 0 var(--space-2);
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: var(--fs-xs);
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.kp-browser__tab-close {
+  flex: 0 0 auto;
+  min-width: var(--hit-min);
+  padding: 0 var(--space-1);
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+.kp-browser__tab-close:hover,
+.kp-browser__tab-select:hover {
+  color: var(--text);
+}
+.kp-browser__tab-select:focus-visible,
+.kp-browser__tab-close:focus-visible {
+  outline: var(--focus-w) solid var(--focus-ring);
+  outline-offset: calc(-1 * var(--focus-w));
+}
+.kp-browser__tab-new {
+  flex: 0 0 auto;
+}
+/* The picture area: whatever the bars leave. Its size is what the engine lays the page out for. */
+.kp-browser__view {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--term-bg);
+  overflow: hidden;
+  /* The zoom bubble is placed in its top right corner. */
+  position: relative;
+}
+/* Chrome's zoom bubble: shown for a while after a zoom change, over the page, never a permanent bar. */
+.kp-browser__zoom-bubble {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  z-index: var(--z-overlay);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-w) solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--panel);
+  color: var(--text);
+  font-size: var(--fs-sm);
+}
+.kp-browser__zoom-value {
+  min-width: 4ch;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+/* Sized by hand to the largest box of the frame's shape that fits the view (BrowserPanel). */
+.kp-browser__canvas {
+  display: block;
+  flex: none;
+  /* Until the first measurement: never larger than the view, keeping the frame's shape. */
+  max-width: 100%;
+  max-height: 100%;
+  cursor: default;
+}
+.kp-browser__canvas:focus-visible {
+  outline: var(--focus-w) solid var(--focus-ring);
+  outline-offset: calc(-1 * var(--focus-w));
+}
+.kp-browser__ext {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border-bottom: var(--border-w) solid var(--border);
+  background: var(--rail);
+}
+/* Under the empty state's buttons it is a box of its own. */
+.kp-browser__body--idle > .kp-browser__ext {
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.kp-browser__ext-title {
+  margin: 0;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+.kp-browser__ext-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.kp-browser__ext-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+.kp-browser__ext-name {
+  font-size: var(--fs-sm);
+  overflow-wrap: anywhere;
+}
+.kp-browser__ext-path {
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+.kp-browser__ext-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+.kp-browser__ext-form .kp-input {
+  flex: 1 1 var(--panel-min);
+  min-width: 0;
+}

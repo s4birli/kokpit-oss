@@ -1,0 +1,66 @@
+{
+  "menu": {
+    "settings": "Ayarlar…",
+    "view": "Görünüm",
+    "resetLayout": "Varsayılan düzen",
+    "terminalSmaller": "Terminal yazısını küçült",
+    "terminalLarger": "Terminal yazısını büyüt",
+    "terminalReset": "Terminal yazısını sıfırla",
+    "browserZoomOut": "Tarayıcıyı uzaklaştır",
+    "browserZoomIn": "Tarayıcıyı yakınlaştır",
+    "browserZoomReset": "Tarayıcıyı sıfırla",
+    "devTools": "Geliştirici araçları",
+    "go": "Git",
+    "editSites": "Siteleri düzenle…",
+    "noSites": "Site yok",
+    "help": "Yardım",
+    "claudeHelp": "Claude komutları",
+    "invalidState": "Geçersiz menü durumu."
+  },
+  "contextMenu": {
+    "cut": "Kes",
+    "copy": "Kopyala",
+    "paste": "Yapıştır",
+    "selectAll": "Tümünü seç",
+    "copyLink": "Bağlantıyı kopyala",
+    "copyAddress": "Adresi kopyala"
+  },
+  "clipboard": {
+    "invalidMenuRequest": "Geçersiz menü isteği.",
+    "nothingToCopy": "Kopyalanacak metin yok.",
+    "tooLarge": "Kopyalanacak metin çok büyük.",
+    "screenTooLarge": "Pano metni çok büyük: en çok {max} karakter yapıştırılabilir."
+  },
+  "connection": {
+    "refused": "Bu adres güvenli bir yol değil: motora yalnız bu Mac (127.0.0.1), açık Tailscale ya da wss:// üzerinden bağlanılır. Anahtarla el sıkışma başlatılmadı. Bu ağa güveniyorsan: Ayarlar › Bağlantı › “güvenli olmayan ağda yine de bağlan”."
+  },
+  "settings": {
+    "invalid": "Geçersiz ayar.",
+    "noEncryption": "Bu Mac'te şifreli saklama kullanılamıyor; anahtar kaydedilmedi."
+  },
+  "ipc": {
+    "unauthorized": "Yetkisiz istek.",
+    "failed": "Ayarlar işlenemedi."
+  },
+  "common": {
+    "invalidProjectId": "Geçersiz proje kimliği.",
+    "invalidRequest": "Geçersiz istek.",
+    "invalidBounds": "Geçersiz panel alanı.",
+    "noWindow": "Pencere yok."
+  },
+  "localBrowser": {
+    "httpOnly": "Yalnız http(s) adresleri açılır.",
+    "chromeFailed": "Chrome açılamadı ({path}): {error}"
+  },
+  "web": {
+    "invalidSiteId": "Geçersiz site kimliği.",
+    "siteGone": "Bu site artık listede yok."
+  },
+  "localEngine": {
+    "notFound": "Bu Mac'te çalışan bir motor bulunamadı."
+  },
+  "preload": {
+    "updateStatusUnreadable": "Güncelleme durumu okunamadı.",
+    "insecure": "Bağlantı güvenli değil."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "accelerators": {
+    "settings": "CmdOrCtrl+,",
+    "devTools": "CmdOrCtrl+Alt+I",
+    "claudeHelp": "CmdOrCtrl+Shift+/"
+  },
+  "sitesSettingsTab": "sites"
+}

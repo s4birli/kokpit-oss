@@ -1,0 +1,12 @@
+{
+  "osc52MaxBytes": 1048576,
+  "osc52Targets": "c",
+  "osc52RequireFocus": true,
+  "macOptionClickForcesSelection": true,
+  "macShiftDragForcesSelection": true,
+  "selectionHintMs": 8000,
+  "selectionHintMinDragPx": 6,
+  "copyValueMaxChars": 4096,
+  "pageUrlMaxChars": 8192,
+  "pageContextPassModifier": "alt"
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Web",
+  "status": {
+    "connecting": "Yükleniyor…",
+    "ready": "Açık",
+    "failed": "Açılamadı",
+    "closed": "Kapalı",
+    "tailnet": "Tailscale yok"
+  },
+  "note": "Site bu bilgisayarda kendi bölümünde açılır; giriş orada saklanır. Kokpit ve ajanlar sayfaya erişemez.",
+  "onlyInApp": "Web sekmeleri yalnız Kokpit uygulamasında açılır.",
+  "siteTabs": "Site sekmeleri",
+  "closeTab": "{title} sekmesini kapat",
+  "reload": "Yenile",
+  "tailnetHelp": "Tailscale'i açıp Yenile'ye bas. Site bu sırada yüklenmedi; hiçbir istek gönderilmedi.",
+  "noSite": "Açık site yok. Git menüsünden ya da buradan bir site aç."
+}

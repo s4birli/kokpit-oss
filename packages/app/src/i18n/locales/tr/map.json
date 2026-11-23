@@ -1,0 +1,11 @@
+{
+  "title": "Harita",
+  "badUrl": "Harita adresi geçersiz.",
+  "openFailed": "Harita açılamadı: {error}",
+  "terminalFailed": "Terminal açılamadı: {error}",
+  "fullScreen": "Tam ekran",
+  "exitFullScreen": "Tam ekrandan çık",
+  "update": "Haritayı güncelle",
+  "emptyLead": "Bu projede henüz harita yok.",
+  "emptyTail": "projede graphify'ı çalıştıran bir terminal açar; bitince harita burada görünür."
+}

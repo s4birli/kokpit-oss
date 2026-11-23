@@ -1,0 +1,18 @@
+{
+  "host": "127.0.0.1",
+  "defaultPort": 7420,
+  "defaultListenLocalhost": true,
+  "healthPath": "/health",
+  "healthTimeoutMs": 1500,
+  "maxConfigBytes": 262144,
+  "maxKeyBytes": 4096,
+  "maxPlistBytes": 65536,
+  "minKeyLength": 16,
+  "maxKeyLength": 1000,
+  "configDirName": "kokpit",
+  "configFileName": "engine.json",
+  "keyFileName": "engine.key",
+  "engineDefaultsFileName": "config.defaults.json",
+  "launchdLabel": "dev.kokpit.engine",
+  "launchAgentsDir": "Library/LaunchAgents"
+}

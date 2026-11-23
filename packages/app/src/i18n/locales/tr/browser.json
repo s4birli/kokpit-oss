@@ -1,0 +1,56 @@
+{
+  "panel": {
+    "title": "Tarayıcı",
+    "pickProject": "Tarayıcı için soldan bir proje seçin.",
+    "newTab": "Yeni sekme",
+    "localNote": "Bu tarayıcı bu bilgisayarda kendi penceresinde açılır; ajan bu tarayıcıyı süremez.",
+    "localUnavailable": "Bu ortamda yerel tarayıcı açılamıyor.",
+    "open": "Tarayıcıyı aç",
+    "opening": "Açılıyor…",
+    "close": "Tarayıcıyı kapat",
+    "closedNote": "Tarayıcı kapalı. Açınca bu projenin kendi Chrome profiliyle Mac mini'de başlar.",
+    "extensions": "Uzantılar",
+    "tabs": "Sekmeler",
+    "closeTab": "Sekmeyi kapat",
+    "closeTabFor": "Sekmeyi kapat: {label}",
+    "back": "Geri",
+    "forward": "İleri",
+    "reload": "Yenile",
+    "address": "Adres"
+  },
+  "address": {
+    "invalid": "Bu adres açılamıyor (çok uzun ya da geçersiz).",
+    "empty": "Adres ya da aranacak bir şey yaz.",
+    "onlyWeb": "Yalnız http(s) adresleri açılabilir.",
+    "badSearchEngine": "Arama motoru ayarı geçersiz (http(s) adresi ve %s olmalı).",
+    "searchTooLong": "Aranacak metin çok uzun."
+  },
+  "extensions": {
+    "title": "Uzantılar",
+    "none": "Henüz geliştirici uzantısı yok.",
+    "loaded": "yüklü",
+    "notLoaded": "yüklenmedi: {error}",
+    "loadsOnOpen": "tarayıcı açılınca yüklenir",
+    "remove": "Kaldır",
+    "removeFor": "Kaldır: {label}",
+    "needAbsolutePath": "Mac mini'deki klasörün tam yolunu yaz (/ ile başlar).",
+    "folder": "Uzantı klasörü (Mac mini'de, manifest.json içeren)",
+    "folderPlaceholder": "/Users/…/uzantim",
+    "load": "Geliştirici uzantısı yükle",
+    "webStoreNote": "Chrome Web Mağazası uzantıları profilin kendi penceresinde bir kez kurulur: kurulum onayı Chrome'un kendi penceresinde çıkar, bu panelde görünmez. \"{label}\"i aç, {machine}'ye Ekran Paylaşımı ile bağlanıp oradan kur, sonra yeniden gizle; uzantı profilde kalır.",
+    "bringToFront": "Öne getir"
+  },
+  "window": {
+    "hint": "Chrome'un kendi pencereleri — eşitleme onayı, uzantı açılır pencereleri — için geçici olarak göster",
+    "label": "{machine} ekranında göster"
+  },
+  "page": {
+    "picture": "Tarayıcı görüntüsü",
+    "zoomBubble": "Yakınlaştırma",
+    "zoomOut": "Uzaklaştır",
+    "zoomIn": "Yakınlaştır",
+    "zoomReset": "Sıfırla",
+    "noClipboard": "Bu ortamda panoya yazılamıyor.",
+    "pasteTooLarge": "Pano metni çok büyük: en çok {max} karakter yapıştırılabilir."
+  }
+}

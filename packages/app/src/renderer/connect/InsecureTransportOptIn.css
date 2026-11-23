@@ -1,0 +1,12 @@
+/* Ayarlar › Bağlantı: "güvenli olmayan ağda yine de bağlan". */
+.kp-optin {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+.kp-optin__warning {
+  margin: 0;
+  color: var(--warn);
+  font-size: var(--fs-sm);
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@kokpit/shared",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts", "./build-info": "./src/build-info.ts", "./bundle-pack": "./src/bundle-pack.ts", "./update-signing": "./src/update-signing.ts", "./i18n": "./src/i18n/index.ts" },
+  "scripts": { "typecheck": "tsc -p ." },
+  "dependencies": { "zod": "4.1.12" }
+}

@@ -1,0 +1,42 @@
+{
+  "labels": {
+    "openBrowser": "Open in browser",
+    "openExternal": "Open in default browser",
+    "copyLink": "Copy link",
+    "showInFiles": "Show in Files",
+    "copyPath": "Copy path"
+  },
+  "text": {
+    "engine": "opens in the browser on {machine}",
+    "client": "opens in the project browser on this computer",
+    "external": "opens in the default browser",
+    "gestureAccel": "⌘ click",
+    "gestureClick": "Click or ⌘ click",
+    "gestureExternal": "⌥⌘ click: default browser",
+    "gestureMenu": "right-click: options",
+    "refusedScheme": "This kind of link does not open ({scheme})",
+    "refusedFile": "File links do not open",
+    "refusedInvalid": "This link cannot be opened",
+    "refusedCopy": "right-click: copy",
+    "deceptive": "Careful: the shown address is different ({shown})",
+    "confirmTitle": "This link does not go where it appears to.",
+    "confirmShown": "Shown",
+    "confirmTarget": "Real target",
+    "confirmOpen": "Open anyway",
+    "confirmCancel": "Cancel",
+    "rateLimited": "Too many links opened; try again in a moment.",
+    "failed": "Could not open the link: {error}",
+    "noExternal": "The default browser cannot be opened here.",
+    "noLocal": "A local browser cannot be opened here.",
+    "invalidRequest": "Invalid link request.",
+    "pathFiles": "opens in Files",
+    "pathByType": "pages open in the browser, other files in Files",
+    "pathMenuOnly": "Does not open on click",
+    "pathCopy": "right-click: Copy path",
+    "pathMissing": "File not found",
+    "pathRemote": "The file is on a remote server; Kokpit cannot open it",
+    "pathOtherProject": "The file is in a project that is not on screen; open that project first.",
+    "pathFailed": "Could not open the file: {error}",
+    "pathNoEngineAddress": "The engine's address is unknown; could not open the preview."
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "appUpdates": {
+    "notPublished": "This build is not published"
+  },
+  "bgAgents": {
+    "unexpected": "claude agents gave an unexpected answer.",
+    "badSessionId": "invalid session id",
+    "notFound": "claude was not found on this machine ({binary}).",
+    "timeout": "claude did not answer within {seconds} seconds.",
+    "tooBig": "claude's output is too large.",
+    "spawnFailed": "claude could not be started.",
+    "spawnFailedDetail": "claude could not be started: {detail}",
+    "failedDetail": "claude failed: {detail}",
+    "failedCode": "claude failed (exit code {code}).",
+    "unreadable": "Could not read claude agents.",
+    "agentNotFound": "Background agent not found.",
+    "projectNotFound": "The agent's project was not found."
+  },
+  "browserClipboard": {
+    "badLimit": "invalid limit",
+    "badCoordinate": "invalid coordinate",
+    "selectionTooLarge": "The selection is too large: at most {max} characters can be copied."
+  },
+  "browserIsolated": {
+    "failed": "The page did not answer the request (it may have changed or closed)."
+  },
+  "browserLive": {
+    "noSelection": "The page did not return its selection."
+  },
+  "browserLoginFill": {
+    "noAnswer": "The page did not answer; no field was filled.",
+    "noFields": "No username or password field to fill was found on this page. (Fields inside frames from other origins are not filled.)",
+    "ambiguous": "This page has more than one password field (a sign-up or change-password form). Click the field you want to fill and try again.",
+    "notFilled": "The fields were found but could not be filled (the page reverted the value).",
+    "nonHttpPage": "a non-http(s) page",
+    "originMismatch": "This login is saved for {saved}; the open page is {page}. No field was filled.",
+    "saveOriginMismatch": "A login is saved only for the site open in the browser: requested {requested}, open page {page}. Not saved."
+  },
+  "browserPorts": {
+    "noFreePort": "No free port was found for the browser"
+  },
+  "browser": {
+    "badProfileId": "This project id cannot be used for a browser profile: {projectId}",
+    "extensionDirNotAbsolute": "The extension folder must be an absolute path",
+    "extensionDirBadPath": "The extension folder's path is invalid",
+    "extensionDirNotFound": "Extension folder not found: {dir}",
+    "notAFolder": "This is not a folder: {dir}",
+    "noManifest": "The folder has no {manifest}: {dir}",
+    "devtoolsUnreadable": "Could not read the Chrome DevTools address",
+    "devtoolsUnexpected": "Chrome DevTools is at an unexpected address",
+    "chromeStartFailed": "Chrome could not be started ({reason}). The profile may be open in another Chrome.",
+    "chromeTimeout": "Chrome did not answer in time",
+    "chromeConnectFailed": "Could not connect to Chrome: {reason}",
+    "chromePrepareFailed": "Could not prepare Chrome: {reason}",
+    "extensionsNotAllowed": "This browser was started without permission to load extensions; close the browser and open it again.",
+    "extensionLoadFailed": "Could not load the extension: {reason}",
+    "engineStopping": "The engine is shutting down",
+    "notRunning": "The browser is not open",
+    "tabNotFound": "Tab not found",
+    "noActiveTab": "No active tab",
+    "tabCloseFailed": "Could not close the tab: {reason}",
+    "pageOpenFailed": "Could not open the page: {reason}",
+    "tooManyTabs": "At most {max} tabs can be open",
+    "pasteTooLarge": "The text to paste is too large: at most {max} characters.",
+    "tooManyExtensions": "At most {max} developer extensions can be added",
+    "badZoom": "Invalid zoom",
+    "zoomAppTooOld": "This app version is out of date: browser zoom is now kept by the engine and cannot be changed from this version. Update the app.",
+    "badZoomRequest": "Invalid zoom request",
+    "badPanelSize": "Invalid panel size",
+    "hiddenOnScreen": "The browser is hidden on the Mac mini screen; first turn on \"Show on Mac mini screen\"."
+  },
+  "cards": {
+    "notARepo": "This folder is not a git repository; no card can be opened.",
+    "projectNotFound": "Project not found: {projectId}",
+    "noCardsOnSsh": "SSH projects have no cards: {project}",
+    "worktreeOutside": "The worktree path leaves the data folder: {projectId}",
+    "cardNotFound": "Card not found: {cardId}",
+    "dirty": "There are uncommitted changes: {paths}",
+    "dirtyMore": "There are uncommitted changes: {paths} (+{more} more)"
+  },
+  "claudeAccounts": {
+    "noDefault": "no default Claude account",
+    "notFound": "Claude account not found: {id}",
+    "badPath": "Invalid folder path.",
+    "notAbsolute": "The folder must be an absolute path or start with ~/.",
+    "outsideHome": "The folder must be inside the home folder ({home}).",
+    "symlinkOutsideHome": "The folder leads outside the home folder through a symbolic link.",
+    "notAFolder": "Not a folder: {dir}",
+    "createFailed": "Could not create the folder: {dir} ({reason})",
+    "nameTaken": "An account with this name already exists: {name}",
+    "dirTaken": "This folder already belongs to the \"{name}\" account.",
+    "defaultDirFixed": "The default account's folder cannot be changed.",
+    "defaultNotDeletable": "The default account cannot be deleted.",
+    "inUse_one": "{count} project uses this account: {projects}",
+    "inUse_other": "{count} projects use this account: {projects}",
+    "defaultAlreadyShares": "The default account already uses these folders.",
+    "skipExists": "already exists, left alone",
+    "skipMissing": "not in the default account",
+    "skipLinkFailed": "could not link ({reason})"
+  },
+  "claudeInventory": {
+    "badId": "Invalid item id",
+    "outside": "The path leaves the Claude folder",
+    "missing": "Item not found",
+    "notMarkdown": "Only markdown files can be previewed",
+    "noProjectDir": "This project has no Claude folder on this machine"
+  },
+  "claudeUsage": {
+    "unknownFolder": "Unknown folder",
+    "sessionsLinked": "The session log folder leads outside the account folder through a symbolic link; not read.",
+    "sessionsUnreadable": "Could not read the session logs.",
+    "probeDisabled": "Asking Claude is turned off on this engine (claudeUsage.probe.enabled).",
+    "probeTooSoon_one": "Asked just now; try again in {count} second.",
+    "probeTooSoon_other": "Asked just now; try again in {count} seconds.",
+    "notFound": "claude was not found ({binary}).",
+    "noQuota": "Claude did not report quota information (you may not be signed in, or the account may have no subscription)."
+  },
+  "filesMedia": {
+    "unsupported": "This file type cannot be opened in Kokpit",
+    "mismatch": "The file's content does not match its extension; not opened",
+    "tooLarge": "The file is too large to open in Kokpit",
+    "notAFile": "Only files can be opened"
+  },
+  "filesPreview": {
+    "missing": "File not found",
+    "notFile": "Only files can be previewed",
+    "unsupported": "This file type cannot be previewed in the browser",
+    "outside": "This folder is not open to preview: it must be inside the home folder or the project",
+    "hidden": "Hidden folders and files (starting with a dot) are not previewed",
+    "home": "The home folder itself is not opened for preview: put the page in its own folder",
+    "denied": "This folder is closed to preview",
+    "tooLarge": "The file is too large to preview",
+    "rate": "Previews were opened too often; try again in a moment",
+    "gone": "The preview address is invalid or has expired. Click the path in the terminal again.",
+    "notFound": "Not found",
+    "busy": "Too many requests; try again in a moment"
+  },
+  "files": {
+    "outside": "The path leaves the project folder",
+    "badPath": "Invalid path",
+    "missing": "File or folder not found",
+    "rootMissing": "Project folder not found",
+    "notAFolder": "This is not a folder"
+  },
+  "flow": {
+    "badName": "Invalid flow name",
+    "noFolder": "This project has no flow folder",
+    "notFound": "Flow not found",
+    "tooLarge": "The flow file is too large to show"
+  },
+  "localPaths": {
+    "notOpenable": "Only files and folders can be opened"
+  },
+  "launch": {
+    "badAlias": "server alias is invalid",
+    "badAddress": "server address is invalid",
+    "badUser": "server user is invalid",
+    "badPort": "server port is invalid",
+    "badKey": "server key is invalid",
+    "cardNotInProject": "the card does not belong to this project",
+    "noCardsOnSsh": "SSH projects have no cards",
+    "hostNotFound": "the project's SSH server was not found",
+    "hostNotInProject": "the server does not belong to this project",
+    "badRemoteDir": "remote folder is invalid",
+    "notCloned": "the project has not been cloned yet"
+  },
+  "git": {
+    "timeout": "git {command} timed out ({ms} ms)",
+    "noDefaultBranch": "No default branch found (no origin/HEAD, HEAD is detached)."
+  },
+  "logins": {
+    "riskFirst": "Agents can drive this browser too; they could read the filled-in password. To fill it, you need to accept this risk for this project.",
+    "riskNow": "An agent (a terminal or a background agent) is running in this project right now; it could read the filled-in password. Every fill needs your confirmation.",
+    "waiting": "A Keychain approval is waiting on the screen of the engine's Mac. No second request was opened for this login.",
+    "cooldown_one": "The Keychain approval for this login was just denied or left unanswered; try again in {count} second.",
+    "cooldown_other": "The Keychain approval for this login was just denied or left unanswered; try again in {count} seconds.",
+    "keychainInteraction": "The Keychain is locked or waiting for approval. On the screen of the Mac the engine runs on, unlock the Keychain; if a permission window appears, choose “Allow”, then try again.",
+    "keychainTimeout": "The Keychain did not answer: approval was awaited but time ran out. On the screen of the Mac the engine runs on, choose “Allow” in the Keychain window and try again.",
+    "keychainDenied": "Keychain access was denied. On the screen of the Mac the engine runs on, allow it in the window that appears, then try again.",
+    "keychainUnavailable": "The Keychain cannot be used on the Mac the engine runs on (the security tool or the login keychain was not found).",
+    "keychainNotFound": "This login's password is not in the Keychain (it may have been deleted by hand). Delete the login and save it again.",
+    "keychainGarbage": "The Keychain item is not in the format Kokpit writes. Delete the login and save it again.",
+    "keychainFailed": "The Keychain operation failed.",
+    "secretTooLong": "The password is too long: at most {max} bytes can be stored.",
+    "badProjectId": "This project's id cannot be used in the Keychain.",
+    "noBrowser": "This engine has no browser",
+    "rateLimited": "Filling too often; wait a moment and try again.",
+    "tooMany": "At most {max} logins can be saved in this project.",
+    "notFound": "Login not found"
+  }
+}

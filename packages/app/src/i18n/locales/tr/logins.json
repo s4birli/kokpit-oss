@@ -1,0 +1,40 @@
+{
+  "title": "Girişler",
+  "tooltip": "Girişler — bu site için kayıtlı kullanıcı adı ve parola",
+  "here": "Bu site",
+  "others": "Diğer siteler",
+  "empty": "Kayıtlı giriş yok.",
+  "noneHere": "Bu site için kayıtlı giriş yok.",
+  "fill": "Doldur",
+  "fillFor": "Doldur: {username}",
+  "remove": "Sil",
+  "removeFor": "Sil: {username}",
+  "confirmRemove": "Silinsin mi?",
+  "confirmRemoveFor": "Silmeyi onayla: {username}",
+  "cancel": "Vazgeç",
+  "saveHere": "Bu site için kaydet",
+  "site": "Site",
+  "username": "Kullanıcı adı",
+  "password": "Parola",
+  "save": "Kaydet",
+  "saving": "Kaydediliyor…",
+  "needBoth": "Kullanıcı adı ve parola gerekli.",
+  "notASite": "Bu sayfa için giriş kaydedilemez (http(s) sayfası değil).",
+  "pageChanged": "Sayfa değişti: form {formSite} için açılmıştı, açık sayfa şimdi {now}. Kayıt iptal edildi; yazılan parola silindi.",
+  "notASiteNow": "bir site değil",
+  "onlyField": {
+    "username": "Yalnız kullanıcı adı dolduruldu (bu sayfada parola alanı yok).",
+    "password": "Yalnız parola dolduruldu (kullanıcı adı alanı bulunamadı)."
+  },
+  "smallPrint": "Parolalar motorun çalıştığı Mac'in Anahtar Zinciri'nde saklanır; buradan geri okunamaz, yalnız sayfaya doldurulur. Dikkat: bu tarayıcıya bağlı bir ajan, doldurulan parolayı sayfadan okuyabilir.",
+  "access": {
+    "confirm": "Her doldurmada motorun Mac'inde Anahtar Zinciri onayı istenir: sizin kullanıcınızla çalışan başka programlar (ajanlar dahil) parolayı tıklamanız olmadan okuyamaz. Pencerede “Her Zaman İzin Ver” derseniz o giriş için bu koruma kalkar.",
+    "silent": "Anahtar Zinciri onay sormaz: parolalar yalnız diskte korunur; bu kullanıcıyla çalışan her program (ajanlar dahil) onları okuyabilir."
+  },
+  "waiting": "Motorun Mac'inin ekranında Anahtar Zinciri onayı bekleniyor…",
+  "riskTitle": "Ajan riski",
+  "risk": "Bu tarayıcıyı ajanlar da sürebiliyor; doldurulan şifreyi okuyabilirler.",
+  "riskNow": "Şu an bu projede çalışan ajan var (terminal ya da arka plan ajanı).",
+  "fillAnyway": "Yine de doldur",
+  "revokeRisk": "Ajan riski onayını geri al"
+}

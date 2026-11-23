@@ -1,0 +1,40 @@
+{
+  "title": "Logins",
+  "tooltip": "Logins — saved username and password for this site",
+  "here": "This site",
+  "others": "Other sites",
+  "empty": "No saved logins.",
+  "noneHere": "No saved logins for this site.",
+  "fill": "Fill",
+  "fillFor": "Fill: {username}",
+  "remove": "Delete",
+  "removeFor": "Delete: {username}",
+  "confirmRemove": "Delete this login?",
+  "confirmRemoveFor": "Confirm delete: {username}",
+  "cancel": "Cancel",
+  "saveHere": "Save for this site",
+  "site": "Site",
+  "username": "Username",
+  "password": "Password",
+  "save": "Save",
+  "saving": "Saving…",
+  "needBoth": "Username and password are required.",
+  "notASite": "Logins can't be saved for this page (it isn't an http(s) page).",
+  "pageChanged": "The page changed: the form was opened for {formSite}, but the open page is now {now}. Saving was cancelled and the typed password was cleared.",
+  "notASiteNow": "not a site",
+  "onlyField": {
+    "username": "Only the username was filled (this page has no password field).",
+    "password": "Only the password was filled (no username field was found)."
+  },
+  "smallPrint": "Passwords are stored in the Keychain of the Mac the engine runs on; they can't be read back from here, only filled into the page. Warning: an agent connected to this browser can read a filled password from the page.",
+  "access": {
+    "confirm": "Every fill asks for Keychain approval on the engine's Mac: other programs running as your user (agents included) can't read the password without your click. Choosing “Always Allow” in that dialog removes this protection for that login.",
+    "silent": "Keychain doesn't ask for approval: passwords are protected only on disk, and any program running as this user (agents included) can read them."
+  },
+  "waiting": "Waiting for Keychain approval on the screen of the engine's Mac…",
+  "riskTitle": "Agent risk",
+  "risk": "Agents can drive this browser too; they can read the filled password.",
+  "riskNow": "An agent is running in this project right now (a terminal or a background agent).",
+  "fillAnyway": "Fill anyway",
+  "revokeRisk": "Revoke agent-risk acceptance"
+}

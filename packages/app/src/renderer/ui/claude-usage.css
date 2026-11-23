@@ -1,0 +1,151 @@
+/* Claude kullanımı — the usage block of an account (Ayarlar › Claude hesapları, Claude paneli › Kullanım).
+   Colours and sizes only from theme.css variables. */
+.kp-usage {
+  --kp-usage-bar-h: var(--space-2);
+  --kp-usage-name-basis: 9em;
+  --kp-usage-value-basis: 5em;
+  --kp-usage-bars-basis: 16em;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  font-size: var(--fs-sm);
+  min-width: 0;
+}
+.kp-usage-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-2);
+  overflow: auto;
+  min-height: 0;
+}
+.kp-usage__title {
+  margin: 0;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+}
+.kp-usage__hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+.kp-usage__plan {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.kp-usage__meter-row,
+.kp-usage__bar-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+.kp-usage__meter-label,
+.kp-usage__bar-name {
+  flex: 0 0 var(--kp-usage-name-basis);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.kp-usage__meter,
+.kp-usage__bar {
+  flex: 1 1 0;
+  min-width: var(--space-5);
+  height: var(--kp-usage-bar-h);
+  border-radius: var(--radius-sm);
+  background: var(--panel-selected);
+  overflow: hidden;
+}
+.kp-usage__meter-fill,
+.kp-usage__bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+.kp-usage__value {
+  flex: 0 0 var(--kp-usage-value-basis);
+  text-align: end;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+.kp-usage__meter-detail {
+  color: var(--muted);
+  font-size: var(--fs-xs);
+  white-space: nowrap;
+}
+.kp-usage__table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.kp-usage__table th,
+.kp-usage__table td {
+  padding: var(--space-1) var(--space-2);
+  border-bottom: var(--border-w) solid var(--border);
+  text-align: end;
+  white-space: nowrap;
+  font-weight: normal;
+}
+.kp-usage__table thead th {
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+.kp-usage__table td {
+  font-family: var(--font-mono);
+}
+.kp-usage__table th:first-child {
+  text-align: start;
+}
+.kp-usage__window {
+  padding: 0 var(--space-1);
+  border: var(--border-w) solid transparent;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.kp-usage__window[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--accent-text);
+  background: var(--panel-selected);
+}
+.kp-usage__breakdown {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+.kp-usage__bars {
+  flex: 1 1 var(--kp-usage-bars-basis);
+  min-width: 0;
+}
+.kp-usage__bars-title {
+  margin: 0 0 var(--space-1);
+  color: var(--muted);
+  font-size: var(--fs-xs);
+  font-weight: normal;
+}
+.kp-usage__bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.kp-usage__confirm,
+.kp-usage__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+/* Narrow panels: the table scrolls sideways instead of squeezing the numbers. */
+.kp-usage__scroll {
+  overflow-x: auto;
+  min-width: 0;
+}

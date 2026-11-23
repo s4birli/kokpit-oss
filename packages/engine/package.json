@@ -1,0 +1,21 @@
+{
+  "name": "@kokpit/engine",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.ts",
+    "typecheck": "tsc -p ."
+  },
+  "dependencies": {
+    "@kokpit/shared": "workspace:*",
+    "node-pty": "1.1.0",
+    "ws": "8.18.3",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@playwright/mcp": "0.0.84",
+    "@types/ws": "8.18.1",
+    "playwright": "1.64.1"
+  }
+}

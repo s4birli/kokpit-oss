@@ -1,0 +1,6 @@
+{
+  "locales": ["en", "tr"],
+  "defaultLocale": "en",
+  "intlTags": { "en": "en", "tr": "tr-TR" },
+  "names": { "en": "English", "tr": "Türkçe" }
+}

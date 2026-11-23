@@ -1,0 +1,64 @@
+{
+  "state": {
+    "running": "working",
+    "waiting": "waiting for you",
+    "idle": "idle",
+    "exited": "exited"
+  },
+  "time": {
+    "justNow": "just now",
+    "seconds_one": "{count} sec ago",
+    "seconds_other": "{count} sec ago",
+    "minutes_one": "{count} min ago",
+    "minutes_other": "{count} min ago",
+    "hours_one": "{count} hr ago",
+    "hours_other": "{count} hr ago",
+    "days_one": "{count} day ago",
+    "days_other": "{count} days ago"
+  },
+  "panel": {
+    "title": "Agents",
+    "terminals": "Terminals"
+  },
+  "rail": {
+    "counter": "{project}: {running} working, {waiting} waiting for you",
+    "waitingBadge_one": "{count} session waiting for you",
+    "waitingBadge_other": "{count} sessions waiting for you",
+    "moreWaiting_one": "… and {count} more session",
+    "moreWaiting_other": "… and {count} more sessions",
+    "waitingTitle": "Waiting for you"
+  },
+  "bg": {
+    "reason": {
+      "approval": "needs approval",
+      "input": "your turn"
+    },
+    "group": {
+      "waiting": "Waiting for you",
+      "running": "Working",
+      "done": "Done"
+    },
+    "title": "Background agents",
+    "allProjects": "All projects",
+    "empty": "No background agents.",
+    "emptyProject": "No background agents in this project.",
+    "logsFailed": "Could not load the logs: {error}",
+    "groupToggle": "{title} ({count})",
+    "account": "Claude account",
+    "attach": "Attach",
+    "attachLabel": "Attach: {name}",
+    "attachFailed": "Could not attach",
+    "logs": "Logs",
+    "logsLabel": "Logs: {name}",
+    "stopConfirm": "Stop it?",
+    "stopYes": "Yes, stop",
+    "stopFailed": "Could not stop",
+    "stop": "Stop",
+    "stopLabel": "Stop: {name}",
+    "cancel": "Cancel",
+    "close": "Close",
+    "loading": "Loading…",
+    "truncated": "Showing only the last part.",
+    "noLogs": "No logs."
+  }
+}

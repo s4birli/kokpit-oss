@@ -1,0 +1,22 @@
+{
+  "title": "Flow",
+  "sshNote": "Flow isn't available for SSH projects: the project folder is on the remote server. Flow diagrams are read only from project folders on this machine.",
+  "update": "Draw / update flow",
+  "listFailed": "Couldn't read the flows: {error}",
+  "readFailed": "Couldn't read the flow: {error}",
+  "drawFailed": "Couldn't draw the diagram: {error}",
+  "terminalFailed": "Couldn't open a terminal: {error}",
+  "terminalUnavailable": "Can't open a terminal",
+  "zoomOut": "Zoom out",
+  "zoomIn": "Zoom in",
+  "fit": "Fit",
+  "fullScreen": "Full screen",
+  "exitFullScreen": "Exit full screen",
+  "emptyLead": "This project has no flow diagrams yet.",
+  "emptyMiddle": "opens Claude in the project; it reads the code and writes the main workflows as Mermaid diagrams to the",
+  "emptyDirFallback": "project",
+  "emptyTail": "folder. The files show up here once they exist.",
+  "list": "Flows",
+  "imageAlt": "{label} flow diagram",
+  "drawing": "Drawing…"
+}

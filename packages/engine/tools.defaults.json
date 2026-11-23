@@ -1,0 +1,105 @@
+{
+  "checkTimeoutMs": 5000,
+  "idMaxLen": 50,
+  "idFallback": "arac",
+  "defaultToolId": "claude",
+  "tools": [
+    {
+      "id": "claude",
+      "name": "Claude",
+      "command": "claude",
+      "checkCommand": "command -v claude",
+      "installCommand": "npm install -g @anthropic-ai/claude-code",
+      "waitingPatterns": [
+        "Do you want to (proceed|make this edit|create|allow|use)",
+        "❯ *1\\. *Yes",
+        "No, and tell Claude what to do differently",
+        "Yes, I trust this folder"
+      ]
+    },
+    {
+      "id": "claude-skip",
+      "name": "Claude (skip permissions)",
+      "command": "claude --dangerously-skip-permissions",
+      "checkCommand": "command -v claude",
+      "installCommand": "npm install -g @anthropic-ai/claude-code",
+      "waitingPatterns": [
+        "Do you want to (proceed|make this edit|create|allow|use)",
+        "❯ *1\\. *Yes",
+        "No, and tell Claude what to do differently",
+        "Yes, I trust this folder"
+      ]
+    },
+    {
+      "id": "claude-agents-skip",
+      "name": "Claude Agents (skip permissions)",
+      "command": "claude agents --dangerously-skip-permissions",
+      "checkCommand": "command -v claude",
+      "installCommand": "npm install -g @anthropic-ai/claude-code",
+      "waitingPatterns": [
+        "Do you want to (proceed|make this edit|create|allow|use)",
+        "❯ *1\\. *Yes",
+        "No, and tell Claude what to do differently",
+        "Yes, I trust this folder"
+      ]
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "command": "codex",
+      "checkCommand": "command -v codex",
+      "installCommand": "npm install -g @openai/codex",
+      "waitingPatterns": [
+        "Would you like to (run the following command|make the following edits|grant these permissions)\\?",
+        "Yes, proceed",
+        "No, and tell Codex what to do differently"
+      ]
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "command": "command gemini",
+      "checkCommand": "command -v gemini",
+      "installCommand": "npm install -g @google/gemini-cli",
+      "waitingPatterns": [
+        "Allow execution",
+        "Apply this change\\?",
+        "Yes, allow once"
+      ]
+    },
+    {
+      "id": "claude-tarayici",
+      "name": "Claude + browser",
+      "command": "KOKPIT_MCP_PACKAGE=@playwright/mcp@0.0.84 KOKPIT_BROWSER_WAIT_S=20 sh {{claudeBrowserScript}}",
+      "checkCommand": "command -v claude",
+      "installCommand": "npm install -g @anthropic-ai/claude-code",
+      "opensBrowser": true,
+      "waitingPatterns": [
+        "Do you want to (proceed|make this edit|create|allow|use)",
+        "❯ *1\\. *Yes",
+        "No, and tell Claude what to do differently",
+        "Yes, I trust this folder"
+      ]
+    }
+  ],
+  "genericWaitingPatterns": [
+    "\\[[yY]/[nN]\\]",
+    "\\([yY]/[nN]\\)",
+    "\\(yes/no(/\\[fingerprint\\])?\\)\\?",
+    "[Pp]assword( for [^:]*)?: *$",
+    "[Pp]ress (any key|[Ee]nter|ENTER|RETURN|[Rr]eturn) to continue"
+  ],
+  "waitingPatternSteps": [],
+  "files": {
+    "claudeBrowserScript": "wrappers/claude-tarayici.sh",
+    "flowPromptFile": "prompts/akis-ciz.md"
+  },
+  "laterSteps": [
+    {
+      "key": "default-tools-4",
+      "toolIds": [
+        "claude-tarayici"
+      ]
+    }
+  ]
+}

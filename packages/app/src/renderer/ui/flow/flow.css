@@ -1,0 +1,113 @@
+/* İş W — Akış paneli. */
+.kp-flow {
+  min-height: var(--placeholder-min-height);
+  height: 100%;
+}
+.kp-flow .kp-panel__bar {
+  flex-wrap: wrap;
+}
+.kp-flow .kp-btn {
+  white-space: nowrap;
+}
+.kp-flow__meta {
+  min-width: 0;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kp-flow__hint {
+  margin: 0 0 var(--space-2);
+}
+.kp-flow__cmd {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+.kp-flow__body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+.kp-flow__list {
+  flex: 0 0 auto;
+  width: clamp(140px, 28%, 260px);
+  margin: 0;
+  padding: var(--space-1);
+  list-style: none;
+  overflow-y: auto;
+  border-right: var(--border-w) solid var(--border);
+}
+.kp-flow__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.kp-flow__item:hover {
+  background: var(--panel-selected);
+}
+.kp-flow__item:focus-visible {
+  outline: var(--focus-w) solid var(--focus-ring);
+}
+.kp-flow__item--active {
+  background: var(--panel-selected);
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+.kp-flow__name {
+  font-size: var(--fs-sm);
+  overflow-wrap: anywhere;
+}
+.kp-flow__time {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+.kp-flow__viewport {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--term-bg);
+  cursor: grab;
+  touch-action: none;
+}
+.kp-flow__viewport:active {
+  cursor: grabbing;
+}
+.kp-flow__stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  transform-origin: center center;
+}
+/* Fit the whole diagram into the viewport (Sığdır); zoom/pan act on the stage. */
+.kp-flow__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+.kp-flow__source {
+  margin: 0;
+  padding: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  white-space: pre-wrap;
+  overflow: auto;
+  height: 100%;
+}
+.kp-flow--full {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  border-radius: 0;
+}

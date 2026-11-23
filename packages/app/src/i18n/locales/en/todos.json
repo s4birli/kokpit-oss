@@ -1,0 +1,45 @@
+{
+  "title": "To-dos",
+  "backToToday": "Back to today",
+  "previousDay": "Previous day",
+  "nextDay": "Next day",
+  "pastDayHint": "To-dos can't be added to a past day.",
+  "day": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "tomorrow": "Tomorrow"
+  },
+  "note": {
+    "label": "Note",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "error": "Couldn't save"
+  },
+  "add": {
+    "label": "New to-do",
+    "placeholder": "Add a to-do, Enter to save",
+    "project": "Project of the new to-do"
+  },
+  "project": {
+    "none": "No project",
+    "deleted": "Deleted project"
+  },
+  "list": {
+    "label": "To-do list",
+    "empty": "No to-dos for this day."
+  },
+  "item": {
+    "label": "{text}. Move with Alt and the arrow keys.",
+    "editText": "Edit text: {text}",
+    "project": "Project: {text}",
+    "save": "Save",
+    "cancel": "Cancel",
+    "rolledFrom": "Carried over from {date}",
+    "fromYesterday": "from yesterday",
+    "fromEarlier": "from earlier days",
+    "edit": "Edit: {text}",
+    "moveUp": "Move up: {text}",
+    "moveDown": "Move down: {text}",
+    "delete": "Delete: {text}"
+  }
+}

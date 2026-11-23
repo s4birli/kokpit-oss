@@ -1,0 +1,66 @@
+{
+  "menu": {
+    "settings": "Settings…",
+    "view": "View",
+    "resetLayout": "Default layout",
+    "terminalSmaller": "Smaller terminal text",
+    "terminalLarger": "Larger terminal text",
+    "terminalReset": "Reset terminal text",
+    "browserZoomOut": "Zoom browser out",
+    "browserZoomIn": "Zoom browser in",
+    "browserZoomReset": "Reset browser zoom",
+    "devTools": "Developer tools",
+    "go": "Go",
+    "editSites": "Edit sites…",
+    "noSites": "No sites",
+    "help": "Help",
+    "claudeHelp": "Claude commands",
+    "invalidState": "Invalid menu state."
+  },
+  "contextMenu": {
+    "cut": "Cut",
+    "copy": "Copy",
+    "paste": "Paste",
+    "selectAll": "Select all",
+    "copyLink": "Copy link",
+    "copyAddress": "Copy address"
+  },
+  "clipboard": {
+    "invalidMenuRequest": "Invalid menu request.",
+    "nothingToCopy": "Nothing to copy.",
+    "tooLarge": "The text to copy is too large.",
+    "screenTooLarge": "Clipboard text is too large: at most {max} characters can be pasted."
+  },
+  "connection": {
+    "refused": "This address is not a secure route: the engine is reached only through this Mac (127.0.0.1), Tailscale (when on) or wss://. The key handshake was not started. If you trust this network: Settings › Connection › “connect anyway on an insecure network”."
+  },
+  "settings": {
+    "invalid": "Invalid setting.",
+    "noEncryption": "Encrypted storage is not available on this Mac; the key was not saved."
+  },
+  "ipc": {
+    "unauthorized": "Unauthorized request.",
+    "failed": "The settings could not be processed."
+  },
+  "common": {
+    "invalidProjectId": "Invalid project id.",
+    "invalidRequest": "Invalid request.",
+    "invalidBounds": "Invalid panel area.",
+    "noWindow": "No window."
+  },
+  "localBrowser": {
+    "httpOnly": "Only http(s) addresses are opened.",
+    "chromeFailed": "Chrome could not be opened ({path}): {error}"
+  },
+  "web": {
+    "invalidSiteId": "Invalid site id.",
+    "siteGone": "This site is no longer in the list."
+  },
+  "localEngine": {
+    "notFound": "No running engine was found on this Mac."
+  },
+  "preload": {
+    "updateStatusUnreadable": "The update status could not be read.",
+    "insecure": "The connection is not secure."
+  }
+}

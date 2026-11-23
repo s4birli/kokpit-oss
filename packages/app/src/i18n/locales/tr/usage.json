@@ -1,0 +1,62 @@
+{
+  "sourceNote": "Kokpit bu Mac'teki oturum kayıtlarından sayar; Claude'un kendi kota yüzdesi değildir.",
+  "sourceNoteShort": "Kokpit'in bu Mac'teki sayımı; kota yüzdesi değil.",
+  "plan": {
+    "fiveHour": "5 saatlik",
+    "sevenDay": "haftalık"
+  },
+  "planQuota": "{plan} kota",
+  "planSource": {
+    "statusline": "durum satırı",
+    "probe": "Claude'a soruldu"
+  },
+  "window": {
+    "session_one": "Son {count} saat",
+    "session_other": "Son {count} saat",
+    "today": "Bugün",
+    "week_one": "Son {count} gün",
+    "week_other": "Son {count} gün"
+  },
+  "tooltip": {
+    "reading": "Kullanım okunuyor…",
+    "windowTokens": "{label}: {value} token",
+    "window": "{label}: {value}",
+    "quota": "Claude kotası: {plan}"
+  },
+  "columns": {
+    "total": "Toplam",
+    "input": "Girdi",
+    "output": "Çıktı",
+    "cacheWrite": "Önbellek yazma",
+    "cacheRead": "Önbellek okuma",
+    "messages": "İleti"
+  },
+  "probeNote": "Claude'a tek, küçük bir istek gönderilir (en ucuz modelle); aboneliğinden çok az harcar.",
+  "noPlanNote": "Claude'un kendi kota yüzdesi bilinmiyor: Kokpit giriş bilgilerini okumaz.",
+  "blockLabel": "Claude kullanımı: {name}",
+  "readingSessions": "Oturum kayıtları okunuyor…",
+  "empty": "{window}de bu Mac'te kayıtlı kullanım yok.",
+  "period": "Dönem",
+  "estimatedCost": "Tahmini maliyet",
+  "models": "Modeller — {window}",
+  "projects": "Projeler — {window}",
+  "partial": "Okuma sınırlarına takıldı: sayılar alt sınırdır.",
+  "costNote": "Maliyet tahminidir: API liste fiyatıyla ({date} tablosu) karşılığı; abonelik ücreti değildir.",
+  "ask": "Sor",
+  "cancel": "Vazgeç",
+  "probeFailed": "Claude'a sorulamadı: {error}",
+  "refreshFailed": "Yenilenemedi: {error}",
+  "updated": "Son güncelleme: {when}",
+  "notYet": "Henüz okunmadı",
+  "reading": "okunuyor…",
+  "refreshLabel": "Kullanımı yenile: {name}",
+  "refresh": "Yenile",
+  "askLabel": "Claude'a sor: {name}",
+  "asking": "Soruluyor…",
+  "askButton": "Claude'a sor",
+  "meterDetail": "sıfırlanma {resets} · {source}, {captured}",
+  "loadFailed": "Kullanım yüklenemedi: {error}",
+  "loading": "Yükleniyor…",
+  "noAccounts": "Claude hesabı yok.",
+  "thisProject": "{name} (bu projenin hesabı)"
+}

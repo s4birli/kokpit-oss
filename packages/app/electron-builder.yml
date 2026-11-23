@@ -1,0 +1,20 @@
+appId: dev.kokpit.app
+productName: Kokpit
+directories:
+  output: dist
+  buildResources: build
+files:
+  - out/**
+  - package.json
+asar: true
+mac:
+  category: public.app-category.developer-tools
+  # "-" = ad-hoc imza: tüm paket tutarlı imzalanır (Developer ID yok).
+  identity: "-"
+  # Notarization yok; ad-hoc imzayla hardened runtime kütüphane doğrulamasında açılışı bozar.
+  hardenedRuntime: false
+  target:
+    - target: dir
+      arch: [arm64]
+    - target: zip
+      arch: [arm64]

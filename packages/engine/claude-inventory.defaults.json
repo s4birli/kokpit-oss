@@ -1,0 +1,13 @@
+{
+  "configDirName": ".claude",
+  "ignoreNames": [".git", "node_modules"],
+  "maxItems": 2000,
+  "maxScanEntries": 20000,
+  "maxFrontmatterBytes": 16384,
+  "maxManifestBytes": 65536,
+  "maxReadBytes": 131072,
+  "maxNameChars": 200,
+  "maxDescriptionChars": 1000,
+  "commandsMaxDepth": 4,
+  "pluginMaxDepth": 6
+}

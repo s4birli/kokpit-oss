@@ -1,0 +1,12 @@
+{
+  "dirName": "graphify-out",
+  "fileGlob": "graph.html",
+  "maxDepth": 3,
+  "maxEntries": 5000,
+  "maxBytes": 33554432,
+  "tokenTtlMs": 30000,
+  "maxTokens": 32,
+  "tokenBytes": 32,
+  "updateCommand": "claude \"/graphify .\"",
+  "contentSecurityPolicy": "sandbox allow-scripts; default-src 'none'; script-src 'unsafe-inline' https://unpkg.com; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'"
+}

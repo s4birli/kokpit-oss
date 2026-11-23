@@ -1,0 +1,44 @@
+{
+  "accounts": {
+    "configDirRequired": "A config folder is required.",
+    "configDirAbsolute": "The config folder must start with / or ~/.",
+    "configDirInvalid": "The config folder is invalid."
+  },
+  "panel": {
+    "title": "Claude",
+    "tabs": {
+      "skill": "Skills",
+      "agent": "Agents",
+      "command": "Commands",
+      "usage": "Usage",
+      "guide": "Guide"
+    },
+    "badge": {
+      "project": "Project",
+      "user": "Account",
+      "plugin": "Plugin"
+    },
+    "noProject": "No project selected.",
+    "loading": "Loading…",
+    "emptyTab": "Nothing in this tab.",
+    "noMatch": "No matching items.",
+    "items": "Items",
+    "preview": "Preview",
+    "truncated_one": "There are more items; showing the first {count}.",
+    "truncated_other": "There are more items; showing the first {count}.",
+    "tablist": "Claude tabs",
+    "search": "Search",
+    "searchPlaceholder": "Search…",
+    "reload": "Reload",
+    "claudeMd": "CLAUDE.md — {parts}",
+    "claudeMdProject": "project: {value}",
+    "claudeMdUser": "account: {value}",
+    "present": "yes",
+    "absent": "no"
+  },
+  "guide": {
+    "builtFrom": "Compiled from Claude Code {version} ({source}).",
+    "own": "Commands of the project and the account",
+    "noMatch": "No matching commands."
+  }
+}

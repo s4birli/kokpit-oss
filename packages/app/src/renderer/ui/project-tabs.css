@@ -1,0 +1,127 @@
+/* İş P — proje sekmeleri and the collapsible rail. */
+/* The strip's row: the open projects, then the selected card's line (name, branch, Kartı sil) at its right end. */
+.kp-topbar {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.kp-ptabs {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  gap: var(--space-1);
+  overflow-x: auto;
+  border-bottom: var(--border-w) solid var(--border);
+}
+.kp-ptab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex: 0 1 var(--ptab-max-width);
+  min-width: var(--ptab-min-width);
+  padding: 0 var(--space-1) 0 var(--space-2);
+  border: var(--border-w) solid var(--border);
+  border-bottom: none;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  background: var(--rail);
+  color: var(--muted);
+}
+.kp-ptab--active {
+  background: var(--panel);
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+.kp-ptab__main {
+  flex: 1;
+  min-width: 0;
+  /* With the tab's top border the strip is exactly one slim row (plus its own bottom border). */
+  min-height: calc(var(--dock-tab-height) - var(--border-w));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+.kp-ptab--active .kp-ptab__main {
+  font-weight: var(--fw-bold);
+}
+.kp-ptab__close {
+  flex: none;
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+  min-width: var(--hit-min);
+  min-height: var(--hit-min);
+  padding: 0 var(--space-1);
+}
+.kp-ptab__account {
+  flex: none;
+  margin-left: 0;
+}
+.kp-cardbar {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  max-width: var(--cardbar-max-width);
+  padding-left: var(--space-3);
+  border-bottom: var(--border-w) solid var(--border);
+}
+.kp-cardbar .kp-header__title {
+  font-size: var(--fs-sm);
+}
+.kp-cardbar__name,
+.kp-cardbar__branch {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.kp-cardbar__name {
+  flex: 0 1 auto;
+}
+.kp-cardbar__branch {
+  flex: 0 2 auto;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+/* As tall as a tab, so the card's line never makes the strip taller. */
+.kp-cardbar .kp-btn {
+  flex: none;
+  min-height: var(--cardbar-btn-height);
+  padding: 0 var(--space-2);
+}
+/* An engine refusal (e.g. uncommitted changes) gets its own line under the strip, only while it is shown. */
+.kp-cardbar__error {
+  flex-basis: 100%;
+  padding-top: var(--space-1);
+}
+.kp-ptab__close:hover {
+  color: var(--text);
+  background: var(--border);
+}
+
+/* Collapsed rail: a strip as wide as its expand button, with the number of waiting sessions under it. */
+.kp-rail--collapsed {
+  flex: 0 0 auto;
+  max-width: var(--rail-collapsed-max);
+  padding: var(--space-2);
+  align-items: flex-start;
+  /* Whatever ends up in the strip, it never grows sideways or scrolls sideways. */
+  overflow-x: hidden;
+}
+.kp-rail__collapse {
+  flex: none;
+}

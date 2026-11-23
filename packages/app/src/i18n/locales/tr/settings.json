@@ -1,0 +1,180 @@
+{
+  "tabs": {
+    "projects": "Projeler",
+    "servers": "Sunucular",
+    "tools": "Araçlar",
+    "claude": "Claude hesapları",
+    "sites": "Siteler",
+    "connection": "Bağlantı",
+    "language": "Dil"
+  },
+  "language": {
+    "label": "Dil",
+    "hint": "Hemen uygulanır ve bu Mac'te saklanır.",
+    "saveFailed": "Dil kaydedilemedi."
+  },
+  "header": {
+    "back": "Geri",
+    "title": "Ayarlar"
+  },
+  "common": {
+    "save": "Kaydet",
+    "cancel": "Vazgeç",
+    "delete": "Sil",
+    "deleteAria": "Sil: {name}",
+    "confirmDelete": "Silmeyi onayla",
+    "edit": "Düzenle",
+    "editAria": "Düzenle: {name}",
+    "editTitle": "Düzenle: {name}",
+    "name": "Ad",
+    "optional": "isteğe bağlı",
+    "yes": "Evet",
+    "no": "Hayır",
+    "defaultTool": "Varsayılan araç"
+  },
+  "validation": {
+    "nameRequired": "Ad gerekli.",
+    "maxChars": "En çok {max} karakter.",
+    "mustStartWithSlash": "{what} / ile başlamalı.",
+    "tooLong": "{what} çok uzun.",
+    "gitUrl": "https:// ya da git@ adresi olmalı.",
+    "httpsUrl": "https:// ile başlayan bir adres olmalı.",
+    "windowsAppUrl": "{schemes} ile başlayan bir bağlantı olmalı.",
+    "required": "{what} gerekli.",
+    "noLeadingDash": "'-' ile başlayamaz.",
+    "noSpaces": "Boşluk içeremez.",
+    "badChar": "Geçersiz karakter.",
+    "port": "Port 1–65535 arasında bir sayı olmalı.",
+    "invalidValue": "Geçersiz değer: {detail}",
+    "patternTooLong": "Satır {line}: en çok {max} karakter.",
+    "patternInvalid": "Satır {line}: geçersiz düzenli ifade.",
+    "tooManyPatterns": "En çok {max} kalıp."
+  },
+  "projects": {
+    "add": "Proje ekle",
+    "loadFailed": "Projeler yüklenemedi: {error}",
+    "defaultToolLine": "Varsayılan araç: {name}",
+    "accountLine": "Claude hesabı: {name}",
+    "browserLine": "Tarayıcı: {where}",
+    "globalDefault": "Genel varsayılan ({name})",
+    "defaultAccountName": "Varsayılan",
+    "defaultAccountOption": "{name} (varsayılan)",
+    "account": {
+      "label": "Claude hesabı",
+      "sshHint": "SSH projelerinde yok sayılır: hesaplar {machine} üzerindedir.",
+      "hint": "Bu projenin terminalleri bu hesabın aboneliğiyle açılır."
+    },
+    "kinds": {
+      "legend": "Konum türü",
+      "local": "{machine} klasörü",
+      "github": "GitHub",
+      "ssh": "SSH sunucusu"
+    },
+    "folderPath": "Klasör yolu",
+    "githubUrl": "GitHub adresi",
+    "githubPlaceholder": "https://… ya da git@…",
+    "githubHint": "{machine} üzerine klonlanır.",
+    "server": "Sunucu",
+    "chooseServer": "Sunucu seç.",
+    "choose": "Seç…",
+    "remoteFolder": "Uzak klasör",
+    "remoteFolderHint": "Boşsa ev klasörü.",
+    "newTitle": "Yeni proje",
+    "cloning": "Klonlanıyor…",
+    "fixedBuiltin": "Yerleşik projenin konumu değiştirilemez",
+    "fixedGithub": "GitHub adresi değiştirilemez",
+    "fixedLine": "{reason}: {location}",
+    "locationNote": "Kartı olan projenin konumu değişmez. Açık terminaller eski yerinde kalır; yenileri yeni konumda açılır.",
+    "agentsBrowser": {
+      "label": "Arka plan ajanları da bu tarayıcıyı kullansın",
+      "hint": "Kokpit, tarayıcının adresini projenin Claude ayar dosyasına yazar; böylece arka planda çalışan ajanlar da (claude agents) bu Chrome'a bağlanır. Dosyanın geri kalanına dokunmaz. Hayır seçilince kendi satırlarını siler. Değişiklik yeni başlayan ajanlarda geçerli olur."
+    },
+    "openInBrowser": {
+      "label": "Terminaldeki open komutu bu tarayıcıda açsın",
+      "hint": "Bu projenin terminallerinde çalışan \"open <http(s) adresi>\" ve \"open <sayfa.html>\" komutları sayfayı {machine}'nin masaüstü tarayıcısı yerine projenin Kokpit tarayıcısında gösterir. Başka her open komutu olduğu gibi çalışır. Değişiklik yeni açılan terminallerde geçerli olur."
+    },
+    "browserWindow": {
+      "hidden": "Hayır (gizli)",
+      "hint": "Gizliyken tarayıcı {machine}'nin ekranında hiç pencere açmaz; yalnız Kokpit'in Tarayıcı panelinde görünür. {why}. Değişince açık tarayıcı yeniden başlar; sekmeler geri gelir."
+    },
+    "runOn": {
+      "label": "Tarayıcı nerede açılsın",
+      "client": "Bu bilgisayar",
+      "profileNote": "Ajan bu profildeki şifre yöneticisine ve açık oturumlara erişebilir."
+    }
+  },
+  "tools": {
+    "status": {
+      "checking": "kontrol ediliyor…",
+      "installed": "kurulu",
+      "notInstalled": "kurulu değil",
+      "unknown": "kontrol yok"
+    },
+    "add": "Araç ekle",
+    "recheck": "Yeniden kontrol et",
+    "loadFailed": "Araçlar yüklenemedi: {error}",
+    "checkFailed": "Kontrol edilemedi: {error}",
+    "install": "Kur",
+    "installAria": "Kur: {name}",
+    "defaultToolHint": "Projede araç seçilmemişse yeni terminal bununla açılır.",
+    "settingsLoadFailed": "Ayarlar yüklenemedi: {error}",
+    "command": "Komut",
+    "commandHint": "Terminal açılınca kabuğa yazılır.",
+    "installCommand": "Kurulum komutu",
+    "checkCommand": "Kontrol komutu",
+    "checkCommandHint": "Araç kuruluysa 0 ile çıkan komut.",
+    "patterns": "Bekleme kalıpları",
+    "patternsHint": "Her satıra bir düzenli ifade. Terminalin son satırlarında biri görünürse ajan “seni bekliyor” sayılır. Boşsa genel kalıplar kullanılır.",
+    "newTitle": "Yeni araç"
+  },
+  "servers": {
+    "add": "Sunucu ekle",
+    "loadFailed": "Sunucular yüklenemedi: {error}",
+    "keyLine": "Anahtar: {file}",
+    "sshConfigTitle": "Salt okunur; ~/.ssh/config dosyasından",
+    "noKey": "Yok",
+    "address": "Adres",
+    "addressPlaceholder": "sunucu.örnek ya da IP",
+    "user": "Kullanıcı",
+    "port": "Port",
+    "key": "Anahtar",
+    "keyHint": "~/.ssh içindeki özel anahtar dosyaları; yalnız adları gösterilir.",
+    "newTitle": "Yeni sunucu"
+  },
+  "sites": {
+    "onlyInApp": "Siteler yalnız Kokpit uygulamasında düzenlenir.",
+    "intro": "Git menüsündeki siteler, bu sırayla. Her site Web panelinde kendi sekmesinde açılır; girişi bu bilgisayarda saklanır. Adres https:// olmalı; http:// yalnız Tailscale ya da yerel IP adresleri için kabul edilir (ör. http://100.x.y.z:9119) ve \"http · Tailscale\" olarak işaretlenir: şifresizdir, yalnız Tailscale açıkken ve adres tailnet'indeyken yüklenir.",
+    "address": "Adres",
+    "upAria": "Yukarı: {title}",
+    "addLegend": "Site ekle",
+    "add": "Ekle",
+    "saved": "Kaydedildi."
+  },
+  "claude": {
+    "add": "Hesap ekle",
+    "credentialsNote": "Giriş bilgileri bu klasörde ya da macOS Anahtar Zinciri'nde kalır; Kokpit onları okumaz. Giriş yapmak için “Giriş yap”.",
+    "shareNote": "{dir} içindeki skills, agents ve commands klasörleri varsayılan hesabınkilere sembolik bağla bağlanır; var olanlara dokunulmaz.",
+    "loadFailed": "Hesaplar yüklenemedi: {error}",
+    "usageLoadFailed": "Kullanım yüklenemedi: {error}",
+    "linked": "Bağlandı: {list}",
+    "noneLinked": "Bağlanan yok",
+    "skipped": "Atlandı: {list}",
+    "projectCount_one": "{count} proje",
+    "projectCount_other": "{count} proje",
+    "loginFailed": "Giriş terminali açılamadı: {error}",
+    "shareFailed": "Paylaşılamadı: {error}",
+    "defaultBadge": "Varsayılan",
+    "defaultBadgeTitle": "Bu hesabın terminallerine CLAUDE_CONFIG_DIR verilmez",
+    "login": "Giriş yap",
+    "loginAria": "Giriş yap: {name}",
+    "confirmShare": "Paylaşmayı onayla",
+    "share": "Skill'leri paylaş",
+    "shareAria": "Skill'leri paylaş: {name}",
+    "newTitle": "Yeni Claude hesabı",
+    "namePlaceholder": "ör. Work",
+    "configDir": "Ayar klasörü",
+    "configDirPlaceholder": "~/.claude-work",
+    "configDirHint": "Ana klasörün içinde olmalı; yoksa oluşturulur. Hiçbir şey silinmez.",
+    "fixedDir": "Varsayılan hesabın klasörü değişmez: {dir}"
+  }
+}

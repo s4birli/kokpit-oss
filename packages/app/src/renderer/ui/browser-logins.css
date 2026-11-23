@@ -1,0 +1,112 @@
+/* Girişler: the key button of the Tarayıcı toolbar and its popover. Uses only variables from theme.css. */
+.kp-logins {
+  position: relative;
+  flex: none;
+  display: flex;
+}
+.kp-logins__icon {
+  display: block;
+  width: var(--logins-icon);
+  height: var(--logins-icon);
+}
+/* Hangs under the button, over the page picture; never wider than the panel, scrolls when the list is long. */
+.kp-logins__pop {
+  position: absolute;
+  top: calc(100% + var(--space-1));
+  right: 0;
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: var(--logins-pop-width);
+  max-width: var(--logins-pop-max);
+  max-height: var(--logins-pop-max-height);
+  overflow-y: auto;
+  padding: var(--space-2);
+  background: var(--panel);
+  border: var(--border-w) solid var(--border-strong);
+  border-radius: var(--radius-sm);
+}
+.kp-logins__note {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+.kp-logins__small {
+  font-size: var(--fs-xs);
+}
+.kp-logins__heading {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+.kp-logins__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.kp-logins__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+/* Logins of other sites: listed so they can be found and deleted, greyed because they cannot be filled here. */
+.kp-logins__item[data-other] .kp-logins__name {
+  color: var(--muted);
+}
+.kp-logins__who {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.kp-logins__name,
+.kp-logins__label,
+.kp-logins__site {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.kp-logins__name {
+  font-size: var(--fs-sm);
+}
+.kp-logins__label,
+.kp-logins__site {
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+.kp-logins__origin {
+  color: var(--text);
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+.kp-logins__actions,
+.kp-logins__confirm {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.kp-logins__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+/* The agent-risk question before a fill: set apart, in the warning colour. */
+.kp-logins__risk {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  border: var(--border-w) solid var(--warn);
+  border-radius: var(--radius-sm);
+}
+.kp-logins__warn {
+  margin: 0;
+  color: var(--warn);
+  font-size: var(--fs-sm);
+}

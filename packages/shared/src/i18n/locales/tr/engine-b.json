@@ -1,0 +1,126 @@
+{
+  "map": {
+    "sshNoMap": "SSH projelerinde harita yok",
+    "noMap": "Bu projede harita yok",
+    "tooLarge": "Harita dosyası gösterilemeyecek kadar büyük"
+  },
+  "projects": {
+    "badRequest": "Geçersiz istek: {detail}",
+    "badRequestAt": "Geçersiz istek: {field}: {detail}",
+    "invalid": "geçersiz",
+    "cloneFailed": "Klonlanamadı: {reason}",
+    "toolNotFound": "Araç bulunamadı: {id}",
+    "accountNotFound": "Claude hesabı bulunamadı: {id}",
+    "notFound": "Proje bulunamadı: {id}",
+    "folderNotFound": "Klasör bulunamadı: {path}",
+    "notAFolder": "Klasör değil: {path}",
+    "sshHostNotFound": "SSH sunucusu bulunamadı: {id}",
+    "githubLocationFixed": "GitHub projesinin konumu değiştirilemez; başka bir depo için yeni proje ekle.",
+    "cannotBecomeGithub": "Konum GitHub'a çevrilemez; GitHub deposu için yeni proje ekle.",
+    "builtinLocationFixed": "Yerleşik projenin konumu değiştirilemez: {name}",
+    "hasCards_one": "Projenin {count} kartı var. Önce kartları sil.",
+    "hasCards_other": "Projenin {count} kartı var. Önce kartları sil.",
+    "builtinUndeletable": "Yerleşik proje silinemez: {name}"
+  },
+  "server": {
+    "tooLarge": "Yanıt tek çerçeveye sığmayacak kadar büyük",
+    "unknownMethod": "Motor bu isteği tanımıyor: {method} (uygulama motordan yeni olabilir)",
+    "scopedOnly": "Bu bağlantı yalnız kendi projesi için ekran isteklerini kullanabilir",
+    "noEngineBrowser": "Bu projenin Mac mini'de çalışan bir Kokpit tarayıcısı yok",
+    "openNotRedirected": "Bu projede open Kokpit tarayıcısına yönlendirilmiyor",
+    "filesNotInBrowser": "Bu motorda dosyalar tarayıcıda açılamıyor",
+    "noInstallCommand": "{tool} için kurulum komutu tanımlı değil"
+  },
+  "settings": {
+    "toolNotFound": "araç bulunamadı"
+  },
+  "ssh": {
+    "fromConfig": "~/.ssh/config içinde tanımlı, oradan düzenle",
+    "notFound": "sunucu bulunamadı",
+    "inUse": "bu sunucuyu kullanan proje var, önce projeyi sil ya da değiştir",
+    "noKey": "anahtar ~/.ssh içinde bulunamadı",
+    "invalidHost": "geçersiz sunucu",
+    "invalid": "{detail}",
+    "invalidField": "{field}: {detail}"
+  },
+  "terminalOpen": {
+    "forbidden": "Bu istek yalnız Kokpit terminalinden yapılabilir",
+    "unauthorized": "Terminalin Kokpit izni geçersiz (terminal kapandı ya da motor yeniden başladı)",
+    "stale": "İstek eski ya da tekrarlanmış (saat farkı?); açılmadı",
+    "malformed": "Geçersiz istek",
+    "rate": "Çok sık açma isteği; biraz sonra yeniden deneyin",
+    "notWeb": "Yalnız http(s) adresleri ve .html/.htm dosyaları Kokpit tarayıcısında açılır",
+    "failed": "Kokpit tarayıcısında açılamadı"
+  },
+  "todos": {
+    "emptyText": "metin boş olamaz",
+    "textTooLong": "metin en çok {max} karakter olmalı",
+    "projectNotFound": "proje bulunamadı",
+    "notFound": "yapılacak bulunamadı",
+    "pastDay": "geçmiş bir güne yapılacak eklenemez",
+    "dayFull": "bir günde en çok {max} yapılacak olabilir"
+  },
+  "tools": {
+    "notFound": "araç bulunamadı",
+    "globalDefault": "bu araç genel varsayılan araç; önce Ayarlar › Araçlar'dan başka bir varsayılan seçin",
+    "projectDefault_one": "bu araç {count} projenin varsayılan aracı; önce projelerden kaldırın",
+    "projectDefault_other": "bu araç {count} projenin varsayılan aracı; önce projelerden kaldırın"
+  },
+  "handlers": {
+    "appUpdate": {
+      "notPublishing": "Bu motor uygulama derlemesi yayınlamıyor"
+    },
+    "bgagents": {
+      "disabled": "Arka plan ajanları bu motorda etkin değil"
+    },
+    "browser": {
+      "none": "Bu motorda tarayıcı yok",
+      "clientSide": "Bu projenin tarayıcısı uygulamanın çalıştığı bilgisayarda açılır; Mac mini'de açılmaz.",
+      "httpOnly": "Yalnız http(s) adresleri açılır.",
+      "filesNotInBrowser": "Bu motorda dosyalar tarayıcıda açılamıyor"
+    },
+    "claudeAccounts": {
+      "disabled": "Claude hesapları bu motorda etkin değil"
+    },
+    "claudeUsage": {
+      "disabled": "Claude kullanımı bu motorda etkin değil"
+    },
+    "claude": {
+      "inventoryOff": "Claude envanteri bu motorda kapalı",
+      "noteSsh": "SSH projesi: proje klasörü uzak sunucuda, yalnız hesap düzeyi gösteriliyor.",
+      "noteClone": "Proje henüz klonlanmadı: yalnız hesap düzeyi gösteriliyor."
+    },
+    "files": {
+      "off": "Dosyalar bu motorda kapalı",
+      "noPaths": "Bu motorda dosya yolları açılamıyor",
+      "ssh": "SSH projelerinde Dosyalar yok: klasör uzak sunucuda",
+      "notCloned": "Proje henüz klonlanmadı",
+      "noFolder": "Bu projenin bu makinede klasörü yok",
+      "noMedia": "Bu motorda dosyalar Kokpit'te açılamıyor"
+    },
+    "flow": {
+      "ssh": "SSH projelerinde Akış yok: proje klasörü uzak sunucuda",
+      "off": "Akış bu motorda kapalı",
+      "notCloned": "Proje henüz klonlanmadı",
+      "noFolder": "Bu projenin bu makinede klasörü yok"
+    },
+    "logins": {
+      "appOnly": "Bu istek yalnız uygulamadan yapılabilir",
+      "none": "Bu motorda kayıtlı giriş desteği yok",
+      "clientBrowser": "Bu projenin tarayıcısı uygulamanın çalıştığı bilgisayarda açılır; kayıtlı girişler yalnız motorun açtığı tarayıcıda kullanılır."
+    },
+    "map": {
+      "off": "Harita bu motorda kapalı"
+    },
+    "paths": {
+      "remote": "SSH projelerinde dosya yolu açılamaz: dosya uzak sunucuda",
+      "noFolder": "Bu projenin bu makinede klasörü yok",
+      "unsupported": "Bu dosya türü tarayıcıda önizlenemez",
+      "clientBrowser": "Bu projenin tarayıcısı uygulamanın çalıştığı bilgisayarda açılır; Mac mini'de açılmaz.",
+      "notListening": "Motorun adresi henüz hazır değil"
+    },
+    "todos": {
+      "unavailable": "yapılacaklar kullanılamıyor"
+    }
+  }
+}

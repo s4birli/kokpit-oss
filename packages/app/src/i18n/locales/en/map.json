@@ -1,0 +1,11 @@
+{
+  "title": "Map",
+  "badUrl": "The map address is invalid.",
+  "openFailed": "Couldn't open the map: {error}",
+  "terminalFailed": "Couldn't open a terminal: {error}",
+  "fullScreen": "Full screen",
+  "exitFullScreen": "Exit full screen",
+  "update": "Update map",
+  "emptyLead": "This project has no map yet.",
+  "emptyTail": "opens a terminal that runs graphify in the project; when it finishes, the map appears here."
+}

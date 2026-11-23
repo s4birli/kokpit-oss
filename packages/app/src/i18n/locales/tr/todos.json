@@ -1,0 +1,45 @@
+{
+  "title": "Yapılacaklar",
+  "backToToday": "Bugüne dön",
+  "previousDay": "Önceki gün",
+  "nextDay": "Sonraki gün",
+  "pastDayHint": "Geçmiş bir güne yapılacak eklenmez.",
+  "day": {
+    "today": "Bugün",
+    "yesterday": "Dün",
+    "tomorrow": "Yarın"
+  },
+  "note": {
+    "label": "Not",
+    "saving": "Kaydediliyor…",
+    "saved": "Kaydedildi",
+    "error": "Kaydedilemedi"
+  },
+  "add": {
+    "label": "Yeni yapılacak",
+    "placeholder": "Yapılacak ekle, Enter ile kaydet",
+    "project": "Yeni yapılacağın projesi"
+  },
+  "project": {
+    "none": "Proje yok",
+    "deleted": "Silinmiş proje"
+  },
+  "list": {
+    "label": "Yapılacaklar listesi",
+    "empty": "Bu gün için yapılacak yok."
+  },
+  "item": {
+    "label": "{text}. Alt ve ok tuşlarıyla taşınır.",
+    "editText": "Metni düzenle: {text}",
+    "project": "Proje: {text}",
+    "save": "Kaydet",
+    "cancel": "Vazgeç",
+    "rolledFrom": "{date} gününden devreden",
+    "fromYesterday": "dünden",
+    "fromEarlier": "önceki günlerden",
+    "edit": "Düzenle: {text}",
+    "moveUp": "Yukarı taşı: {text}",
+    "moveDown": "Aşağı taşı: {text}",
+    "delete": "Sil: {text}"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "pnpm": "pnpm",
+  "appFilter": "@kokpit/app",
+  "distScript": "dist",
+  "configDirName": "kokpit",
+  "configFileName": "engine.json",
+  "keyFileName": "engine.key",
+  "host": "127.0.0.1",
+  "waitSeconds": 300,
+  "signingDirEnv": "KOKPIT_APP_SIGNING_DIR",
+  "defaultLanguageEnv": "KOKPIT_DEFAULT_LANGUAGE",
+  "waitPollMs": 2000,
+  "requestTimeoutMs": 5000
+}

@@ -1,0 +1,64 @@
+{
+  "state": {
+    "running": "çalışıyor",
+    "waiting": "seni bekliyor",
+    "idle": "boşta",
+    "exited": "kapandı"
+  },
+  "time": {
+    "justNow": "az önce",
+    "seconds_one": "{count} sn önce",
+    "seconds_other": "{count} sn önce",
+    "minutes_one": "{count} dk önce",
+    "minutes_other": "{count} dk önce",
+    "hours_one": "{count} sa önce",
+    "hours_other": "{count} sa önce",
+    "days_one": "{count} gün önce",
+    "days_other": "{count} gün önce"
+  },
+  "panel": {
+    "title": "Ajanlar",
+    "terminals": "Terminaller"
+  },
+  "rail": {
+    "counter": "{project}: {running} çalışıyor, {waiting} seni bekliyor",
+    "waitingBadge_one": "{count} oturum seni bekliyor",
+    "waitingBadge_other": "{count} oturum seni bekliyor",
+    "moreWaiting_one": "… ve {count} oturum daha",
+    "moreWaiting_other": "… ve {count} oturum daha",
+    "waitingTitle": "Seni bekleyen"
+  },
+  "bg": {
+    "reason": {
+      "approval": "onay bekliyor",
+      "input": "sıra sende"
+    },
+    "group": {
+      "waiting": "Seni bekliyor",
+      "running": "Çalışıyor",
+      "done": "Bitti"
+    },
+    "title": "Arka plan ajanları",
+    "allProjects": "Tüm projeler",
+    "empty": "Arka plan ajanı yok.",
+    "emptyProject": "Bu projede arka plan ajanı yok.",
+    "logsFailed": "Kayıtlar alınamadı: {error}",
+    "groupToggle": "{title} ({count})",
+    "account": "Claude hesabı",
+    "attach": "Bağlan",
+    "attachLabel": "Bağlan: {name}",
+    "attachFailed": "Bağlanılamadı",
+    "logs": "Kayıtlar",
+    "logsLabel": "Kayıtlar: {name}",
+    "stopConfirm": "Durdurulsun mu?",
+    "stopYes": "Evet, durdur",
+    "stopFailed": "Durdurulamadı",
+    "stop": "Durdur",
+    "stopLabel": "Durdur: {name}",
+    "cancel": "Vazgeç",
+    "close": "Kapat",
+    "loading": "Yükleniyor…",
+    "truncated": "Yalnız son kısım gösteriliyor.",
+    "noLogs": "Kayıt yok."
+  }
+}

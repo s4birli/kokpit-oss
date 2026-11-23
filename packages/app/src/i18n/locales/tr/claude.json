@@ -1,0 +1,44 @@
+{
+  "accounts": {
+    "configDirRequired": "Ayar klasörü gerekli.",
+    "configDirAbsolute": "Ayar klasörü / ya da ~/ ile başlamalı.",
+    "configDirInvalid": "Ayar klasörü geçersiz."
+  },
+  "panel": {
+    "title": "Claude",
+    "tabs": {
+      "skill": "Skill'ler",
+      "agent": "Ajanlar",
+      "command": "Komutlar",
+      "usage": "Kullanım",
+      "guide": "Rehber"
+    },
+    "badge": {
+      "project": "Proje",
+      "user": "Hesap",
+      "plugin": "Plugin"
+    },
+    "noProject": "Proje seçilmedi.",
+    "loading": "Yükleniyor…",
+    "emptyTab": "Bu sekmede öğe yok.",
+    "noMatch": "Eşleşen öğe yok.",
+    "items": "Öğeler",
+    "preview": "Önizleme",
+    "truncated_one": "Listede daha çok öğe var; ilk {count} öğe gösteriliyor.",
+    "truncated_other": "Listede daha çok öğe var; ilk {count} öğe gösteriliyor.",
+    "tablist": "Claude sekmeleri",
+    "search": "Ara",
+    "searchPlaceholder": "Ara…",
+    "reload": "Yenile",
+    "claudeMd": "CLAUDE.md — {parts}",
+    "claudeMdProject": "proje: {value}",
+    "claudeMdUser": "hesap: {value}",
+    "present": "var",
+    "absent": "yok"
+  },
+  "guide": {
+    "builtFrom": "Claude Code {version} sürümünden derlendi ({source}).",
+    "own": "Projenin ve hesabın komutları",
+    "noMatch": "Eşleşen komut yok."
+  }
+}

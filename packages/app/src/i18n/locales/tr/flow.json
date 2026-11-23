@@ -1,0 +1,22 @@
+{
+  "title": "Akış",
+  "sshNote": "SSH projelerinde Akış yok: proje klasörü uzak sunucuda. Akış şemaları yalnız bu makinedeki proje klasörlerinden okunur.",
+  "update": "Akışı çiz / güncelle",
+  "listFailed": "Akışlar okunamadı: {error}",
+  "readFailed": "Akış okunamadı: {error}",
+  "drawFailed": "Şema çizilemedi: {error}",
+  "terminalFailed": "Terminal açılamadı: {error}",
+  "terminalUnavailable": "Terminal açılamıyor",
+  "zoomOut": "Uzaklaştır",
+  "zoomIn": "Yakınlaştır",
+  "fit": "Sığdır",
+  "fullScreen": "Tam ekran",
+  "exitFullScreen": "Tam ekrandan çık",
+  "emptyLead": "Bu projede henüz akış şeması yok.",
+  "emptyMiddle": "projede Claude'u açar; kodu okuyup ana iş akışlarını",
+  "emptyDirFallback": "proje",
+  "emptyTail": "klasörüne Mermaid şeması olarak yazar. Dosyalar oluşunca burada görünür.",
+  "list": "Akışlar",
+  "imageAlt": "{label} akış şeması",
+  "drawing": "Çiziliyor…"
+}

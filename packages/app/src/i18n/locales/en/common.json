@@ -1,0 +1,39 @@
+{
+  "language": {
+    "name": "English"
+  },
+  "uiState": {
+    "invalid": "Invalid interface state.",
+    "noVersion": "The interface state has no version.",
+    "tooManyLayouts": "Too many project layouts.",
+    "notJson": "The interface state is not JSON.",
+    "tooLarge": "The interface state is too large."
+  },
+  "sites": {
+    "tailnetBlocked": "Tailscale is off or this address is not in your tailnet; not opened over plain http.",
+    "badgeTailnetLabel": "http · Tailscale",
+    "badgeTailnetTitle": "Plain http (unencrypted). Loaded only while Tailscale is on and this address is in your tailnet; the device that runs this address inside the tailnet can see the traffic.",
+    "badgeLocalLabel": "http · local",
+    "badgeLocalTitle": "Plain http (unencrypted); the address is this computer itself.",
+    "urlCredentials": "the address cannot contain a user name or password.",
+    "urlHttpNeedsIp": "http:// is accepted only for Tailscale/local addresses written as an IP address (e.g. http://100.x.y.z:9119); a domain name needs https://.",
+    "urlHttpNotPrivate": "http:// is accepted only for Tailscale and local addresses ({cidrs}); this address needs https://.",
+    "urlScheme": "the address must start with https:// (http:// also works for a Tailscale/local IP address, e.g. http://100.x.y.z:9119).",
+    "invalidSite": "Invalid site.",
+    "site": "Site",
+    "invalidId": "{title}: invalid id.",
+    "nameRequired": "A name is required.",
+    "nameTooLong": "{title}…: the name can be at most {max} characters.",
+    "urlError": "{title}: {error}",
+    "invalidList": "Invalid site list.",
+    "tooMany": "At most {max} sites.",
+    "duplicateId": "{title}: two sites have the same id."
+  },
+  "client": {
+    "disconnected": "The engine connection was lost.",
+    "transportUnchecked": "Could not check whether the connection is secure.",
+    "notConnected": "Not connected to the engine.",
+    "invalidRequest": "Invalid request: {method}",
+    "timeout": "The engine did not respond: {method}"
+  }
+}

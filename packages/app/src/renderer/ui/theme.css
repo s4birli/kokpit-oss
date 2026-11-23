@@ -1,0 +1,109 @@
+/* Kokpit design tokens (dark theme). Every colour, font and size used by the UI lives here. */
+:root {
+  color-scheme: dark;
+
+  /* colours */
+  --bg: #0f1115;
+  --rail: #12151b;
+  --panel: #161a21;
+  --panel-selected: #0f1218;
+  --border: #262c36;
+  --border-strong: #3a4557;
+  --text: #e6e9ef;
+  --muted: #9aa3b2;
+  --accent: #6ca8ff;
+  --accent-text: #8fbcff;
+  --warn: #f2b84b;
+  --ok: #7fd1a6;
+  --danger: #ffb4b4;
+  --term-bg: #0b0d11;
+  /* Masaüstü: the shadow under a window, so overlapping windows read apart. */
+  --window-shadow: rgb(0 0 0 / 0.45);
+  --focus-ring: var(--accent);
+
+  /* type */
+  --font-ui: Inter, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-md: 14px;
+  --fs-lg: 18px;
+  --fs-xl: 20px;
+  --fw-bold: 650;
+  --term-font-size: 13px;
+
+  /* spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+
+  /* shape */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --border-w: 1px;
+  --focus-w: 2px;
+
+  /* sizes */
+  --touch: 44px;
+  --rail-basis: 290px;
+  --flow-basis: 340px;
+  --workspace-basis: 520px;
+  --panel-min: 320px;
+  --term-min-height: 320px;
+  --browser-tab-min: 96px;
+  --browser-tab-max: 200px;
+  --placeholder-min-height: 160px;
+  /* İş C — Harita */
+  --map-min-height: 420px;
+  /* İş P — Uzak masaüstü */
+  --surface-min-height: 420px;
+  --z-overlay: 100;
+  --card-indent: var(--space-4);
+  /* ---- İş T: terminal sekmeleri ---- */
+  --tabs-dot-size: 8px;
+  --tabs-tab-max-width: 220px;
+  --tabs-divider-w: 6px;
+  --tabs-menu-z: 10;
+  /* ---- İş A (Adım 7): arka plan ajanları ---- */
+  --bga-logs-max-height: 320px;
+  /* ---- Modüler düzen (İş L) ---- */
+  --dock-drop: #6ca8ff33;
+  /* ---- Room for the screens: the work area's chrome is compact ---- */
+  /* The smallest hit target (a button, a tab, an input) in the work area. */
+  --hit-min: 24px;
+  /* One slim row: a panel's toolbar, a tab strip. */
+  --bar-h: 28px;
+  --dock-tab-height: var(--bar-h);
+  /* How far beyond its own line a dock sash can still be grabbed (there is no gap between dock groups). */
+  --dock-sash-reach: 3px;
+  /* The address bar never gets narrower than this before the browser toolbar wraps. */
+  --browser-address-min: 96px;
+  /* ---- İş P: proje sekmeleri ---- */
+  --ptab-min-width: 96px;
+  --ptab-max-width: 220px;
+  /* The selected card's line at the right end of the project tab strip. */
+  --cardbar-max-width: 60%;
+  --cardbar-btn-height: var(--hit-min);
+  /* The collapsed rail is a strip: one button wide, plus its padding and its border. */
+  --rail-collapsed-max: calc(var(--touch) + 2 * var(--space-2) + var(--border-w));
+  /* "Seni bekleyen" in the expanded rail: taller than this, the list scrolls and the projects stay on screen. */
+  --waiting-list-max-height: 35vh;
+  /* İş M: Ayarlar › Siteler alanlarının en dar genişliği. */
+  --site-field-min: 14rem;
+  /* ---- Girişler: the key icon of the Tarayıcı toolbar and its popover ---- */
+  --logins-icon: 14px;
+  --logins-pop-width: 320px;
+  --logins-pop-max: 90vw;
+  --logins-pop-max-height: 70vh;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: var(--fs-md);
+}

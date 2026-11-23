@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "layouts": {
+    "normal": {
+      "grid": {
+        "root": {
+          "type": "branch",
+          "data": [
+            {
+              "type": "branch",
+              "data": [
+                {
+                  "type": "leaf",
+                  "data": {
+                    "views": [
+                      "files"
+                    ],
+                    "activeView": "files",
+                    "id": "1"
+                  },
+                  "size": 98
+                },
+                {
+                  "type": "leaf",
+                  "data": {
+                    "views": [
+                      "browser",
+                      "map",
+                      "web"
+                    ],
+                    "activeView": "web",
+                    "id": "2"
+                  },
+                  "size": 98
+                }
+              ],
+              "size": 98
+            },
+            {
+              "type": "leaf",
+              "data": {
+                "views": [
+                  "terminals"
+                ],
+                "activeView": "terminals",
+                "id": "4"
+              },
+              "size": 98
+            }
+          ],
+          "size": 100
+        },
+        "width": 100,
+        "height": 100,
+        "orientation": "VERTICAL"
+      },
+      "panels": {
+        "files": {
+          "id": "files",
+          "contentComponent": "files",
+          "title": "Dosyalar"
+        },
+        "browser": {
+          "id": "browser",
+          "contentComponent": "browser",
+          "title": "Tarayıcı"
+        },
+        "map": {
+          "id": "map",
+          "contentComponent": "map",
+          "title": "Harita"
+        },
+        "web": {
+          "id": "web",
+          "contentComponent": "web",
+          "title": "Web"
+        },
+        "terminals": {
+          "id": "terminals",
+          "contentComponent": "terminals",
+          "title": "Terminal"
+        }
+      },
+      "activeGroup": "2"
+    }
+  },
+  "panels": {
+    "terminals": {
+      "project:p1": {
+        "order": [
+          "t1",
+          "t2"
+        ]
+      }
+    },
+    "web": {
+      "global": {
+        "open": [
+          "ana"
+        ]
+      }
+    }
+  },
+  "selection": {
+    "kind": "project",
+    "projectId": "p1"
+  },
+  "tabs": {
+    "tabs": [
+      {
+        "projectId": "p1"
+      },
+      {
+        "projectId": "p2",
+        "cardId": "c9"
+      }
+    ],
+    "active": "p1"
+  }
+}

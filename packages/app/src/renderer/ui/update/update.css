@@ -1,0 +1,54 @@
+/* Kendini güncelleme: the update strip (in the connection banner's place) and Ayarlar › Bağlantı › Sürüm. */
+.kp-banner--update-warn {
+  color: var(--warn);
+}
+.kp-banner--update-info {
+  color: var(--text);
+}
+
+.kp-about {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  border: var(--border-w) solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--panel);
+}
+.kp-about__title {
+  margin: 0;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+}
+.kp-about__list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-1) var(--space-4);
+  margin: 0;
+  font-size: var(--fs-sm);
+}
+.kp-about__list dt {
+  color: var(--muted);
+}
+.kp-about__list dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+.kp-about__auto {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+}
+.kp-about__hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+.kp-about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}

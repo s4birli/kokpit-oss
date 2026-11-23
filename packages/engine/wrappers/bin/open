@@ -1,0 +1,115 @@
+#!/bin/sh
+# Kokpit `open`: first on PATH in Kokpit terminals (the engine puts this directory there; terminal-open.ts).
+#
+# It handles exactly two cases, and only with ONE argument and no option:
+#   open <http(s) address>        → the terminal's project browser in Kokpit (Tarayıcı panel)
+#   open <existing .html / .htm>  → the same, served by the engine as a preview (never file://)
+# Everything else — options (-a, -R, -e, -n, -g, …), several arguments, folders, other files, other schemes — is
+# handed to the real `open` unchanged. When the engine cannot be reached or refuses, one line says so and the shim
+# stops (exit 1): the engine Mac's desktop browser is not opened on its screen — unless KOKPIT_OPEN_FALLBACK is 1
+# (engine setting files.open.fallbackToSystemOpen), then the real `open` runs as if this script were not here.
+#
+# From the terminal's environment (set by the engine, per terminal):
+#   KOKPIT_OPEN_ENDPOINT   http://<engine address>:<port>/terminal/open
+#   KOKPIT_OPEN_ID         this terminal's grant (public id)
+#   KOKPIT_OPEN_KEY_IPAD   its HMAC key, pre-padded (key XOR 0x36 / 0x5c, hex): good only for that route, only for
+#   KOKPIT_OPEN_KEY_OPAD   this project. The key is never sent: requests carry an HMAC over a timestamp and a fresh
+#                          nonce, and the engine's reply is only believed when it carries the engine's HMAC.
+#   KOKPIT_OPEN_REAL       the operating system's open        KOKPIT_OPEN_CURL   curl
+#   KOKPIT_OPEN_FALLBACK   1 = on failure run the real open with the address/page; otherwise stop with exit 1
+#   KOKPIT_OPEN_XXD / _SHASUM / _OD / _DATE   the tools the HMAC and the nonce are made with (stdin only)
+#   KOKPIT_OPEN_TIMEOUT_S  seconds to wait for the engine
+
+real=${KOKPIT_OPEN_REAL:-}
+case "$real" in
+  /*) ;;
+  *) real=/usr/bin/open ;;
+esac
+
+[ "$#" -eq 1 ] || exec "$real" "$@"
+[ -n "${KOKPIT_OPEN_ENDPOINT:-}" ] && [ -n "${KOKPIT_OPEN_ID:-}" ] && [ -n "${KOKPIT_OPEN_KEY_IPAD:-}" ] && [ -n "${KOKPIT_OPEN_KEY_OPAD:-}" ] || exec "$real" "$@"
+
+arg=$1
+case "$arg" in
+  -*) exec "$real" "$@" ;;
+  [Hh][Tt][Tt][Pp]://?* | [Hh][Tt][Tt][Pp][Ss]://?*)
+    kind=url
+    target=$arg
+    ;;
+  *.[Hh][Tt][Mm][Ll] | *.[Hh][Tt][Mm])
+    [ -f "$arg" ] || exec "$real" "$@"
+    kind=file
+    case "$arg" in
+      /*) target=$arg ;;
+      *) target=$PWD/$arg ;;
+    esac
+    ;;
+  *) exec "$real" "$@" ;;
+esac
+
+tool() { case "$1" in /*) printf '%s' "$1" ;; *) printf '%s' "$2" ;; esac; }
+curl=$(tool "${KOKPIT_OPEN_CURL:-}" /usr/bin/curl)
+xxd=$(tool "${KOKPIT_OPEN_XXD:-}" /usr/bin/xxd)
+shasum=$(tool "${KOKPIT_OPEN_SHASUM:-}" /usr/bin/shasum)
+od=$(tool "${KOKPIT_OPEN_OD:-}" /usr/bin/od)
+date=$(tool "${KOKPIT_OPEN_DATE:-}" /bin/date)
+
+# HMAC-SHA256 of stdin with the pre-padded key halves: sha256(opad ‖ sha256(ipad ‖ message)). Every secret goes
+# through printf (a shell builtin) into a pipe, never onto a command line.
+hmac() {
+  inner=$({ printf '%s' "$KOKPIT_OPEN_KEY_IPAD" | "$xxd" -r -p; cat; } | "$shasum" -a 256)
+  inner=${inner%% *}
+  outer=$({ printf '%s' "$KOKPIT_OPEN_KEY_OPAD" | "$xxd" -r -p; printf '%s' "$inner" | "$xxd" -r -p; } | "$shasum" -a 256)
+  printf '%s' "${outer%% *}"
+}
+timeout=${KOKPIT_OPEN_TIMEOUT_S:-}
+case "$timeout" in
+  "" | *[!0-9]*) timeout=10 ;;
+esac
+
+ts=$("$date" +%s)
+nonce=$("$od" -An -N16 -tx1 /dev/urandom) || nonce=""
+# od prints the bytes as hex words: the words, joined.
+set -f
+nonce=$(printf '%s' $nonce)
+set +f
+mac=$(printf 'kokpit-open-v1\n%s\n%s\n%s\n%s\n%s' "$KOKPIT_OPEN_ID" "$ts" "$nonce" "$kind" "$target" | hmac)
+
+reply=$(printf '%s\n%s\n%s\n%s\n%s\n%s' "$KOKPIT_OPEN_ID" "$ts" "$nonce" "$mac" "$kind" "$target" |
+  "$curl" -sS --noproxy '*' --max-time "$timeout" -X POST -H 'Content-Type: text/plain; charset=utf-8' \
+    --data-binary @- -w '\n%{http_code}' "$KOKPIT_OPEN_ENDPOINT" 2>/dev/null) || reply=""
+
+code=$(printf '%s\n' "$reply" | tail -n 1)
+reply_mac=$(printf '%s\n' "$reply" | head -n 1)
+reason=$(printf '%s\n' "$reply" | sed -n 2p)
+# Done only when the reply proves it came from the engine that holds this terminal's key.
+proof=$(printf 'kokpit-open-reply-v1\n%s\n%s' "$nonce" "$code" | hmac)
+# A broken HMAC tool yields an empty or short proof: only a full 64-hex proof is ever compared.
+case "$proof" in
+  *[!0-9a-f]* | "") proof_ok=no ;;
+  *) [ ${#proof} -eq 64 ] && proof_ok=yes || proof_ok=no ;;
+esac
+proven=no
+[ "$proof_ok" = yes ] && [ "$reply_mac" = "$proof" ] && proven=yes
+if [ "$code" = "200" ]; then
+  [ "$proven" = yes ] && exit 0
+  reason="motorun yanıtı doğrulanamadı"
+fi
+# 303, proven: this project's open is not for Kokpit (the user turned it off) — the real open, as asked.
+if [ "$code" = "303" ] && [ "$proven" = yes ]; then
+  printf 'kokpit: Kokpit tarayıcısında açılmadı (%s); sistemin open komutu kullanılıyor.\n' "$reason" >&2
+  exec "$real" "$@"
+fi
+[ "$code" = "303" ] && reason="motorun yanıtı doğrulanamadı"
+
+case "$code" in
+  200) ;;
+  [1-5][0-9][0-9]) [ -n "$reason" ] || reason="motor $code yanıtı verdi" ;;
+  *) reason="motora ulaşılamadı" ;;
+esac
+if [ "${KOKPIT_OPEN_FALLBACK:-}" = 1 ]; then
+  printf 'kokpit: Kokpit tarayıcısında açılmadı (%s); sistemin open komutu kullanılıyor.\n' "$reason" >&2
+  exec "$real" "$@"
+fi
+printf 'kokpit: Kokpit tarayıcısında açılmadı (%s); masaüstü tarayıcısında da açılmadı (ayar: files.open.fallbackToSystemOpen).\n' "$reason" >&2
+exit 1

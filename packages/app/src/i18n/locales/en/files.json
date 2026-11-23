@@ -1,0 +1,47 @@
+{
+  "title": "Files",
+  "panel": {
+    "sshNote": "Files isn't available for SSH projects: the folder is on the remote server. You can browse it from the terminal.",
+    "linkNote": "Broken link, or a link pointing outside the project",
+    "loading": "Loading…",
+    "emptyFolder": "Empty folder",
+    "truncated": "This folder has more items; showing the first {count}.",
+    "noProject": "No project selected.",
+    "tree": "File tree",
+    "divider": "Resize the tree and the preview",
+    "preview": "Preview",
+    "shrink": "Shrink",
+    "shrinkTitle": "Shrink (Esc)",
+    "enlarge": "Enlarge",
+    "enlargeTitle": "Enlarge: show the file at window size",
+    "closePreview": "Close preview",
+    "reload": "Reload"
+  },
+  "preview": {
+    "pick": "Select a file to preview.",
+    "loading": "Loading…",
+    "binary": "Binary file ({size}); no preview.",
+    "truncated": "Large file: showing the first {shown} (of {size})."
+  },
+  "media": {
+    "loading": "Loading…",
+    "badUrl": "The file address is invalid.",
+    "imageFailed": "Couldn't show the image: the file is damaged or in a format the built-in viewer doesn't know.",
+    "videoLabel": "Video: {path}",
+    "audioLabel": "Audio: {path}",
+    "fit": "Fit",
+    "actualSize": "Actual size (100%)",
+    "fitImage": "Fit the image to the panel",
+    "showActualSize": "Show the image at actual size",
+    "noun": {
+      "video": "video",
+      "audio": "audio file",
+      "image": "image",
+      "pdf": "PDF"
+    },
+    "what": "Type: {mime} · {size}",
+    "codecFailed": "This {noun} can't be played in Kokpit: the built-in player can't decode the file's codec (e.g. ProRes or HEVC). {what}. Kokpit doesn't convert files; exported as H.264/AAC (.mp4) or VP9/Opus (.webm), it will play.",
+    "readFailed": "Couldn't read the file (the connection dropped or the file changed). {what}. Use ↻ Reload to try again.",
+    "noPicture": "Can't decode the picture's codec (e.g. ProRes or HEVC); only the sound plays. {what}. Kokpit doesn't convert files."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "label": "dev.kokpit.engine",
+  "labelEnv": "KOKPIT_LAUNCHD_LABEL",
+  "throttleInterval": 10,
+  "logDir": "Library/Logs/kokpit",
+  "defaultLang": "en_US.UTF-8",
+  "launchAgentsDir": "Library/LaunchAgents",
+  "plutil": "plutil",
+  "launchctl": "launchctl",
+  "bootoutPollMs": 200,
+  "bootoutMaxPolls": 50,
+  "bootstrapRetries": 5,
+  "bootstrapRetryDelayMs": 500,
+  "bootstrapRetryExitCodes": [5]
+}

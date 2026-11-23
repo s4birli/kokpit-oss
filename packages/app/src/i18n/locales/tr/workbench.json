@@ -1,0 +1,71 @@
+{
+  "rail": {
+    "collapse": "Sol listeyi daralt",
+    "expand": "Sol listeyi genişlet",
+    "viewWork": "Çalışma",
+    "viewTodoOnly": "Yapılacaklar",
+    "settings": "Ayarlar",
+    "view": "Görünüm",
+    "projects": "Projeler",
+    "newCardFor": "Yeni kart: {project}",
+    "newCard": "+ Yeni kart",
+    "createFailed": "Kart oluşturulamadı: {error}",
+    "cardName": "Kart adı",
+    "create": "Oluştur"
+  },
+  "common": {
+    "cancel": "Vazgeç"
+  },
+  "projectTabs": {
+    "label": "Proje sekmeleri",
+    "close": "Sekmeyi kapat: {title}",
+    "moveHint": "Sürükleyerek ya da Alt+Shift+ok tuşlarıyla taşı; orta tıkla kapat.",
+    "account": "Claude hesabı"
+  },
+  "cardBar": {
+    "label": "Seçili kart",
+    "remove": "Kartı sil",
+    "confirm": "Silmeyi onayla"
+  },
+  "placeholder": {
+    "body": "Sonraki adımlarda gelecek."
+  },
+  "banner": {
+    "insecure": "Bu adres güvenli bir yol değil (yalnız bu Mac, açık Tailscale ya da wss://). Anahtarla el sıkışma başlatılmadı.",
+    "connecting": "Bağlanıyor{target}…",
+    "reconnecting": "Motora ulaşılamıyor{target}. Yeniden deneniyor…",
+    "unauthorized": "Motor anahtarı reddetti. Bağlantı ayarlarından anahtarı güncelle.",
+    "settings": "Bağlantı ayarları"
+  },
+  "location": {},
+  "tools": {
+    "shellOnly": "Yalnız kabuk"
+  },
+  "place": {
+    "other": "Diğer"
+  },
+  "noSelection": {
+    "title": "Proje seçilmedi",
+    "hint": "Soldan bir proje ya da kart seç."
+  },
+  "layout": {
+    "emptyDock": "Bütün paneller kapalı. Görünüm menüsünden bir panel aç.",
+    "unavailable": "Bu panel seçili proje için kullanılamaz.",
+    "panelError": "Panel bir hatayla durdu.",
+    "closeTab": "{title} panelini kapat",
+    "closeTabPlain": "Paneli kapat"
+  },
+  "panels": {
+    "agents": "Ajanlar",
+    "map": "Harita",
+    "noTerminals": "Açık terminal yok.",
+    "noProjectTerminals": "Bu projede terminal yok."
+  },
+  "load": {
+    "cards": "Kartlar yüklenemedi: {error}",
+    "projects": "Projeler yüklenemedi: {error}",
+    "terminals": "Terminaller yüklenemedi: {error}",
+    "agents": "Ajanlar yüklenemedi: {error}",
+    "bgAgents": "Arka plan ajanları yüklenemedi: {error}"
+  }
+}

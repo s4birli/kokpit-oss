@@ -1,0 +1,4 @@
+{
+  "$comment": "Build-time feature set: optional modules built into this edition.",
+  "features": {}
+}

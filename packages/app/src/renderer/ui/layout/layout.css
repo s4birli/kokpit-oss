@@ -1,0 +1,108 @@
+/* İş L — Modüler düzen. dockview themed with our tokens only (theme.css). */
+.kp-layout {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* ---------- dock ---------- */
+.kp-dock-root {
+  flex: 1;
+  min-height: 0;
+}
+/* A panel fills its dock group edge to edge: no padding here, no card (border, radius) around the panel. */
+.kp-dock-panel {
+  /* Containing block of the panel's visually hidden name. */
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+.kp-dock-panel > .kp-panel {
+  flex: 1 0 auto;
+  border: 0;
+  border-radius: 0;
+}
+/* Controls inside the dock are compact (the rail, Ayarlar and dialogs keep the large ones). */
+.kp-dock-panel :is(.kp-btn, .kp-input) {
+  min-height: var(--hit-min);
+}
+.kp-dock-panel .kp-btn {
+  min-width: var(--hit-min);
+  padding: 0 var(--space-2);
+}
+.kp-dock-panel .kp-btn--icon {
+  padding: 0;
+}
+.kp-dock-panel .kp-input {
+  padding: 0 var(--space-2);
+}
+.kp-dock-note {
+  margin: 0;
+  padding: var(--space-3);
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+
+.kp-dock {
+  color-scheme: dark;
+  --dv-group-view-background-color: var(--bg);
+  --dv-tabs-and-actions-container-background-color: var(--rail);
+  --dv-tabs-and-actions-container-height: var(--dock-tab-height);
+  --dv-tabs-and-actions-container-font-size: var(--fs-sm);
+  --dv-activegroup-visiblepanel-tab-background-color: var(--panel);
+  --dv-activegroup-hiddenpanel-tab-background-color: var(--rail);
+  --dv-inactivegroup-visiblepanel-tab-background-color: var(--panel-selected);
+  --dv-inactivegroup-hiddenpanel-tab-background-color: var(--rail);
+  --dv-activegroup-visiblepanel-tab-color: var(--text);
+  --dv-activegroup-hiddenpanel-tab-color: var(--muted);
+  --dv-inactivegroup-visiblepanel-tab-color: var(--muted);
+  --dv-inactivegroup-hiddenpanel-tab-color: var(--muted);
+  --dv-tab-divider-color: var(--border);
+  --dv-separator-border: var(--border);
+  --dv-paneview-header-border-color: var(--border);
+  --dv-paneview-active-outline-color: var(--accent);
+  --dv-drag-over-background-color: var(--dock-drop);
+  --dv-drag-over-border-color: var(--accent);
+  --dv-drag-over-border: var(--border-w) solid var(--accent);
+  --dv-edge-dock-indicator-color: var(--accent);
+  --dv-tabs-container-scrollbar-color: var(--border-strong);
+  --dv-icon-hover-background-color: var(--panel-selected);
+  --dv-sash-color: transparent;
+  --dv-active-sash-color: var(--accent);
+  --dv-active-sash-transition-duration: 0.1s;
+  --dv-active-sash-transition-delay: 0.3s;
+  --dv-tab-font-size: inherit;
+  --dv-tab-close-icon-size: inherit;
+  --dv-tab-margin: 0;
+  --dv-border-radius: var(--radius-sm);
+  --dv-tab-border-radius: 0;
+  --dv-sash-border-radius: 0;
+  --dv-dropdown-border-radius: var(--radius-sm);
+  --dv-spacing-padding: 0;
+  --dv-overlay-z-index: var(--z-overlay);
+  --dv-floating-group-border: none;
+  --dv-floating-box-shadow: none;
+  --dv-floating-border: var(--border-w) solid var(--border);
+  --dv-floating-group-dragging-opacity: 0.5;
+  --dv-context-menu-background-color: var(--panel);
+  --dv-context-menu-color: var(--text);
+  font-family: var(--font-ui);
+}
+/* No gap between groups: the separator is one line, and a sash can be grabbed a little beyond it. */
+.kp-dock .dv-sash::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--dock-sash-reach));
+}
+/* The tab's close "×" is a full hit target. */
+.kp-dock .dv-default-tab .dv-default-tab-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--hit-min);
+  min-height: var(--hit-min);
+}

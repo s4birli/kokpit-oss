@@ -1,0 +1,205 @@
+/* İş C (Adım 8) — Claude paneli. Colours only from theme.css variables; preview reuses files.css. */
+.kp-claude {
+  --kp-claude-list-basis: 260px;
+  --kp-files-preview-basis: 360px;
+  min-height: var(--placeholder-min-height);
+  height: 100%;
+  container-type: inline-size;
+}
+/* The panel's one bar: its tabs, the search box and "Yenile". */
+.kp-claude__bar {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: var(--bar-h);
+  padding: 0 var(--space-1);
+  border-bottom: var(--border-w) solid var(--border);
+}
+.kp-claude__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+.kp-claude__tab {
+  min-height: var(--hit-min);
+  padding: 0 var(--space-2);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+.kp-claude__tab[aria-selected="true"] {
+  border-color: var(--accent);
+  color: var(--accent-text);
+  background: var(--panel-selected);
+}
+.kp-claude__count {
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+.kp-claude__search {
+  flex: 1 1 140px;
+  min-width: 0;
+  min-height: var(--hit-min);
+  padding: 0 var(--space-2);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--panel-selected);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--fs-sm);
+}
+.kp-claude__note,
+.kp-claude__meta,
+.kp-claude__hint {
+  margin: 0;
+  padding: var(--space-1) var(--space-3);
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+.kp-claude__note {
+  color: var(--warn);
+}
+.kp-claude__alert {
+  padding: var(--space-3);
+}
+.kp-claude__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+/* Narrow panel: list above, preview below, each with its own scroll. */
+.kp-claude__side {
+  flex: 1 1 40%;
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+  border-bottom: var(--border-w) solid var(--border);
+}
+.kp-claude__preview {
+  flex: 1 1 60%;
+  min-height: 0;
+}
+/* Wide panel: side by side. */
+@container (min-width: 560px) {
+  .kp-claude__body {
+    flex-direction: row;
+  }
+  .kp-claude__side {
+    flex: 1 1 var(--kp-claude-list-basis);
+    border-bottom: 0;
+    border-right: var(--border-w) solid var(--border);
+  }
+  .kp-claude__preview {
+    flex: 2 1 var(--kp-files-preview-basis);
+  }
+}
+.kp-claude__list {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-1) 0;
+}
+.kp-claude__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  padding: var(--space-1) var(--space-3);
+  border: 0;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.kp-claude__item:hover,
+.kp-claude__item[aria-current="true"] {
+  background: var(--panel-selected);
+}
+.kp-claude__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+.kp-claude__name {
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.kp-claude__item[aria-current="true"] .kp-claude__name {
+  color: var(--accent-text);
+}
+.kp-claude__desc {
+  color: var(--muted);
+  font-size: var(--fs-xs);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.kp-claude__badge {
+  flex: 0 0 auto;
+  margin-left: var(--space-1);
+  padding: 0 var(--space-1);
+  border: var(--border-w) solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  font-size: var(--fs-xs);
+}
+.kp-claude__badge--project {
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+.kp-claude__badge--plugin {
+  border-color: var(--ok);
+  color: var(--ok);
+}
+.kp-claude__guide {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding-bottom: var(--space-3);
+}
+.kp-claude__section-title {
+  margin: var(--space-3) var(--space-3) var(--space-1);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+.kp-claude__dl {
+  margin: 0;
+  padding: 0 var(--space-3);
+}
+.kp-claude__entry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  padding: var(--space-1) 0;
+  border-bottom: var(--border-w) solid var(--border);
+}
+.kp-claude__entry dt {
+  flex: 0 1 220px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.kp-claude__entry dt code {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--accent-text);
+}
+.kp-claude__entry dd {
+  flex: 1 1 240px;
+  margin: 0;
+  color: var(--text);
+  font-size: var(--fs-sm);
+}

@@ -1,0 +1,49 @@
+{
+  "partitionPrefix": "persist:web-",
+  "sites": [],
+  "defaultsSeededBeforeMarker": [],
+  "httpAllowedCidrs": [
+    "100.64.0.0/10",
+    "127.0.0.0/8",
+    "::1/128",
+    "fd7a:115c:a1e0::/48"
+  ],
+  "httpTailnet": {
+    "cidrs": [
+      "100.64.0.0/10",
+      "fd7a:115c:a1e0::/48"
+    ],
+    "binaries": [
+      "/Applications/Tailscale.app/Contents/MacOS/Tailscale",
+      "/opt/homebrew/bin/tailscale",
+      "/usr/local/bin/tailscale",
+      "tailscale"
+    ],
+    "statusArgs": [
+      "status",
+      "--json"
+    ],
+    "env": {
+      "TERM": "dumb"
+    },
+    "timeoutMs": 4000,
+    "cacheMs": 5000,
+    "maxOutputBytes": 8388608
+  },
+  "firstLaunchSiteId": "home",
+  "authPopupHosts": [],
+  "allowedPermissions": [
+    "clipboard-sanitized-write",
+    "fullscreen"
+  ],
+  "userAgentDropTokens": [
+    "Electron",
+    "kokpit"
+  ],
+  "fallbackSiteId": "site",
+  "limits": {
+    "maxSites": 30,
+    "maxTitle": 60,
+    "maxIdLength": 40
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "panel": {
+    "label": "Terminal: {title}",
+    "exitedWithCode": "exited (code {code})",
+    "attachFailed": "Could not connect to the terminal: {error}",
+    "closeFailed": "Could not close the terminal: {error}",
+    "confirmClose": "Confirm close",
+    "cancel": "Cancel",
+    "close": "Close terminal",
+    "historyLost": "Could not load the history; new output keeps appearing.",
+    "retry": "Retry"
+  },
+  "launcher": {
+    "openFailed": "Could not open a terminal: {error}",
+    "tool": "Tool",
+    "startCommand": "Start command",
+    "optional": "optional",
+    "newTerminal": "New terminal"
+  },
+  "tabs": {
+    "panelTitle": "Terminal",
+    "label": "Terminals",
+    "noSelection": "Select a project or card on the left.",
+    "tablist": "Terminal tabs",
+    "closeTab": "Close the {title} tab",
+    "partner": "Terminal beside it",
+    "split": "Split",
+    "newMenu": "+ New terminal ▾",
+    "confirmClose": "Close “{title}”? The running process will end.",
+    "emptyCard": "No terminals on this card.",
+    "emptyProject": "No terminals in this project.",
+    "resizeSplit": "Resize the split"
+  },
+  "clipboard": {
+    "selectionHint": "Drag with ⌥ Option (or ⇧ Shift) held to select · ⌘C copies"
+  }
+}

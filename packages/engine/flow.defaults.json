@@ -1,0 +1,8 @@
+{
+  "dir": "docs/akis",
+  "maxFiles": 200,
+  "maxBytes": 131072,
+  "titleScanBytes": 1024,
+  "titleMaxChars": 120,
+  "updateCommand": "claude \"$(cat {{flowPromptFile}})\""
+}

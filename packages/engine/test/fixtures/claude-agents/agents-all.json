@@ -1,0 +1,167 @@
+[
+  {
+    "id": "9e3779b1",
+    "cwd": "/Users/ornek/projeler/alfa",
+    "kind": "background",
+    "startedAt": 1792600000000,
+    "sessionId": "9e3779b1-0000-4000-8000-000000000000",
+    "name": "Alfa testlerini düzelt",
+    "state": "done"
+  },
+  {
+    "id": "3c6ef362",
+    "cwd": "/Users/ornek/projeler/beta",
+    "kind": "background",
+    "startedAt": 1792600600000,
+    "sessionId": "3c6ef362-0000-4000-8000-000000000001",
+    "name": "Beta için arayüz taslağı",
+    "state": "blocked"
+  },
+  {
+    "id": "daa66d13",
+    "cwd": "/Users/ornek/projeler/alfa/.claude/worktrees/kart-1",
+    "kind": "background",
+    "startedAt": 1792601200000,
+    "sessionId": "daa66d13-0000-4000-8000-000000000002",
+    "name": "Rapor betiğini yenile",
+    "state": "done"
+  },
+  {
+    "id": "78dde6c4",
+    "cwd": "/Users/ornek",
+    "kind": "background",
+    "startedAt": 1792601800000,
+    "sessionId": "78dde6c4-0000-4000-8000-000000000003",
+    "name": "Giriş sayfası hatası",
+    "state": "blocked"
+  },
+  {
+    "id": "17156075",
+    "cwd": "/tmp/baska-yer",
+    "kind": "background",
+    "startedAt": 1792602400000,
+    "sessionId": "17156075-0000-4000-8000-000000000004",
+    "name": "Belgeleri güncelle",
+    "state": "done"
+  },
+  {
+    "id": "b54cda26",
+    "cwd": "/Users/ornek/projeler/beta/paket",
+    "kind": "background",
+    "startedAt": 1792603000000,
+    "sessionId": "b54cda26-0000-4000-8000-000000000005",
+    "name": "Önbellek temizliği",
+    "state": "blocked"
+  },
+  {
+    "id": "538453d7",
+    "cwd": "/Users/ornek/projeler/alfa",
+    "kind": "background",
+    "startedAt": 1792603600000,
+    "sessionId": "538453d7-0000-4000-8000-000000000006",
+    "name": "Sürüm notları",
+    "state": "done"
+  },
+  {
+    "id": "f1bbcd88",
+    "cwd": "/Users/ornek/projeler/beta",
+    "kind": "background",
+    "startedAt": 1792604200000,
+    "sessionId": "f1bbcd88-0000-4000-8000-000000000007",
+    "name": "API istemcisi",
+    "state": "blocked"
+  },
+  {
+    "pid": 40008,
+    "id": "8ff34739",
+    "cwd": "/Users/ornek/projeler/alfa/.claude/worktrees/kart-1",
+    "kind": "background",
+    "startedAt": 1792604800000,
+    "sessionId": "8ff34739-0000-4000-8000-000000000008",
+    "name": "Bağımlılık güncellemesi",
+    "status": "idle",
+    "state": "blocked"
+  },
+  {
+    "pid": 40009,
+    "id": "2e2ac0ea",
+    "cwd": "/Users/ornek",
+    "kind": "background",
+    "startedAt": 1792605400000,
+    "sessionId": "2e2ac0ea-0000-4000-8000-000000000009",
+    "name": "Kart sürükle bırak",
+    "status": "idle",
+    "state": "blocked"
+  },
+  {
+    "id": "cc623a9b",
+    "cwd": "/tmp/baska-yer",
+    "kind": "background",
+    "startedAt": 1792606000000,
+    "sessionId": "cc623a9b-0000-4000-8000-000000000010",
+    "name": "Gece işi",
+    "state": "blocked"
+  },
+  {
+    "id": "6a99b44c",
+    "cwd": "/Users/ornek/projeler/beta/paket",
+    "kind": "background",
+    "startedAt": 1792606600000,
+    "sessionId": "6a99b44c-0000-4000-8000-000000000011",
+    "name": "Log döndürme",
+    "state": "done"
+  },
+  {
+    "pid": 40012,
+    "id": "08d12dfd",
+    "cwd": "/Users/ornek/projeler/alfa",
+    "kind": "background",
+    "startedAt": 1792607200000,
+    "sessionId": "08d12dfd-0000-4000-8000-000000000012",
+    "name": "Tema renkleri",
+    "status": "idle",
+    "state": "done"
+  },
+  {
+    "id": "a708a7ae",
+    "cwd": "/Users/ornek/projeler/beta",
+    "kind": "background",
+    "startedAt": 1792607800000,
+    "sessionId": "a708a7ae-0000-4000-8000-000000000013",
+    "name": "Çeviri dosyaları",
+    "state": "done"
+  },
+  {
+    "pid": 40014,
+    "id": "4540215f",
+    "cwd": "/Users/ornek/projeler/alfa/.claude/worktrees/kart-1",
+    "kind": "background",
+    "startedAt": 1792608400000,
+    "sessionId": "4540215f-0000-4000-8000-000000000014",
+    "name": "Arama dizini",
+    "status": "idle",
+    "state": "done"
+  },
+  {
+    "pid": 40015,
+    "id": "e3779b10",
+    "cwd": "/Users/ornek",
+    "kind": "background",
+    "startedAt": 1792609000000,
+    "sessionId": "e3779b10-0000-4000-8000-000000000015",
+    "name": "Yedekleme",
+    "status": "idle",
+    "state": "working"
+  },
+  {
+    "pid": 40016,
+    "id": "81af14c1",
+    "cwd": "/tmp/baska-yer",
+    "kind": "background",
+    "startedAt": 1792609600000,
+    "sessionId": "81af14c1-0000-4000-8000-000000000016",
+    "name": "Performans ölçümü",
+    "status": "busy",
+    "state": "working"
+  }
+]

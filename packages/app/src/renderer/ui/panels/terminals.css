@@ -1,0 +1,195 @@
+/* İş T — Terminaller paneli (tab strip, menu, split). Theme tokens only. */
+.kp-tabs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  background: var(--term-bg);
+}
+/* One slim row: the terminal tabs, then Böl and "+ Yeni terminal". */
+.kp-tabs__bar {
+  flex: none;
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-1);
+  min-height: var(--bar-h);
+  border-bottom: var(--border-w) solid var(--border);
+  background: var(--panel);
+}
+.kp-tabs__list {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+}
+.kp-tabs__tab {
+  display: flex;
+  align-items: center;
+  max-width: var(--tabs-tab-max-width);
+  border-right: var(--border-w) solid var(--border);
+  border-bottom: var(--focus-w) solid transparent;
+}
+.kp-tabs__tab--active {
+  background: var(--panel-selected);
+  border-bottom-color: var(--accent);
+}
+.kp-tabs__tab--split {
+  border-bottom-color: var(--border-strong);
+}
+.kp-tabs__select {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  /* The tab's bottom line is part of the row. */
+  min-height: calc(var(--bar-h) - var(--focus-w));
+  padding: 0 var(--space-1) 0 var(--space-2);
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+.kp-tabs__tab--active .kp-tabs__select {
+  color: var(--text);
+}
+.kp-tabs__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.kp-tabs__dot {
+  flex: none;
+  width: var(--tabs-dot-size);
+  height: var(--tabs-dot-size);
+  border-radius: 50%;
+  background: var(--muted);
+}
+.kp-tabs__dot--running {
+  background: var(--accent);
+}
+.kp-tabs__dot--waiting {
+  background: var(--warn);
+}
+.kp-tabs__dot--idle {
+  background: var(--ok);
+}
+.kp-tabs__dot--exited {
+  background: transparent;
+  border: var(--border-w) solid var(--muted);
+}
+.kp-tabs__close {
+  min-width: var(--hit-min);
+  min-height: var(--hit-min);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: var(--fs-lg);
+  cursor: pointer;
+}
+.kp-tabs__close:hover,
+.kp-tabs__select:hover {
+  color: var(--text);
+}
+.kp-tabs__select:focus-visible,
+.kp-tabs__close:focus-visible,
+.kp-tabs__divider:focus-visible {
+  outline: var(--focus-w) solid var(--focus-ring);
+  outline-offset: calc(-1 * var(--focus-w));
+}
+.kp-tabs__actions {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-1);
+}
+.kp-tabs__actions .kp-btn {
+  white-space: nowrap;
+}
+.kp-tabs__menu {
+  position: absolute;
+  right: var(--space-2);
+  top: calc(var(--bar-h) + var(--space-1));
+  z-index: var(--tabs-menu-z);
+  padding: var(--space-3);
+  border: var(--border-w) solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--panel);
+}
+.kp-tabs__confirm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-w) solid var(--border);
+  background: var(--panel);
+  font-size: var(--fs-sm);
+}
+/* An empty panel: the launcher is its content. */
+.kp-tabs__start {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+}
+.kp-tabs__start .kp-tabs__empty {
+  padding: 0;
+}
+.kp-tabs__empty {
+  margin: 0;
+  padding: var(--space-3);
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+/* Every terminal stays mounted; panes overlap in one grid cell and only "a" (and "b" when split) are visible. */
+.kp-tabs__stage {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+.kp-tabs__pane {
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+}
+.kp-tabs__pane > .kp-term {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.kp-tabs__pane--hidden {
+  visibility: hidden;
+}
+.kp-tabs__stage--split .kp-tabs__pane--b {
+  grid-column: 3;
+}
+.kp-tabs__divider {
+  grid-row: 1;
+  grid-column: 2;
+  cursor: col-resize;
+  background: var(--border);
+  touch-action: none;
+}
+.kp-tabs__divider:hover {
+  background: var(--border-strong);
+}
+.kp-tabs__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

@@ -1,0 +1,42 @@
+{
+  "labels": {
+    "openBrowser": "Tarayıcıda aç",
+    "openExternal": "Varsayılan tarayıcıda aç",
+    "copyLink": "Bağlantıyı kopyala",
+    "showInFiles": "Dosyalar'da göster",
+    "copyPath": "Yolu kopyala"
+  },
+  "text": {
+    "engine": "{machine}'deki tarayıcıda açılır",
+    "client": "bu bilgisayardaki proje tarayıcısında açılır",
+    "external": "varsayılan tarayıcıda açılır",
+    "gestureAccel": "⌘ tıkla",
+    "gestureClick": "Tıkla ya da ⌘ tıkla",
+    "gestureExternal": "⌥⌘ tıkla: varsayılan tarayıcı",
+    "gestureMenu": "sağ tık: seçenekler",
+    "refusedScheme": "Bu tür bağlantı açılmaz ({scheme})",
+    "refusedFile": "Dosya bağlantısı açılmaz",
+    "refusedInvalid": "Bu bağlantı açılamaz",
+    "refusedCopy": "sağ tık: kopyala",
+    "deceptive": "Dikkat: görünen adres başka ({shown})",
+    "confirmTitle": "Bağlantı göründüğü adrese gitmiyor.",
+    "confirmShown": "Görünen",
+    "confirmTarget": "Gerçek hedef",
+    "confirmOpen": "Yine de aç",
+    "confirmCancel": "Vazgeç",
+    "rateLimited": "Çok sık bağlantı açıldı; biraz sonra yeniden deneyin.",
+    "failed": "Bağlantı açılamadı: {error}",
+    "noExternal": "Bu ortamda varsayılan tarayıcı açılamıyor.",
+    "noLocal": "Bu ortamda yerel tarayıcı açılamıyor.",
+    "invalidRequest": "Geçersiz bağlantı isteği.",
+    "pathFiles": "Dosyalar'da açılır",
+    "pathByType": "sayfa tarayıcıda, diğer dosyalar Dosyalar'da açılır",
+    "pathMenuOnly": "Tıklayınca açılmaz",
+    "pathCopy": "sağ tık: Yolu kopyala",
+    "pathMissing": "Dosya bulunamadı",
+    "pathRemote": "Dosya uzak sunucuda; Kokpit'te açılamaz",
+    "pathOtherProject": "Dosya şu an ekranda olmayan bir projede; önce o projeyi açın.",
+    "pathFailed": "Dosya açılamadı: {error}",
+    "pathNoEngineAddress": "Motorun adresi bilinmiyor; önizleme açılamadı."
+  }
+}

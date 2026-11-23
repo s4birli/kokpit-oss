@@ -1,0 +1,71 @@
+{
+  "rail": {
+    "collapse": "Collapse the sidebar",
+    "expand": "Expand the sidebar",
+    "viewWork": "Work",
+    "viewTodoOnly": "To-dos",
+    "settings": "Settings",
+    "view": "View",
+    "projects": "Projects",
+    "newCardFor": "New card: {project}",
+    "newCard": "+ New card",
+    "createFailed": "Could not create the card: {error}",
+    "cardName": "Card name",
+    "create": "Create"
+  },
+  "common": {
+    "cancel": "Cancel"
+  },
+  "projectTabs": {
+    "label": "Project tabs",
+    "close": "Close tab: {title}",
+    "moveHint": "Drag, or use Alt+Shift+arrow keys, to move; middle-click to close.",
+    "account": "Claude account"
+  },
+  "cardBar": {
+    "label": "Selected card",
+    "remove": "Delete card",
+    "confirm": "Confirm delete"
+  },
+  "placeholder": {
+    "body": "Coming in a later step."
+  },
+  "banner": {
+    "insecure": "This address is not a secure route (only this Mac, Tailscale when on, or wss://). The key handshake was not started.",
+    "connecting": "Connecting{target}…",
+    "reconnecting": "Cannot reach the engine{target}. Retrying…",
+    "unauthorized": "The engine rejected the key. Update the key in the connection settings.",
+    "settings": "Connection settings"
+  },
+  "location": {},
+  "tools": {
+    "shellOnly": "Shell only"
+  },
+  "place": {
+    "other": "Other"
+  },
+  "noSelection": {
+    "title": "No project selected",
+    "hint": "Select a project or card on the left."
+  },
+  "layout": {
+    "emptyDock": "All panels are closed. Open one from the View menu.",
+    "unavailable": "This panel is not available for the selected project.",
+    "panelError": "The panel stopped with an error.",
+    "closeTab": "Close the {title} panel",
+    "closeTabPlain": "Close panel"
+  },
+  "panels": {
+    "agents": "Agents",
+    "map": "Map",
+    "noTerminals": "No open terminals.",
+    "noProjectTerminals": "No terminals in this project."
+  },
+  "load": {
+    "cards": "Could not load cards: {error}",
+    "projects": "Could not load projects: {error}",
+    "terminals": "Could not load terminals: {error}",
+    "agents": "Could not load agents: {error}",
+    "bgAgents": "Could not load background agents: {error}"
+  }
+}

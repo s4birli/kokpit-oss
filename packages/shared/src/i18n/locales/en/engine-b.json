@@ -1,0 +1,126 @@
+{
+  "map": {
+    "sshNoMap": "SSH projects have no map",
+    "noMap": "This project has no map",
+    "tooLarge": "The map file is too large to show"
+  },
+  "projects": {
+    "badRequest": "Invalid request: {detail}",
+    "badRequestAt": "Invalid request: {field}: {detail}",
+    "invalid": "invalid",
+    "cloneFailed": "Could not clone: {reason}",
+    "toolNotFound": "Tool not found: {id}",
+    "accountNotFound": "Claude account not found: {id}",
+    "notFound": "Project not found: {id}",
+    "folderNotFound": "Folder not found: {path}",
+    "notAFolder": "Not a folder: {path}",
+    "sshHostNotFound": "SSH server not found: {id}",
+    "githubLocationFixed": "A GitHub project's location cannot be changed; add a new project for another repository.",
+    "cannotBecomeGithub": "The location cannot be changed to GitHub; add a new project for a GitHub repository.",
+    "builtinLocationFixed": "The built-in project's location cannot be changed: {name}",
+    "hasCards_one": "The project has {count} card. Delete the cards first.",
+    "hasCards_other": "The project has {count} cards. Delete the cards first.",
+    "builtinUndeletable": "The built-in project cannot be deleted: {name}"
+  },
+  "server": {
+    "tooLarge": "The response is too large to fit in one frame",
+    "unknownMethod": "The engine does not know this request: {method} (the app may be newer than the engine)",
+    "scopedOnly": "This connection may only use screen requests for its own project",
+    "noEngineBrowser": "This project has no Kokpit browser running on the Mac mini",
+    "openNotRedirected": "In this project, open is not redirected to the Kokpit browser",
+    "filesNotInBrowser": "Files cannot be opened in the browser on this engine",
+    "noInstallCommand": "No install command is defined for {tool}"
+  },
+  "settings": {
+    "toolNotFound": "tool not found"
+  },
+  "ssh": {
+    "fromConfig": "defined in ~/.ssh/config; edit it there",
+    "notFound": "server not found",
+    "inUse": "a project uses this server; delete or change that project first",
+    "noKey": "key not found in ~/.ssh",
+    "invalidHost": "invalid server",
+    "invalid": "{detail}",
+    "invalidField": "{field}: {detail}"
+  },
+  "terminalOpen": {
+    "forbidden": "This request can only be made from a Kokpit terminal",
+    "unauthorized": "The terminal's Kokpit permission is invalid (the terminal closed or the engine restarted)",
+    "stale": "The request is old or repeated (clock skew?); not opened",
+    "malformed": "Invalid request",
+    "rate": "Too many open requests; try again in a moment",
+    "notWeb": "Only http(s) addresses and .html/.htm files open in the Kokpit browser",
+    "failed": "Could not open in the Kokpit browser"
+  },
+  "todos": {
+    "emptyText": "the text cannot be empty",
+    "textTooLong": "the text must be at most {max} characters",
+    "projectNotFound": "project not found",
+    "notFound": "to-do not found",
+    "pastDay": "a to-do cannot be added to a past day",
+    "dayFull": "a day can have at most {max} to-dos"
+  },
+  "tools": {
+    "notFound": "tool not found",
+    "globalDefault": "this tool is the global default; first choose another default in Settings › Tools",
+    "projectDefault_one": "this tool is the default tool of {count} project; remove it from that project first",
+    "projectDefault_other": "this tool is the default tool of {count} projects; remove it from those projects first"
+  },
+  "handlers": {
+    "appUpdate": {
+      "notPublishing": "This engine does not publish an app build"
+    },
+    "bgagents": {
+      "disabled": "Background agents are not enabled on this engine"
+    },
+    "browser": {
+      "none": "This engine has no browser",
+      "clientSide": "This project's browser opens on the computer running the app, not on the Mac mini.",
+      "httpOnly": "Only http(s) addresses can be opened.",
+      "filesNotInBrowser": "Files cannot be opened in the browser on this engine"
+    },
+    "claudeAccounts": {
+      "disabled": "Claude accounts are not enabled on this engine"
+    },
+    "claudeUsage": {
+      "disabled": "Claude usage is not enabled on this engine"
+    },
+    "claude": {
+      "inventoryOff": "The Claude inventory is off on this engine",
+      "noteSsh": "SSH project: the project folder is on the remote server; only the account level is shown.",
+      "noteClone": "The project has not been cloned yet; only the account level is shown."
+    },
+    "files": {
+      "off": "Files is off on this engine",
+      "noPaths": "File paths cannot be opened on this engine",
+      "ssh": "SSH projects have no Files: the folder is on the remote server",
+      "notCloned": "The project has not been cloned yet",
+      "noFolder": "This project has no folder on this machine",
+      "noMedia": "Files cannot be opened in Kokpit on this engine"
+    },
+    "flow": {
+      "ssh": "SSH projects have no Flow: the project folder is on the remote server",
+      "off": "Flow is off on this engine",
+      "notCloned": "The project has not been cloned yet",
+      "noFolder": "This project has no folder on this machine"
+    },
+    "logins": {
+      "appOnly": "This request can only be made from the app",
+      "none": "This engine has no saved-login support",
+      "clientBrowser": "This project's browser opens on the computer running the app; saved logins are only used in the browser the engine opens."
+    },
+    "map": {
+      "off": "Map is off on this engine"
+    },
+    "paths": {
+      "remote": "File paths cannot be opened in SSH projects: the file is on the remote server",
+      "noFolder": "This project has no folder on this machine",
+      "unsupported": "This file type cannot be previewed in the browser",
+      "clientBrowser": "This project's browser opens on the computer running the app, not on the Mac mini.",
+      "notListening": "The engine's address is not ready yet"
+    },
+    "todos": {
+      "unavailable": "to-dos are unavailable"
+    }
+  }
+}

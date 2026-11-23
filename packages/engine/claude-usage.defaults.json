@@ -1,0 +1,38 @@
+{
+  "projectsDirName": "projects",
+  "transcriptExt": ".jsonl",
+  "maxDepth": 8,
+  "maxFiles": 100000,
+  "maxLineBytes": 8388608,
+  "readChunkBytes": 1048576,
+  "maxPassBytes": 4294967296,
+  "tickBudgetMs": 8,
+  "refreshIntervalMs": 60000,
+  "sessionWindowHours": 5,
+  "longWindowDays": 7,
+  "maxMessages": 300000,
+  "topProjects": 5,
+  "cacheDirName": "claude-usage",
+  "cacheChunkEvents": 2000,
+  "maxCacheBytes": 268435456,
+  "modelPrefix": "claude-",
+  "ignoreModels": ["<synthetic>"],
+  "worktreeMarkers": ["/.claude/worktrees/"],
+  "plan": {
+    "snapshotFileName": "kokpit-kullanim.json",
+    "maxSnapshotBytes": 65536
+  },
+  "probe": {
+    "enabled": true,
+    "dirName": "probe",
+    "args": ["-p", "ok", "--model", "haiku", "--output-format", "stream-json", "--verbose", "--no-session-persistence", "--safe-mode", "--strict-mcp-config", "--tools", ""],
+    "timeoutMs": 60000,
+    "maxOutputBytes": 4194304,
+    "minIntervalMs": 60000,
+    "utilizationScale": 100
+  },
+  "prices": {
+    "asOf": null,
+    "perMillionUsd": {}
+  }
+}

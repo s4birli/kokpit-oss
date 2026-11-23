@@ -1,0 +1,37 @@
+{
+  "panel": {
+    "label": "Terminal: {title}",
+    "exitedWithCode": "kapandı (çıkış {code})",
+    "attachFailed": "Terminale bağlanılamadı: {error}",
+    "closeFailed": "Terminal kapatılamadı: {error}",
+    "confirmClose": "Kapatmayı onayla",
+    "cancel": "Vazgeç",
+    "close": "Terminali kapat",
+    "historyLost": "Geçmiş yüklenemedi; yeni çıktılar görünmeye devam eder.",
+    "retry": "Yeniden dene"
+  },
+  "launcher": {
+    "openFailed": "Terminal açılamadı: {error}",
+    "tool": "Araç",
+    "startCommand": "Başlangıç komutu",
+    "optional": "isteğe bağlı",
+    "newTerminal": "Yeni terminal"
+  },
+  "tabs": {
+    "panelTitle": "Terminal",
+    "label": "Terminaller",
+    "noSelection": "Soldan bir proje ya da kart seç.",
+    "tablist": "Terminal sekmeleri",
+    "closeTab": "{title} sekmesini kapat",
+    "partner": "Yanındaki terminal",
+    "split": "Böl",
+    "newMenu": "+ Yeni terminal ▾",
+    "confirmClose": "“{title}” kapatılsın mı? Çalışan işlem sonlanır.",
+    "emptyCard": "Bu kartta terminal yok.",
+    "emptyProject": "Bu projede terminal yok.",
+    "resizeSplit": "Bölmeyi boyutlandır"
+  },
+  "clipboard": {
+    "selectionHint": "Seçmek için ⌥ Option (ya da ⇧ Shift) basılı sürükle · ⌘C kopyalar"
+  }
+}

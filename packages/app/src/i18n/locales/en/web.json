@@ -1,0 +1,17 @@
+{
+  "title": "Web",
+  "status": {
+    "connecting": "Loading…",
+    "ready": "Open",
+    "failed": "Couldn't open",
+    "closed": "Closed",
+    "tailnet": "No Tailscale"
+  },
+  "note": "The site opens on this computer in its own partition; its sign-in is kept there. Kokpit and agents can't access the page.",
+  "onlyInApp": "Web tabs open only in the Kokpit app.",
+  "siteTabs": "Site tabs",
+  "closeTab": "Close the {title} tab",
+  "reload": "Reload",
+  "tailnetHelp": "Turn on Tailscale and press Reload. The site wasn't loaded in the meantime; no request was sent.",
+  "noSite": "No site is open. Open one from the Go menu or from here."
+}

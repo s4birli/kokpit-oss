@@ -1,0 +1,11 @@
+{
+  "dataDir": "~/Library/Application Support/Kokpit",
+  "port": 7420,
+  "shell": "/bin/zsh",
+  "projects": [
+    {
+      "name": "Example",
+      "repoPath": "~/code/example"
+    }
+  ]
+}

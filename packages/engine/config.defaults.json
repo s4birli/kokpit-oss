@@ -1,0 +1,171 @@
+{
+  "language": "en",
+  "port": 7420,
+  "bufferBytes": 1048576,
+  "shellArgs": [
+    "-l"
+  ],
+  "branchPrefix": "kokpit/",
+  "baseBranch": null,
+  "authTimeoutMs": 5000,
+  "authNonceMemory": 4096,
+  "tailscaleRescanMs": 30000,
+  "wsPingIntervalMs": 30000,
+  "listenLocalhost": true,
+  "listenTailscale": true,
+  "tailscaleCidrs": [
+    "100.64.0.0/10",
+    "fd7a:115c:a1e0::/48"
+  ],
+  "projects": [],
+  "flushIntervalMs": 1000,
+  "killGraceMs": 2000,
+  "slugMaxLen": 50,
+  "slugFallback": "kart",
+  "gitCloneTimeoutMs": 300000,
+  "builtinProjectId": "mac-mini",
+  "builtinProjectName": "Mac mini",
+  "sshBinary": "ssh",
+  "activityWindowMs": 3000,
+  "activityDebounceMs": 250,
+  "activityScanLines": 15,
+  "activitySummaryMaxLen": 160,
+  "activityTailChars": 16384,
+  "claudeBinary": "claude",
+  "bgAgentsPollMs": 5000,
+  "bgAgentsIdlePollMaxMs": 20000,
+  "bgAgentsTimeoutMs": 15000,
+  "bgAgentsMaxOutputBytes": 2097152,
+  "bgAgentsLogsMaxChars": 65536,
+  "claudeAccounts": {
+    "defaultId": "benim",
+    "defaultName": "Benim",
+    "defaultDirName": ".claude",
+    "idFallback": "hesap",
+    "idMaxLen": 50,
+    "shareNames": [
+      "skills",
+      "agents",
+      "commands"
+    ],
+    "loginArgs": [
+      "/login"
+    ]
+  },
+  "browser": {
+    "chromePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "headless": false,
+    "hiddenIdentity": true,
+    "identityProbeUrl": "chrome://version/",
+    "psPath": "/bin/ps",
+    "lsofPath": "/usr/sbin/lsof",
+    "testMode": false,
+    "profilesDirName": "browser-profiles",
+    "workspaceDirName": "browser-workspace",
+    "projectId": "web-tasks",
+    "projectName": "Browser tasks",
+    "windowWidth": 1280,
+    "windowHeight": 800,
+    "cdpPortBase": 39200,
+    "cdpPortSpan": 800,
+    "startTimeoutMs": 20000,
+    "pollIntervalMs": 100,
+    "stopGraceMs": 3000,
+    "cdpTimeoutMs": 15000,
+    "frameWindow": 2,
+    "screencastEveryNthFrame": 1,
+    "maxFrameChars": 950000,
+    "maxTabs": 50,
+    "changeCoalesceMs": 100,
+    "defaultZoom": 0.67,
+    "zoomPaintWaitMs": 500,
+    "tabStepTimeoutMs": 1000,
+    "viewportHealIntervalMs": 500,
+    "viewportHealMaxTries": 3,
+    "playwrightMcpCdpEndpointEnv": [
+      "PLAYWRIGHT_MCP_CDP_ENDPOINT"
+    ],
+    "playwrightMcpOutputDirEnv": [
+      "PLAYWRIGHT_MCP_OUTPUT_DIR"
+    ],
+    "playwrightMcpOutputDirName": "kokpit-playwright-mcp",
+    "claudeSettingsPath": [
+      ".claude",
+      "settings.local.json"
+    ],
+    "playwrightMcpOutputRetentionDays": 7,
+    "playwrightMcpOutputSweepIntervalMs": 86400000,
+    "playwrightMcpOutputSweepMaxEntries": 20000,
+    "startForCommands": [
+      "claude"
+    ],
+    "clipboardMaxChars": 100000
+  },
+  "logins": {
+    "securityPath": "/usr/bin/security",
+    "servicePrefix": "dev.kokpit.login.",
+    "accountFormat": "{loginId}",
+    "secretPrefix": "kokpit1.",
+    "env": {},
+    "envPassthrough": [
+      "HOME",
+      "USER",
+      "LOGNAME",
+      "TMPDIR",
+      "__CF_USER_TEXT_ENCODING"
+    ],
+    "keychainAccess": "confirm",
+    "timeoutMs": 45000,
+    "confirmTimeoutMs": 120000,
+    "denyCooldownMs": 30000,
+    "maxSecretBytes": 1024,
+    "maxCommandChars": 4000,
+    "maxOutputBytes": 16384,
+    "maxPerProject": 200,
+    "fillRateMax": 10,
+    "fillRateWindowMs": 60000,
+    "fillWorldName": "kokpit-giris",
+    "fillFrameDepth": 8,
+    "errors": {
+      "interaction": {
+        "exitCodes": [
+          36
+        ],
+        "patterns": [
+          "User interaction is not allowed"
+        ]
+      },
+      "denied": {
+        "exitCodes": [
+          51,
+          128
+        ],
+        "patterns": [
+          "passphrase you entered is not correct",
+          "User canceled",
+          "authorization was denied",
+          "not permitted"
+        ]
+      },
+      "unavailable": {
+        "exitCodes": [
+          50,
+          53
+        ],
+        "patterns": [
+          "keychain could not be found",
+          "A default keychain could not be found",
+          "No keychain is available"
+        ]
+      },
+      "notFound": {
+        "exitCodes": [
+          44
+        ],
+        "patterns": [
+          "item could not be found"
+        ]
+      }
+    }
+  }
+}

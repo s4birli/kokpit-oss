@@ -1,0 +1,19 @@
+{
+  "plainClickOpens": true,
+  "pathPlainClickOpens": true,
+  "clickMaxMovePx": 4,
+  "tooltipDelayMs": 350,
+  "tooltipMaxChars": 200,
+  "tooltipOffsetPx": 18,
+  "confirmMs": 20000,
+  "noticeMs": 6000,
+  "maxWrappedRows": 64,
+  "menuTargetMaxChars": 80,
+  "menuCloseGraceMs": 200,
+  "rate": {
+    "max": 10,
+    "windowMs": 10000,
+    "minIntervalMs": 300
+  },
+  "pathCacheMs": 3000
+}

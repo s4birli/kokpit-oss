@@ -1,0 +1,180 @@
+{
+  "tabs": {
+    "projects": "Projects",
+    "servers": "Servers",
+    "tools": "Tools",
+    "claude": "Claude accounts",
+    "sites": "Sites",
+    "connection": "Connection",
+    "language": "Language"
+  },
+  "language": {
+    "label": "Language",
+    "hint": "Applies right away and is kept on this Mac.",
+    "saveFailed": "The language could not be saved."
+  },
+  "header": {
+    "back": "Back",
+    "title": "Settings"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleteAria": "Delete: {name}",
+    "confirmDelete": "Confirm delete",
+    "edit": "Edit",
+    "editAria": "Edit: {name}",
+    "editTitle": "Edit: {name}",
+    "name": "Name",
+    "optional": "optional",
+    "yes": "Yes",
+    "no": "No",
+    "defaultTool": "Default tool"
+  },
+  "validation": {
+    "nameRequired": "Name is required.",
+    "maxChars": "At most {max} characters.",
+    "mustStartWithSlash": "{what} must start with /.",
+    "tooLong": "{what} is too long.",
+    "gitUrl": "Must be an https:// or git@ address.",
+    "httpsUrl": "Must be an address starting with https://.",
+    "windowsAppUrl": "Must be a link starting with {schemes}.",
+    "required": "{what} is required.",
+    "noLeadingDash": "Cannot start with '-'.",
+    "noSpaces": "Cannot contain spaces.",
+    "badChar": "Invalid character.",
+    "port": "Port must be a number between 1 and 65535.",
+    "invalidValue": "Invalid value: {detail}",
+    "patternTooLong": "Line {line}: at most {max} characters.",
+    "patternInvalid": "Line {line}: invalid regular expression.",
+    "tooManyPatterns": "At most {max} patterns."
+  },
+  "projects": {
+    "add": "Add project",
+    "loadFailed": "Could not load projects: {error}",
+    "defaultToolLine": "Default tool: {name}",
+    "accountLine": "Claude account: {name}",
+    "browserLine": "Browser: {where}",
+    "globalDefault": "Global default ({name})",
+    "defaultAccountName": "Default",
+    "defaultAccountOption": "{name} (default)",
+    "account": {
+      "label": "Claude account",
+      "sshHint": "Ignored for SSH projects: accounts live on {machine}.",
+      "hint": "This project's terminals open with this account's subscription."
+    },
+    "kinds": {
+      "legend": "Location type",
+      "local": "{machine} folder",
+      "github": "GitHub",
+      "ssh": "SSH server"
+    },
+    "folderPath": "Folder path",
+    "githubUrl": "GitHub address",
+    "githubPlaceholder": "https://… or git@…",
+    "githubHint": "Cloned onto {machine}.",
+    "server": "Server",
+    "chooseServer": "Choose a server.",
+    "choose": "Choose…",
+    "remoteFolder": "Remote folder",
+    "remoteFolderHint": "Home folder if empty.",
+    "newTitle": "New project",
+    "cloning": "Cloning…",
+    "fixedBuiltin": "The built-in project's location cannot be changed",
+    "fixedGithub": "The GitHub address cannot be changed",
+    "fixedLine": "{reason}: {location}",
+    "locationNote": "A project with cards keeps its location. Open terminals stay where they are; new ones open in the new location.",
+    "agentsBrowser": {
+      "label": "Background agents use this browser too",
+      "hint": "Kokpit writes the browser's address into the project's Claude settings file, so agents running in the background (claude agents) also connect to this Chrome. The rest of the file is left untouched. Choosing No removes its own lines. The change applies to newly started agents."
+    },
+    "openInBrowser": {
+      "label": "Terminal open command uses this browser",
+      "hint": "In this project's terminals, \"open <http(s) address>\" and \"open <page.html>\" show the page in the project's Kokpit browser instead of the desktop browser on {machine}. Every other open command works as usual. The change applies to newly opened terminals."
+    },
+    "browserWindow": {
+      "hidden": "No (hidden)",
+      "hint": "While hidden, the browser opens no window on the {machine} screen; it shows only in Kokpit's Browser panel. {why}. Changing this restarts the open browser; tabs come back."
+    },
+    "runOn": {
+      "label": "Where the browser opens",
+      "client": "This computer",
+      "profileNote": "The agent can access this profile's password manager and signed-in sessions."
+    }
+  },
+  "tools": {
+    "status": {
+      "checking": "checking…",
+      "installed": "installed",
+      "notInstalled": "not installed",
+      "unknown": "no check"
+    },
+    "add": "Add tool",
+    "recheck": "Check again",
+    "loadFailed": "Could not load tools: {error}",
+    "checkFailed": "Could not check: {error}",
+    "install": "Install",
+    "installAria": "Install: {name}",
+    "defaultToolHint": "New terminals open with this when the project has no tool chosen.",
+    "settingsLoadFailed": "Could not load settings: {error}",
+    "command": "Command",
+    "commandHint": "Typed into the shell when the terminal opens.",
+    "installCommand": "Install command",
+    "checkCommand": "Check command",
+    "checkCommandHint": "A command that exits with 0 if the tool is installed.",
+    "patterns": "Waiting patterns",
+    "patternsHint": "One regular expression per line. If one appears in the terminal's last lines, the agent counts as “waiting for you”. If empty, the general patterns are used.",
+    "newTitle": "New tool"
+  },
+  "servers": {
+    "add": "Add server",
+    "loadFailed": "Could not load servers: {error}",
+    "keyLine": "Key: {file}",
+    "sshConfigTitle": "Read-only; from ~/.ssh/config",
+    "noKey": "None",
+    "address": "Address",
+    "addressPlaceholder": "server.example or IP",
+    "user": "User",
+    "port": "Port",
+    "key": "Key",
+    "keyHint": "Private key files in ~/.ssh; only their names are shown.",
+    "newTitle": "New server"
+  },
+  "sites": {
+    "onlyInApp": "Sites can only be edited in the Kokpit app.",
+    "intro": "The sites in the Go menu, in this order. Each site opens in its own tab in the Web panel; its login is kept on this computer. The address must be https://; http:// is accepted only for Tailscale or local IP addresses (e.g. http://100.x.y.z:9119) and is marked \"http · Tailscale\": it is unencrypted and loads only while Tailscale is on and the address is in your tailnet.",
+    "address": "Address",
+    "upAria": "Move up: {title}",
+    "addLegend": "Add site",
+    "add": "Add",
+    "saved": "Saved."
+  },
+  "claude": {
+    "add": "Add account",
+    "credentialsNote": "Sign-in details stay in this folder or in the macOS Keychain; Kokpit does not read them. To sign in, use “Sign in”.",
+    "shareNote": "The skills, agents and commands folders in {dir} are symlinked to the default account's; existing ones are left untouched.",
+    "loadFailed": "Could not load accounts: {error}",
+    "usageLoadFailed": "Could not load usage: {error}",
+    "linked": "Linked: {list}",
+    "noneLinked": "Nothing linked",
+    "skipped": "Skipped: {list}",
+    "projectCount_one": "{count} project",
+    "projectCount_other": "{count} projects",
+    "loginFailed": "Could not open the sign-in terminal: {error}",
+    "shareFailed": "Could not share: {error}",
+    "defaultBadge": "Default",
+    "defaultBadgeTitle": "This account's terminals get no CLAUDE_CONFIG_DIR",
+    "login": "Sign in",
+    "loginAria": "Sign in: {name}",
+    "confirmShare": "Confirm sharing",
+    "share": "Share skills",
+    "shareAria": "Share skills: {name}",
+    "newTitle": "New Claude account",
+    "namePlaceholder": "e.g. Work",
+    "configDir": "Config folder",
+    "configDirPlaceholder": "~/.claude-work",
+    "configDirHint": "Must be inside your home folder; created if missing. Nothing is deleted.",
+    "fixedDir": "The default account's folder cannot change: {dir}"
+  }
+}

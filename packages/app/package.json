@@ -1,0 +1,39 @@
+{
+  "name": "@kokpit/app",
+  "version": "0.1.0",
+  "description": "Kokpit masaüstü uygulaması",
+  "private": true,
+  "type": "module",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "dist": "node scripts/dist.ts",
+    "typecheck": "tsc -p .",
+    "test:e2e": "electron-vite build && vitest run -c vitest.e2e.config.ts",
+    "test:dist": "pnpm run dist && vitest run -c vitest.dist.config.ts",
+    "test:update": "vitest run -c vitest.update.config.ts"
+  },
+  "devDependencies": {
+    "@kokpit/shared": "workspace:*",
+    "@testing-library/react": "16.3.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@vitejs/plugin-react": "6.0.1",
+    "@xterm/addon-fit": "0.11.0",
+    "@xterm/xterm": "6.0.0",
+    "dockview": "8.8.3",
+    "dockview-core": "8.8.3",
+    "dockview-react": "8.8.3",
+    "electron": "39.2.3",
+    "electron-builder": "26.18.1",
+    "electron-vite": "6.0.0",
+    "jsdom": "27.0.1",
+    "mermaid": "12.2.0",
+    "playwright": "1.64.1",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "vite": "8.0.0",
+    "zod": "4.1.12"
+  }
+}

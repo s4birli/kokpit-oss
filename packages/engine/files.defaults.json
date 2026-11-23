@@ -1,0 +1,370 @@
+{
+  "hiddenNames": [
+    ".git"
+  ],
+  "maxEntries": 500,
+  "maxReadBytes": 131072,
+  "media": {
+    "tokenTtlMs": 900000,
+    "tokenBytes": 32,
+    "maxTokens": 64,
+    "maxTokensPerConnection": 8,
+    "maxBytes": 17179869184,
+    "maxStreams": 8,
+    "retryAfterS": 1,
+    "sniffBytes": 1024,
+    "chunkBytes": 262144,
+    "contentSecurityPolicy": "sandbox; default-src 'none'; style-src 'unsafe-inline'; form-action 'none'; base-uri 'none'",
+    "types": {
+      "mp4": {
+        "kind": "video",
+        "mime": "video/mp4",
+        "signatures": [
+          [
+            {
+              "at": 4,
+              "text": "ftyp"
+            }
+          ]
+        ]
+      },
+      "m4v": {
+        "kind": "video",
+        "mime": "video/mp4",
+        "signatures": [
+          [
+            {
+              "at": 4,
+              "text": "ftyp"
+            }
+          ]
+        ]
+      },
+      "mov": {
+        "kind": "video",
+        "mime": "video/quicktime",
+        "signatures": [
+          [
+            {
+              "at": 4,
+              "text": "ftyp"
+            }
+          ],
+          [
+            {
+              "at": 4,
+              "text": "moov"
+            }
+          ],
+          [
+            {
+              "at": 4,
+              "text": "mdat"
+            }
+          ],
+          [
+            {
+              "at": 4,
+              "text": "wide"
+            }
+          ],
+          [
+            {
+              "at": 4,
+              "text": "free"
+            }
+          ],
+          [
+            {
+              "at": 4,
+              "text": "skip"
+            }
+          ]
+        ]
+      },
+      "webm": {
+        "kind": "video",
+        "mime": "video/webm",
+        "signatures": [
+          [
+            {
+              "at": 0,
+              "hex": "1a45dfa3"
+            }
+          ]
+        ]
+      },
+      "mp3": {
+        "kind": "audio",
+        "mime": "audio/mpeg",
+        "signatures": [
+          [
+            {
+              "at": 0,
+              "text": "ID3"
+            }
+          ],
+          [
+            {
+              "at": 0,
+              "hex": "fffb"
+            }
+          ],
+          [
+            {
+              "at": 0,
+              "hex": "fffa"
+            }
+          ],
+          [
+            {
+              "at": 0,
+              "hex": "fff3"
+            }
+          ],
+          [
+            {
+              "at": 0,
+              "hex": "fff2"
+            }
+          ],
+          [
+            {
+              "at": 0,
+              "hex": "ffe3"
+            }
+          ],
+          [
+            {
+              "at": 0,
+              "hex": "ffe2"
+            }
+          ]
+        ]
+      },
+      "m4a": {
+        "kind": "audio",
+        "mime": "audio/mp4",
+        "signatures": [
+          [
+            {
+              "at": 4,
+              "text": "ftyp"
+            }
+          ]
+        ]
+      },
+      "wav": {
+        "kind": "audio",
+        "mime": "audio/wav",
+        "signatures": [
+          [
+            {
+              "at": 0,
+              "text": "RIFF"
+            },
+            {
+              "at": 8,
+              "text": "WAVE"
+            }
+          ]
+        ]
+      },
+      "ogg": {
+        "kind": "audio",
+        "mime": "audio/ogg",
+        "signatures": [
+          [
+            {
+              "at": 0,
+              "text": "OggS"
+            }
+          ]
+        ]
+      },
+      "png": {
+        "kind": "image",
+        "mime": "image/png",
+        "signatures": [
+          [
+            {
+              "at": 0,
+              "hex": "89504e470d0a1a0a"
+            }
+          ]
+        ]
+      },
+      "jpg": {
+        "kind": "image",
+        "mime": "image/jpeg",
+        "signatures": [
+          [
+            {
+              "at": 0,
+              "hex": "ffd8ff"
+            }
+          ]
+        ]
+      },
+      "jpeg": {
+        "kind": "image",
+        "mime": "image/jpeg",
+        "signatures": [
+          [
+            {
+              "at": 0,
+              "hex": "ffd8ff"
+            }
+          ]
+        ]
+      },
+      "gif": {
+        "kind": "image",
+        "mime": "image/gif",
+        "signatures": [
+          [
+            {
+              "at": 0,
+              "text": "GIF87a"
+            }
+          ],
+          [
+            {
+              "at": 0,
+              "text": "GIF89a"
+            }
+          ]
+        ]
+      },
+      "webp": {
+        "kind": "image",
+        "mime": "image/webp",
+        "signatures": [
+          [
+            {
+              "at": 0,
+              "text": "RIFF"
+            },
+            {
+              "at": 8,
+              "text": "WEBP"
+            }
+          ]
+        ]
+      },
+      "svg": {
+        "kind": "image",
+        "mime": "image/svg+xml",
+        "signatures": [
+          [
+            {
+              "text": "<svg"
+            }
+          ]
+        ]
+      },
+      "pdf": {
+        "kind": "pdf",
+        "mime": "application/pdf",
+        "signatures": [
+          [
+            {
+              "at": 0,
+              "text": "%PDF-"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "preview": {
+    "tokenTtlMs": 1800000,
+    "tokenBytes": 32,
+    "maxTokens": 64,
+    "maxTokensPerProject": 16,
+    "maxBytes": 2147483648,
+    "maxStreams": 16,
+    "retryAfterS": 1,
+    "chunkBytes": 262144,
+    "maxUrlPathChars": 4096,
+    "rate": {
+      "max": 20,
+      "windowMs": 10000
+    },
+    "extraRoots": [],
+    "deniedHomeDirs": [
+      "Library",
+      "Applications"
+    ],
+    "singleFileHomeDirs": [
+      "Desktop",
+      "Documents",
+      "Downloads",
+      "Movies",
+      "Music",
+      "Pictures",
+      "Public"
+    ],
+    "indexNames": [
+      "index.html",
+      "index.htm"
+    ],
+    "contentSecurityPolicy": "default-src {self} https: data: blob:; script-src {self} 'unsafe-inline' 'unsafe-eval' https: blob:; style-src {self} 'unsafe-inline' https:; img-src {self} https: data: blob:; font-src {self} https: data:; media-src {self} https: data: blob:; connect-src {self}; frame-src {self}; worker-src {self} blob:; object-src 'none'; form-action 'none'; base-uri {self}; frame-ancestors 'self'",
+    "types": {
+      "html": "text/html; charset=utf-8",
+      "htm": "text/html; charset=utf-8",
+      "css": "text/css; charset=utf-8",
+      "js": "text/javascript; charset=utf-8",
+      "mjs": "text/javascript; charset=utf-8",
+      "json": "application/json; charset=utf-8",
+      "map": "application/json; charset=utf-8",
+      "svg": "image/svg+xml",
+      "png": "image/png",
+      "jpg": "image/jpeg",
+      "jpeg": "image/jpeg",
+      "gif": "image/gif",
+      "webp": "image/webp",
+      "avif": "image/avif",
+      "ico": "image/x-icon",
+      "woff": "font/woff",
+      "woff2": "font/woff2",
+      "ttf": "font/ttf",
+      "otf": "font/otf",
+      "mp4": "video/mp4",
+      "webm": "video/webm",
+      "mp3": "audio/mpeg",
+      "wav": "audio/wav",
+      "pdf": "application/pdf",
+      "txt": "text/plain; charset=utf-8",
+      "md": "text/plain; charset=utf-8"
+    }
+  },
+  "paths": {
+    "lsofPath": "/usr/sbin/lsof",
+    "cwdTimeoutMs": 1500,
+    "cwdCacheMs": 2000,
+    "maxTailWords": 12
+  },
+  "open": {
+    "enabled": true,
+    "realOpenPath": "/usr/bin/open",
+    "fallbackToSystemOpen": false,
+    "curlPath": "/usr/bin/curl",
+    "xxdPath": "/usr/bin/xxd",
+    "shasumPath": "/usr/bin/shasum",
+    "odPath": "/usr/bin/od",
+    "datePath": "/bin/date",
+    "clockSkewS": 30,
+    "grantBytes": 32,
+    "grantMaxAgeMs": 2592000000,
+    "requestTimeoutS": 10,
+    "maxBodyBytes": 16384,
+    "rate": {
+      "max": 20,
+      "windowMs": 10000
+    },
+    "shimDir": "wrappers/bin",
+    "zshDir": "wrappers/zsh",
+    "shEnvFile": "wrappers/sh-env.sh"
+  }
+}

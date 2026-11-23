@@ -1,0 +1,47 @@
+{
+  "title": "Dosyalar",
+  "panel": {
+    "sshNote": "SSH projelerinde Dosyalar yok: klasör uzak sunucuda. Terminalden gezebilirsin.",
+    "linkNote": "Kırık ya da proje dışına işaret eden bağlantı",
+    "loading": "Yükleniyor…",
+    "emptyFolder": "Boş klasör",
+    "truncated": "Klasörde daha çok öğe var; ilk {count} öğe gösteriliyor.",
+    "noProject": "Proje seçilmedi.",
+    "tree": "Dosya ağacı",
+    "divider": "Ağaç ile önizlemenin arasını boyutlandır",
+    "preview": "Önizleme",
+    "shrink": "Küçült",
+    "shrinkTitle": "Küçült (Esc)",
+    "enlarge": "Büyüt",
+    "enlargeTitle": "Büyüt: dosyayı pencere boyunda göster",
+    "closePreview": "Önizlemeyi kapat",
+    "reload": "Yenile"
+  },
+  "preview": {
+    "pick": "Önizlemek için bir dosya seç.",
+    "loading": "Yükleniyor…",
+    "binary": "İkili dosya ({size}); önizleme yok.",
+    "truncated": "Büyük dosya: ilk {shown} gösteriliyor (toplam {size})."
+  },
+  "media": {
+    "loading": "Yükleniyor…",
+    "badUrl": "Dosya adresi geçersiz.",
+    "imageFailed": "Resim gösterilemedi: dosya bozuk ya da yerleşik görüntüleyicinin tanımadığı bir biçimde.",
+    "videoLabel": "Video: {path}",
+    "audioLabel": "Ses: {path}",
+    "fit": "Sığdır",
+    "actualSize": "Gerçek boyut (%100)",
+    "fitImage": "Resmi panele sığdır",
+    "showActualSize": "Resmi gerçek boyutunda göster",
+    "noun": {
+      "video": "video",
+      "audio": "ses",
+      "image": "resim",
+      "pdf": "PDF"
+    },
+    "what": "Tür: {mime} · {size}",
+    "codecFailed": "Bu {noun} Kokpit'te oynatılamıyor: yerleşik oynatıcı dosyanın kodeğini çözemiyor (ör. ProRes ya da HEVC). {what}. Kokpit dönüştürme yapmaz; H.264/AAC (.mp4) ya da VP9/Opus (.webm) olarak dışa aktarılırsa oynar.",
+    "readFailed": "Dosya okunamadı (bağlantı kesildi ya da dosya değişti). {what}. ↻ Yenile ile yeniden dene.",
+    "noPicture": "Görüntü kodeği çözülemiyor (ör. ProRes ya da HEVC); yalnız ses çalınıyor. {what}. Kokpit dönüştürme yapmaz."
+  }
+}

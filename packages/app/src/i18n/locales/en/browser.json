@@ -1,0 +1,56 @@
+{
+  "panel": {
+    "title": "Browser",
+    "pickProject": "Choose a project on the left for the Browser.",
+    "newTab": "New tab",
+    "localNote": "This browser opens in its own window on this computer; agents can't drive it.",
+    "localUnavailable": "A local browser can't be opened in this environment.",
+    "open": "Open browser",
+    "opening": "Opening…",
+    "close": "Close browser",
+    "closedNote": "The browser is closed. When opened, it starts on the Mac mini with this project's own Chrome profile.",
+    "extensions": "Extensions",
+    "tabs": "Tabs",
+    "closeTab": "Close tab",
+    "closeTabFor": "Close tab: {label}",
+    "back": "Back",
+    "forward": "Forward",
+    "reload": "Reload",
+    "address": "Address"
+  },
+  "address": {
+    "invalid": "This address can't be opened (too long or invalid).",
+    "empty": "Type an address or something to search for.",
+    "onlyWeb": "Only http(s) addresses can be opened.",
+    "badSearchEngine": "The search engine setting is invalid (it must be an http(s) address containing %s).",
+    "searchTooLong": "The search text is too long."
+  },
+  "extensions": {
+    "title": "Extensions",
+    "none": "No developer extensions yet.",
+    "loaded": "loaded",
+    "notLoaded": "not loaded: {error}",
+    "loadsOnOpen": "loads when the browser opens",
+    "remove": "Remove",
+    "removeFor": "Remove: {label}",
+    "needAbsolutePath": "Type the full path of the folder on the Mac mini (starting with /).",
+    "folder": "Extension folder (on the Mac mini, containing manifest.json)",
+    "folderPlaceholder": "/Users/…/my-extension",
+    "load": "Load developer extension",
+    "webStoreNote": "Chrome Web Store extensions are installed once in the profile's own window: Chrome shows the install prompt in its own window, not in this panel. Turn on \"{label}\", connect to {machine} with Screen Sharing and install it there, then hide the window again; the extension stays in the profile.",
+    "bringToFront": "Bring to front"
+  },
+  "window": {
+    "hint": "Show temporarily for Chrome's own windows — sync confirmation, extension pop-ups",
+    "label": "Show on {machine}'s screen"
+  },
+  "page": {
+    "picture": "Browser view",
+    "zoomBubble": "Zoom",
+    "zoomOut": "Zoom out",
+    "zoomIn": "Zoom in",
+    "zoomReset": "Reset",
+    "noClipboard": "The clipboard can't be written in this environment.",
+    "pasteTooLarge": "The clipboard text is too large: at most {max} characters can be pasted."
+  }
+}

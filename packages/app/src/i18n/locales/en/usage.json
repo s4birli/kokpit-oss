@@ -1,0 +1,62 @@
+{
+  "sourceNote": "Kokpit counts from the session transcripts on this Mac; this is not Claude's own quota percentage.",
+  "sourceNoteShort": "Kokpit's count on this Mac; not the quota percentage.",
+  "plan": {
+    "fiveHour": "5-hour",
+    "sevenDay": "weekly"
+  },
+  "planQuota": "{plan} quota",
+  "planSource": {
+    "statusline": "status line",
+    "probe": "asked Claude"
+  },
+  "window": {
+    "session_one": "Last {count} hour",
+    "session_other": "Last {count} hours",
+    "today": "Today",
+    "week_one": "Last {count} day",
+    "week_other": "Last {count} days"
+  },
+  "tooltip": {
+    "reading": "Reading usage…",
+    "windowTokens": "{label}: {value} tokens",
+    "window": "{label}: {value}",
+    "quota": "Claude quota: {plan}"
+  },
+  "columns": {
+    "total": "Total",
+    "input": "Input",
+    "output": "Output",
+    "cacheWrite": "Cache write",
+    "cacheRead": "Cache read",
+    "messages": "Messages"
+  },
+  "probeNote": "One small request is sent to Claude (with the cheapest model); it uses very little of your subscription.",
+  "noPlanNote": "Claude's own quota percentage is unknown: Kokpit does not read login credentials.",
+  "blockLabel": "Claude usage: {name}",
+  "readingSessions": "Reading session transcripts…",
+  "empty": "{window}: no usage recorded on this Mac.",
+  "period": "Period",
+  "estimatedCost": "Estimated cost",
+  "models": "Models — {window}",
+  "projects": "Projects — {window}",
+  "partial": "Hit the reading limits: the numbers are lower bounds.",
+  "costNote": "The cost is an estimate: the equivalent at API list prices (price table of {date}); not your subscription fee.",
+  "ask": "Ask",
+  "cancel": "Cancel",
+  "probeFailed": "Could not ask Claude: {error}",
+  "refreshFailed": "Could not reload: {error}",
+  "updated": "Last updated: {when}",
+  "notYet": "Not read yet",
+  "reading": "reading…",
+  "refreshLabel": "Reload usage: {name}",
+  "refresh": "Reload",
+  "askLabel": "Ask Claude: {name}",
+  "asking": "Asking…",
+  "askButton": "Ask Claude",
+  "meterDetail": "resets {resets} · {source}, {captured}",
+  "loadFailed": "Could not load usage: {error}",
+  "loading": "Loading…",
+  "noAccounts": "No Claude accounts.",
+  "thisProject": "{name} (this project's account)"
+}
